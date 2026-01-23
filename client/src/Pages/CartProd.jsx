@@ -37,7 +37,7 @@ return (
  
   
   <div className=' border mb-3'>
-        <img src={produto.imagem} alt="" className='w-25 h-25' />
+        <img src={`https://lojamcserver.onrender.com${produto.imagem}`} alt="" className='w-25 h-25' />
         <div className='detail ms-4'>
             <h5>{produto.descricao}</h5>            
             <h4 style={{color:'DarkMagenta', fontWeight:'bold'}}>R${produto.preco}</h4>        
