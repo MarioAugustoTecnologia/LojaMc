@@ -142,6 +142,7 @@ const cadastrar = (e) => {
                               method: "POST",
                               headers: { 'content-type': 'application/json' },
                               body: JSON.stringify(cadobj)
+                              
                           }).then((res) => {
                               toast.success('Cadastrado com sucesso !')
                               setId('');
