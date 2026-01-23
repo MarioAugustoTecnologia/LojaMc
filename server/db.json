@@ -1,15 +1,7 @@
 {
   "pedidos": [],
-  "usuarios": [
-    {
-      "id": "Mario Augusto",
-      "hashedPassword": "$2b$10$jBXsY6Z5qCZlQ/GsHdhUlOnB2Oepx54QiHmFmi7Fk77GWPbwVGbz."
-    },
-    {
-      "id": "admin",
-      "hashedPassword": "$2b$10$MQe/dcKz3qfeZkhUKAINPuKHi7TqQ2Yw7W5HeEqgKIPBllvu5.vBq"
-    }
-  ],
+  "usuarios": [],  
+ 
   "statusped": [
     {
       "status": "Em andamento",
