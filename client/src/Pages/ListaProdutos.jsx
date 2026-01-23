@@ -154,7 +154,7 @@ const ListaProdutos = ({ item }) => {
                   <td className="td">{item.descricao}</td>
                   <td className="td">{item.preco}</td>
                   <td className="td" style={{ fontWeight: 'bold', color: getColor(item.status) }}>{item.status}</td>
-                  <td className="td"><img src={`http://localhost:3000${item.imagem}`} />{item.imagem}</td>
+                  <td className="td"><img src={`https://lojamcserver.onrender.com${item.imagem}`} />{item.imagem}</td>
                   <td>
                     <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                     <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>
