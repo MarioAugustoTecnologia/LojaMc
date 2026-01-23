@@ -1,0 +1,38 @@
+{
+  "pedidos": [],
+  "usuarios": [
+    {
+      "id": "Mario Augusto",
+      "hashedPassword": "$2b$10$jBXsY6Z5qCZlQ/GsHdhUlOnB2Oepx54QiHmFmi7Fk77GWPbwVGbz."
+    },
+    {
+      "id": "admin",
+      "hashedPassword": "$2b$10$MQe/dcKz3qfeZkhUKAINPuKHi7TqQ2Yw7W5HeEqgKIPBllvu5.vBq"
+    }
+  ],
+  "statusped": [
+    {
+      "status": "Em andamento",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "status": "Entregue"
+    },
+    {
+      "status": "Cancelado",
+      "id": 3
+    }
+  ],
+  "produtos": [],
+  "statusprod": [
+    {
+      "status": "Produto Disponivel",
+      "id": 1
+    },
+    {
+      "status": "Produto Indisponivel",
+      "id": 2
+    }
+  ]
+}
