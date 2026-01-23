@@ -16,7 +16,7 @@ const EditStatusPed = () => {
    
 
     useEffect(() => {
-        fetch("http://localhost:3000/pedidos/" + pedidocod).then((res) => {
+        fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod).then((res) => {
             return res.json();
         }).then((resp) => {
             idchange(resp.id);
@@ -27,7 +27,7 @@ const EditStatusPed = () => {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:3000/statusped").then((res) => {
+        fetch("https://lojamcserver.onrender.com/statusped").then((res) => {
 
             return res.json()
 
@@ -99,7 +99,7 @@ const EditStatusPed = () => {
             }).then((result) => {
 
                 if (result.isConfirmed) {
-                    fetch("http://localhost:3000/pedidos/" + pedidocod, {
+                    fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod, {
                         method: "PATCH",
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify(edtobj)

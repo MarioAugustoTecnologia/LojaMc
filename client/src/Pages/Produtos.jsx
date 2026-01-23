@@ -35,7 +35,7 @@ const Produtos = ({produto}) => {
 
   useEffect(() => {
 
-    fetch("http://localhost:3000/produtos").then((res) => {
+    fetch("https://lojamcserver.onrender.com/produtos").then((res) => {
 
     return res.json()
 

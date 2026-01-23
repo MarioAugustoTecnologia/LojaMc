@@ -28,7 +28,7 @@ const ListaProdutos = ({ item }) => {
 
   useEffect(() => {
 
-    fetch("http://localhost:3000/produtos").then((res) => {
+    fetch("https://lojamcserver.onrender.com/produtos").then((res) => {
 
       return res.json()
 
@@ -63,7 +63,7 @@ const ListaProdutos = ({ item }) => {
 
       if (result.isConfirmed) {
 
-        fetch("http://localhost:3000/produtos/" + id, {
+        fetch("https://lojamcserver.onrender.com/produtos/" + id, {
 
           method: "DELETE"
 

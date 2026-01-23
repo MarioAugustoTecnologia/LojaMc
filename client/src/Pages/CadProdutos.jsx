@@ -42,7 +42,7 @@ const CadProdutos = () => {
 
                 const cadobj = { descricao, preco, imagem, status, quant }
 
-                fetch("http://localhost:3000/produtos", {
+                fetch("https://lojamcserver.onrender.com/produtos", {
                     method: "POST",
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(cadobj)

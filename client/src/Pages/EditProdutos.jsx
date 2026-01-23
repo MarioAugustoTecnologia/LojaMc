@@ -19,7 +19,7 @@ const EditProdutos = () => {
    
 
     useEffect(() => {
-        fetch("http://localhost:3000/produtos/" + produtocod).then((res) => {
+        fetch("https://lojamcserver.onrender.com/produtos/" + produtocod).then((res) => {
             return res.json();
         }).then((resp) => {
             idchange(resp.id);
@@ -35,7 +35,7 @@ const EditProdutos = () => {
 
 
      useEffect(() => {
-        fetch("http://localhost:3000/statusprod").then((res) => {
+        fetch("https://lojamcserver.onrender.com/statusprod").then((res) => {
 
             return res.json()
 
@@ -72,7 +72,7 @@ const EditProdutos = () => {
             }).then((result) => {
 
                 if (result.isConfirmed) {
-                    fetch("http://localhost:3000/produtos/" + produtocod, {
+                    fetch("https://lojamcserver.onrender.com/produtos/" + produtocod, {
                         method: "PATCH",
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify(edtobj)

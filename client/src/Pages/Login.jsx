@@ -20,7 +20,7 @@ const Login = () => {
     if (validate()) {
 
       //console.log('proceed')
-      fetch('http://localhost:3000/usuarios/' + usuario).then((res) => {
+      fetch('https://lojamcserver.onrender.com/usuarios/' + usuario).then((res) => {
 
         return res.json()
 

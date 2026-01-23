@@ -166,7 +166,7 @@ const Cart = () => {
 
                if (result.isConfirmed) {
 
-                  fetch("http://localhost:3000/pedidos", {
+                  fetch("https://lojamcserver.onrender.com/pedidos", {
                      method: "POST",
                      headers: { 'content-type': 'application/json' },
                      body: JSON.stringify(caddados)

@@ -138,7 +138,7 @@ const cadastrar = (e) => {
   
                       if (result.isConfirmed) {
   
-                          fetch("http://localhost:3000/usuarios", {
+                          fetch("https://lojamcserver.onrender.com/usuarios", {
                               method: "POST",
                               headers: { 'content-type': 'application/json' },
                               body: JSON.stringify(cadobj)

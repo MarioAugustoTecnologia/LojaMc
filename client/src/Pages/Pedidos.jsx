@@ -31,7 +31,7 @@ const Pedidos = ({ item }) => {
   const [pedido, setPedidos] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/pedidos").then((res) => {
+    fetch("https://lojamcserver.onrender.com/pedidos").then((res) => {
 
       return res.json()
 
@@ -63,7 +63,7 @@ const Pedidos = ({ item }) => {
 
       if (result.isConfirmed) {
 
-        fetch("http://localhost:3000/pedidos/" + id, {
+        fetch("https://lojamcserver.onrender.com/pedidos/" + id, {
 
           method: "DELETE"
 
