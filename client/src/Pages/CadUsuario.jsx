@@ -92,12 +92,12 @@ const CadUsuario = () => {
 
     const validarsenha = (valor) => {
 
-        const senhavalida = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,10}$/
+        const senhavalida = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,10}$/
 
 
         if (!senhavalida.test(valor)) {
             // Verifica se a string tem pelo menos um espaço no meio
-            return 'Senha deve conter: Uma letra maiuscula e minuscula, um numero, um caracter especial e de 8 a 10 digitos !';
+            return 'Senha deve conter: letras maiusculas e minusculas, numeros, caracter especial e de 8 a 10 digitos !';
         }
 
     }
@@ -108,18 +108,18 @@ const cadastrar = (e) => {
   
           if (isValidate()) {
   
-              const mensagemErro = validarNomeCompleto(id);
-              const errosenha = validarsenha(senha);
+             // const mensagemErro = validarNomeCompleto(id);
+              //const errosenha = validarsenha(senha);
   
-              if (mensagemErro) {
-                  setErro(mensagemErro);
-                  console.log('Erro de validação:', mensagemErro);
-              } else {
+              //if (mensagemErro) {
+                  //setErro(mensagemErro);
+                  //console.log('Erro de validação:', mensagemErro);
+              //} else {
   
-                  if(errosenha){
-                      setErro(errosenha);
-                      console.log('Erro de validação:', errosenha);
-                  }else{            
+                  //if(errosenha){
+                     // setErro(errosenha);
+                      //console.log('Erro de validação:', errosenha);
+                  //}else{            
                             
                   const password = senha;
                   const hashedPassword = bcrypt.hashSync(password, 10)
@@ -160,8 +160,8 @@ const cadastrar = (e) => {
   
               }
              }
-          }
-      }
+          
+      
 
   
     return (
