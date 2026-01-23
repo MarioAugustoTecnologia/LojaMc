@@ -155,7 +155,7 @@ const Produtos = ({produto}) => {
 
                      return (
                         <div className='box' key={produto.id}>
-                           <img src={`http://localhost:3000${produto.imagem}`} />
+                           <img src={`https://lojamcserver.onrender.com${produto.imagem}`} />
                            <br />
                            <h5>{produto.descricao}</h5>
                            <h4 style={{ color: 'DarkMagenta', fontWeight: 'bold' }}>R${produto.preco}</h4>
