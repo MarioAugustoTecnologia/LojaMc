@@ -1,6 +1,13 @@
 {
   "pedidos": [],
-  "usuarios": [],  
+  "usuarios": [{
+      "id": "Felipe Luiz",
+      "hashedPassword": "$2b$10$Z6q3YFCnaAqbO.4mmMUo4eB1dd1TbDfb9hpEP4gRmZ1koUIo6iGA6"
+    },
+    {
+      "id": "admin",
+      "hashedPassword": "$2b$10$YATna9MiE8oVL6q3CFy.4.X2WMiRsuzoK/d3H9Ltolw2ym2k9TWum"
+    }],  
  
   "statusped": [
     {
@@ -16,7 +23,144 @@
       "id": 3
     }
   ],
-  "produtos": [],
+  "produtos": [
+    {
+      "descricao": "Pc Intel Core i5 10ª; gigabyte mr125; 8gb ddr4; m.2. 500gb.",
+      "preco": "1200.00",
+      "imagem": "/Images/Computador.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 1
+    },
+    {
+      "descricao": "Pc Amd Ryzem 5 5600g 16g de ram ddr4, ssd 500 gb, asus h65m2",
+      "preco": "1000.00",
+      "imagem": "/Images/PcRyzen.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 2
+    },
+    {
+      "descricao": "Notebook Acer ac5602 pentium gold 2.6 ghz; 16 gb ddr4, m2 240 gb",
+      "preco": "960.00",
+      "imagem": "/Images/Notebook.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 3
+    },
+    {
+      "descricao": "Pc Intel Core I5 13450 (Integrado); Ram: ddr4 8gb; SSD 120gb",
+      "preco": "2399.90",
+      "imagem": "/Images/Inteli513450.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 4
+    },
+    {
+      "descricao": "Pc Intel Core i7 3770; Ram: DDR3 8gb; ssd: 120 gb; Placa Mãe: H61",
+      "preco": "849.90",
+      "imagem": "/Images/InteIi73770.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 5
+    },
+    {
+      "descricao": "Pc Intel Celeron; Ram: ddr4 8gb; Ssd: 120gb; Placa Mãe: H110",
+      "preco": "919.90",
+      "imagem": "/Images/IntelCeleron.jpg",
+      "status": "Produto Indisponivel",
+      "quant": 1,
+      "id": 6
+    },
+    {
+      "descricao": "Pc Intel Core I3 3240; Ram: ddr3 8gb; ssd: 120gb; Placa mãe: H61",
+      "preco": "609.90",
+      "imagem": "/Images/Inteli33240.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 7
+    },
+    {
+      "descricao": "Pc Intel Core i5 3570; Ram: ddr3 8gb; ssd 120gb; Placa Mãe: H61",
+      "preco": "699.90",
+      "imagem": "/Images/Inteli53570.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 8
+    },
+    {
+      "descricao": "Pc Core i3 4150; ddr3 8gb; ssd 120gb; Placa Mãe: H81",
+      "preco": "679.90",
+      "imagem": "/Images/Inteli34150.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 9
+    },
+    {
+      "descricao": "Pc Intel Core i5 4570; ddr3 8gb; ssd 120gb; Placa Mãe: H81",
+      "preco": "759.90",
+      "imagem": "/Images/IntelI54570.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 10
+    },
+    {
+      "descricao": "Pc Intel Pentium; ddr4 8gb; ssd 120gb; Placa Mãe: H110",
+      "preco": "1009.90",
+      "imagem": "/Images/IntelPentium.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 11
+    },
+    {
+      "descricao": "Pc Intel Core i7 4770; ddr3 8gb; ssd 120gb; Placa Mãe H81",
+      "preco": "889.90",
+      "imagem": "/Images/IntelI74770.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 12
+    },
+    {
+      "descricao": "Pc Intel Core i5 12400; ddr4 8gb; ssd 120gb; Placa mãe: H610",
+      "preco": "2049.90",
+      "imagem": "/Images/IntelI512400.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 13
+    },
+    {
+      "descricao": "Pc Intel Core i3 6100; ddr4 8gb; ssd 120gb; Placa Mãe H110",
+      "preco": "1109.90",
+      "imagem": "/Images/IntelI36100.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 14
+    },
+    {
+      "descricao": "Pc Intel Core i7 6700 (Integrado); ddr4 8gb; ssd 12gb; ",
+      "preco": "1099.90",
+      "imagem": "/Images/IntelI76700.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 15
+    },
+    {
+      "descricao": "Pc Intel Core i5 8500; ddr4 8gb; ssd 120gb; Placa Mãe H110",
+      "preco": "1409.90",
+      "imagem": "/Images/IntelI58500",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 16
+    },
+    {
+      "descricao": "Pc Intel Core i5 11400; ddr4 8gb; ssd 120gb; Placa Mãe H510",
+      "preco": "2089.90",
+      "imagem": "/Images/IntelI511400.jpg",
+      "status": "Produto Disponivel",
+      "quant": 1,
+      "id": 17
+    }
+  ],
   "statusprod": [
     {
       "status": "Produto Disponivel",
