@@ -108,18 +108,18 @@ const cadastrar = (e) => {
   
           if (isValidate()) {
   
-             // const mensagemErro = validarNomeCompleto(id);
-              //const errosenha = validarsenha(senha);
+              const mensagemErro = validarNomeCompleto(id);
+              const errosenha = validarsenha(senha);
   
-              //if (mensagemErro) {
-                  //setErro(mensagemErro);
-                  //console.log('Erro de validação:', mensagemErro);
-              //} else {
+              if (mensagemErro) {
+                  setErro(mensagemErro);
+                  console.log('Erro de validação:', mensagemErro);
+              } else {
   
-                  //if(errosenha){
-                     // setErro(errosenha);
-                      //console.log('Erro de validação:', errosenha);
-                  //}else{            
+                  if(errosenha){
+                      setErro(errosenha);
+                      console.log('Erro de validação:', errosenha);
+                  }else{            
                             
                   const password = senha;
                   const hashedPassword = bcrypt.hashSync(password, 10)
@@ -160,6 +160,8 @@ const cadastrar = (e) => {
   
               }
              }
+            }
+        }
           
       
 

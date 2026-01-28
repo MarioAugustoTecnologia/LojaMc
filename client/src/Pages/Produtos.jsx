@@ -116,20 +116,18 @@ const Produtos = ({produto}) => {
    }
 
    const usuario = localStorage.getItem('usuario');
-   //const boasvindas = "Bem vindo; " 
-   
-
+   //const boasvindas = "Bem vindo; "   
 
    return (
 
       <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 20 }}>
-            <h5 className="text-white" style={{ fontSize: '20px' }} id="user" > {usuario}</h5>
+            <h5 className="text-white" style={{ fontSize: '18px' }} id="user" > {usuario}</h5>
 
             <div className="d-flex justify-content-center">
-               <a href="" className="navbar-brand text-white fs-5">Pesquisar:</a>
-               <input type="search" style={{ margin: "0 12px", width: "300px", height: '35px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)}  />
+               <a className="navbar-brand text-white" style={{fontSize:'18px'}}>Pesquisar:</a>
+               <input type="search" style={{ margin: "0 12px", width: "300px", height: '35px', fontSize:'18px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)}  />
                <div className="">
                   <Link to="" style={{ color: 'white' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white' }}>Já Possui Conta ? - Faça o Login: </Link>
@@ -138,11 +136,11 @@ const Produtos = ({produto}) => {
             </div>
             <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart />{cart.length} </Link>
          </div>
-         <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-            <Link className="navbar-link fs-5 text-white"></Link>
-            <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: "18px" }} onClick={SairdaConta}>Sair:</a></Link>
+             <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
+               <Link className="navbar-link fs-5 text-white"></Link>
+               <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: "16px" }} onClick={SairdaConta}>Sair:</a></Link>
 
-         </div>
+             </div>
 
          <div className='container mt-5'>
 

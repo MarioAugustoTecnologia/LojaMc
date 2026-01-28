@@ -240,8 +240,8 @@ function SairdaConta() {
                </div>
                <div className="col-4">
                   <div className="bg-secondary p-3 text-white">
-                     <h5>Total Itens:    {totalitens(cart)}</h5>
-                     <h5>Total Geral:    {(totalpreco(cart)).toFixed(2)}</h5>
+                     <h5>Total Itens:   {totalitens(cart)}</h5>
+                     <h5>Total Geral: R${(totalpreco(cart)).toFixed(2)}</h5>
 
                   </div>
 
