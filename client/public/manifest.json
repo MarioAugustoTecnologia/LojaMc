@@ -1,6 +1,6 @@
 {
-  "name": "Nome Completo do App",
-  "short_name": "NomeCurto",
+  "name": "LojaMc",
+  "short_name": "Sistema",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
