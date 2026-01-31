@@ -135,8 +135,9 @@ const Produtos = ({ produto }) => {
 
          </nav>
 
-         <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-
+         <div className="d-flex justify-content-center bg-secondary py-3 px-5 text-white">
+             
+             <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: '15px', margin: '200px'}}></a></Link>
       
             <div className="">
                <Link to="" style={{ color: 'white', fontSize: '13px', margin: '-1680px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
