@@ -122,25 +122,26 @@ const Produtos = ({ produto }) => {
 
       <div className="">
 
-         <nav className="d-flex bg-secondary py-3 px-5 text-white" style={{ height: 15 }}>
+          <nav className="d-flex bg-secondary text-white " style={{height:20}}>               
 
 
             <div className="d-flex justify-content-center">
-               <a href="" className="navbar-brand text-white" style={{ fontSize: '15px' }}>Pesquisar:</a>
-               <input type="search" style={{ margin: "0 12px", width: "160px", height: '25px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
-
-               <div className="">
-                  <Link to="" style={{ color: 'white', fontSize: '13px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
-                  <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link>
-
-               </div>
+               <a href="" className="navbar-brand text-white" style={{fontSize:'15px'}}>Pesquisar:</a>
+               <input type="search" style={{ margin: "0 12px", width: "130px", height: '25px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)}  />
+                         
             </div>
-            <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart style={{ margin: '10px', fontSize: '20px' }} />{cart.length} </Link>
-         </nav>
-
+            <Link to="/carrinho" className="navbar-link fs-5 text-white" style={{margin:'-5px'}}><BsCart style={{margin:'10px', fontSize:'20px'}} />{cart.length} </Link>
+         </nav>                  
+    
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-            <h5 className="text-white" id="user" style={{ marginBlock: '10px', fontSize: '15px' }} > {usuario}</h5>
-            <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: '15px', margin: '-1200px' }} onClick={SairdaConta}>Sair:</a></Link>
+            <h5 className="text-white" id="user" style={{marginBlock:'10px', fontSize:'15px'}} > {usuario}</h5>
+            <Link className="navbar-link fs-5 text-white"><a style={{fontSize:'15px', margin:'-650px'}} onClick={SairdaConta}>Sair:</a></Link>
+            <div className="">
+               <Link to="" style={{ color: 'white' , fontSize:'13px', margin:'-1680px'}} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
+               <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize:'13px', margin:'-1680px' }}>Já Possui Conta ? - Faça o Login: </Link>
+
+            </div>
+            
 
          </div>
 
