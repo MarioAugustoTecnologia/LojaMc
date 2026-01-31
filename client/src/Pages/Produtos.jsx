@@ -8,16 +8,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 
 
-const Produtos = ({produto}) => {
+const Produtos = ({ produto }) => {
 
    //Função para Determinar a cor baseada na condição:
 
    const getColor = (status) => {
 
-      if (status === "Produto Disponivel"){
+      if (status === "Produto Disponivel") {
 
          return 'green'
-      }else{         
+      } else {
 
          return 'red'
       }
@@ -25,30 +25,30 @@ const Produtos = ({produto}) => {
 
    const { cart } = useContext(CartContext)
    const { dispatch } = useContext(CartContext)
-  
-   const [produtodata, setProdutodata] = useState([])  
+
+   const [produtodata, setProdutodata] = useState([])
    const [buscanome, setBuscaNome] = React.useState("")
 
-   const buscarap = buscanome.toLowerCase() 
-  
+   const buscarap = buscanome.toLowerCase()
+
    var produtos = produtodata.filter(item => item.descricao.toLowerCase().includes(buscarap))
 
-  useEffect(() => {
+   useEffect(() => {
 
-    fetch("https://lojamcserver.onrender.com/produtos").then((res) => {
+      fetch("https://lojamcserver.onrender.com/produtos").then((res) => {
 
-    return res.json()
+         return res.json()
 
-    }).then((resp) => {
+      }).then((resp) => {
 
-      setProdutodata(resp)
+         setProdutodata(resp)
 
-    }).catch((err) => {
-      console.log(err.message)
-    }) 
-   
-  }, []) 
-   
+      }).catch((err) => {
+         console.log(err.message)
+      })
+
+   }, [])
+
 
    function SairdaConta() {
 
@@ -122,25 +122,25 @@ const Produtos = ({produto}) => {
 
       <div className="">
 
-         <nav className="d-flex bg-secondary py-3 px-5 text-white" style={{ height: 15 }}>               
+         <nav className="d-flex bg-secondary py-3 px-5 text-white" style={{ height: 15 }}>
 
 
             <div className="d-flex justify-content-center">
-               <a href="" className="navbar-brand text-white" style={{fontSize:'20px'}}>Pesquisar:</a>
-               <input type="search" style={{ margin: "0 12px", width: "300px", height: '35px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)}  />
-               
+               <a href="" className="navbar-brand text-white" style={{ fontSize: '15px' }}>Pesquisar:</a>
+               <input type="search" style={{ margin: "0 12px", width: "160px", height: '25px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+
                <div className="">
-                  <Link to="" style={{ color: 'white' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
-                  <Link to="" onClick={ComparaLogin} style={{ color: 'white' }}>Já Possui Conta ? - Faça o Login: </Link>
+                  <Link to="" style={{ color: 'white', fontSize: '13px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
+                  <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link>
 
                </div>
             </div>
-            <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart style={{margin:'10px'}} />{cart.length} </Link>
-         </nav>    
-    
+            <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart style={{ margin: '10px', fontSize: '20px' }} />{cart.length} </Link>
+         </nav>
+
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-            <h5 className="text-white" id="user" style={{marginBlock:'10px'}} > {usuario}</h5>
-            <Link className="navbar-link fs-5 text-white"><a style={{fontSize:'18px', margin:'-1000px'}} onClick={SairdaConta}>Sair:</a></Link>
+            <h5 className="text-white" id="user" style={{ marginBlock: '10px', fontSize: '15px' }} > {usuario}</h5>
+            <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: '15px', margin: '-1200px' }} onClick={SairdaConta}>Sair:</a></Link>
 
          </div>
 
@@ -159,7 +159,7 @@ const Produtos = ({produto}) => {
                            <br />
                            <h5>{produto.descricao}</h5>
                            <h4 style={{ color: 'DarkMagenta', fontWeight: 'bold' }}>R${produto.preco}</h4>
-                           <h5  style={{ fontWeight: 'bold', color: getColor(produto.status) }}>{produto.status}</h5>
+                           <h5 style={{ fontWeight: 'bold', color: getColor(produto.status) }}>{produto.status}</h5>
                            <br />
                            <button id="botao" className='btn btn-primary' onClick={() => dispatch({ type: "Add", produto: produto })} >adicionar ao carrinho</button>
                         </div>
