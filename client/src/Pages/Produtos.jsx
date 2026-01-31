@@ -122,27 +122,28 @@ const Produtos = ({produto}) => {
 
       <div className="">
 
-           <nav className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 20 }}>
-                 
-            <h5 className="text-white" id="user" > {usuario}</h5>
+         <nav className="d-flex bg-secondary py-3 px-5 text-white" style={{ height: 15 }}>               
+
 
             <div className="d-flex justify-content-center">
                <a href="" className="navbar-brand text-white" style={{fontSize:'20px'}}>Pesquisar:</a>
                <input type="search" style={{ margin: "0 12px", width: "300px", height: '35px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)}  />
+               
                <div className="">
                   <Link to="" style={{ color: 'white' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white' }}>Já Possui Conta ? - Faça o Login: </Link>
 
                </div>
             </div>
-            <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart />{cart.length} </Link>
-         </nav>     
+            <Link to="/carrinho" className="navbar-link fs-5 text-white"><BsCart style={{margin:'10px'}} />{cart.length} </Link>
+         </nav>    
     
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-            <Link className="navbar-link fs-5 text-white"></Link>
-            <Link className="navbar-link fs-5 text-white"><a style={{fontSize:'18px'}} onClick={SairdaConta}>Sair:</a></Link>
+            <h5 className="text-white" id="user" style={{marginBlock:'10px'}} > {usuario}</h5>
+            <Link className="navbar-link fs-5 text-white"><a style={{fontSize:'18px', margin:'-1000px'}} onClick={SairdaConta}>Sair:</a></Link>
 
          </div>
+
          <div className='container mt-5'>
 
 
