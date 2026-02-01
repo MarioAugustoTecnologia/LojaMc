@@ -170,7 +170,7 @@ const validarsenha = (valor) => {
 
     return (
 
-     <div className="">
+      <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
@@ -211,8 +211,11 @@ const validarsenha = (valor) => {
                     /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
                 </div><br /><br />
                     <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
-                <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
-                <button onClick={Login} style={{backgroundColor:'orange', color:'white', margin:'0 30px', width:'90px'}}>Login:</button>
+                <div className='d-flex'>
+                    <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
+                    <button onClick={Login} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Login:</button>
+  
+                </div>    
                 <ToastContainer />
             </form>
 
@@ -223,7 +226,6 @@ const validarsenha = (valor) => {
             </footer>
 
         </div>
-
 
     )
 }
