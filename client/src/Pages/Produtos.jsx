@@ -123,7 +123,7 @@ return (
 
       <div className="bg-secondary" style={{height:75}}>
          <div className="d-flex"> 
-               <label htmlFor="" style={{color:'white', margin:'0 10px'}}>Pesquisar:</label>
+               <label htmlFor="" style={{color:'white', margin:'0 10px'}}>Busca:</label>
                <input type="search" style={{ width: "130px", height: '25px', margin:'0 5px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
                <Link to="/carrinho" className=" text-white" style={{ margin: '0 12px' }}><BsCart style={{fontSize: '20px' }} />{cart.length} </Link>
                <div className="">
@@ -150,7 +150,7 @@ return (
 
                      return (
                         <div className='box' key={produto.id}>
-                           <img src={`http://localhost:8000${produto.imagem}`} />
+                           <img src={`https://lojamcserver.onrender.com${produto.imagem}`} />
                            <br />
                            <h7>{produto.descricao}</h7>
                            <h5 style={{ color: 'DarkMagenta', fontWeight: 'bold' }}>R${produto.preco}</h5>
