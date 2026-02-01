@@ -170,14 +170,15 @@ const validarsenha = (valor) => {
 
     return (
 
-        <div className="">
+       <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
             </div><br /><br />
+       
 
-            <form className="mobile-form" onSubmit={cadastrar}>
+            <form className="mobile-form" style={{margin:'0 200px'}} onSubmit={cadastrar}>
                 <h5>Cadastrar Usuario:</h5>
 
                 <div className="form-group">
@@ -191,6 +192,7 @@ const validarsenha = (valor) => {
                         onChange={e => setId(e.target.value)}
                         placeholder="Seu nome completo"
                         onKeyUp={MostraUsuario}
+                        style={{width:'150px'}}
               
                     />
                 </div>             
@@ -204,6 +206,7 @@ const validarsenha = (valor) => {
                         value={senha}
                         onChange={e => setSenha(e.target.value)}
                         onKeyUp={MostraSenha}
+                        style={{width:'150px'}}
                         
                     /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
                 </div><br /><br />
@@ -219,7 +222,7 @@ const validarsenha = (valor) => {
 
             </footer>
 
-        </div>    
+        </div>
 
     )
 }
