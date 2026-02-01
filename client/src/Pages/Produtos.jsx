@@ -119,38 +119,26 @@ const Produtos = ({ produto }) => {
 
    return (
 
-      <div className="">
+    <div className="">
 
-          <nav className="d-flex bg-secondary text-white " style={{ height: 20 }}>
-            
-            <div className="d-flex justify-content-center">
-               
-               <a href="" className="navbar-brand text-white" style={{ fontSize: '15px', marginBlock:'10px' }}>Pesquisar:</a>
-               <input type="search" style={{ margin: "0 12px", width: "130px", height: '25px', marginBlock:'10px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
-
-
-            </div>
-            
-                <Link to="/carrinho" className="navbar-link fs-5 text-white" style={{ margin: '-5px' }}><BsCart style={{ margin: '10px', fontSize: '20px' }} />{cart.length} </Link> <br />
-                
-         </nav>
-
-         <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-      
-            <Link className="navbar-link fs-5 text-white"><a style={{ fontSize: '15px', margin: '200px'}}></a></Link>
-            <div className="">
-               <Link to="" style={{ color: 'white', fontSize: '13px', margin: '-1680px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar Conta:</Link><br />
-               <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px', margin: '-1680px' }}>Já Possui Conta ? - Faça o Login: </Link>
-
-            </div>
+      <div className="bg-secondary" style={{height:75, width:'27%', margin:'0 600px'}}>
+         <div className="d-flex"> 
+               <label htmlFor="" style={{color:'white', margin:'0 10px'}}>Pesquisar:</label>
+               <input type="search" style={{ width: "130px", height: '25px', margin:'0 5px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+               <Link to="/carrinho" className=" text-white" style={{ margin: '0 12px' }}><BsCart style={{fontSize: '20px' }} />{cart.length} </Link>
+               <div className="">
+                  <Link to="" style={{ color: 'white', fontSize: '13px'}} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />                        
+                  <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
+                  <Link style={{ color: 'white', fontSize:'15px'}} onClick={SairdaConta}>Sair:</Link>
+               </div>            
 
          </div>
-         <div className="d-flex bg-secondary text-white" style={{height:40}}>
-              <h6 style={{color:'white', margin:'0 20px'}}>{usuario}</h6>              
-              <Link style={{ color: 'white', fontSize:'15px', margin:'0 50px'}} onClick={SairdaConta}>Sair:</Link>
-         </div>         
+           <h6 style={{color:'white', margin:'0 20px'}}>{usuario}</h6>    
+         
+         
+      </div>
 
-        <div className='container mt-5'>
+       <div className='container mt-5'>
 
 
             <div className='row row-cols-1 row-cols-md-3 g-4'>
@@ -161,13 +149,13 @@ const Produtos = ({ produto }) => {
 
                      return (
                         <div className='box' key={produto.id}>
-                           <img src={`https://lojamcserver.onrender.com${produto.imagem}`} />
+                           <img src={`http://localhost:8000${produto.imagem}`} />
                            <br />
-                           <h5>{produto.descricao}</h5>
-                           <h4 style={{ color: 'DarkMagenta', fontWeight: 'bold' }}>R${produto.preco}</h4>
+                           <h7>{produto.descricao}</h7>
+                           <h5 style={{ color: 'DarkMagenta', fontWeight: 'bold' }}>R${produto.preco}</h5>
                            <h5 style={{ fontWeight: 'bold', color: getColor(produto.status) }}>{produto.status}</h5>
                            <br />
-                           <button id="botao" className='btn btn-primary' onClick={() => dispatch({ type: "Add", produto: produto })} >adicionar ao carrinho</button>
+                           <button style={{ fontSize: '13px' }} id="botao" className='btn btn-primary' onClick={() => dispatch({ type: "Add", produto: produto })} >adicionar ao carrinho</button>
                         </div>
                      )
 
@@ -177,12 +165,16 @@ const Produtos = ({ produto }) => {
             </div>
             <ToastContainer />
 
-         </div>
-
+         </div>          
+        
+        
          <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
             <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
          </footer>
+         
+
+
 
       </div>
 
