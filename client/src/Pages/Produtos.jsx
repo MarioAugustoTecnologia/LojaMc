@@ -117,11 +117,11 @@ const Produtos = ({ produto }) => {
    const usuario = localStorage.getItem('usuario');
    //const boasvindas = "Bem vindo; "   
 
-   return (
+return (
 
-    <div className="">
+ <div className="">
 
-      <div className="bg-secondary" style={{height:75, width:'27%', margin:'0 600px'}}>
+      <div className="bg-secondary" style={{height:75}}>
          <div className="d-flex"> 
                <label htmlFor="" style={{color:'white', margin:'0 10px'}}>Pesquisar:</label>
                <input type="search" style={{ width: "130px", height: '25px', margin:'0 5px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
@@ -130,7 +130,8 @@ const Produtos = ({ produto }) => {
                   <Link to="" style={{ color: 'white', fontSize: '13px'}} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />                        
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
                   <Link style={{ color: 'white', fontSize:'15px'}} onClick={SairdaConta}>Sair:</Link>
-               </div>            
+               </div>
+            
 
          </div>
            <h6 style={{color:'white', margin:'0 20px'}}>{usuario}</h6>    
@@ -165,20 +166,17 @@ const Produtos = ({ produto }) => {
             </div>
             <ToastContainer />
 
-         </div>          
+         </div>        
         
-        
+                        
          <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
             <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
-         </footer>
-         
+         </footer>       
 
 
 
       </div>
-
-
 
 
    )
