@@ -69,26 +69,26 @@ const CadUsuario = () => {
 
     }
 
-     const validarNomeCompleto = (valor) => {
- 
- 
-         const regexNomeCompleto = /^[A-Za-zÀ-ú\s]{3,}(?:\s[A-Za-zÀ-ú\s]{3,})+$/
-         
- 
-         if (!regexNomeCompleto.test(valor)) {
-             // Verifica se a string tem pelo menos um espaço no meio
-             return 'Por favor, insira o nome completo (nome e sobrenome).';
-         }
- 
-            const temComprimentoMinimo = id.length >= 10
-              if(!temComprimentoMinimo){
- 
-                 return 'O nome deve ter no mínimo 10 caracteres.';
-             }
-         
- 
- 
- }
+    const validarNomeCompleto = (valor) => {
+
+
+        const regexNomeCompleto = /^[A-Za-zÀ-ú\s]{3,}(?:\s[A-Za-zÀ-ú\s]{3,})+$/
+
+
+        if (!regexNomeCompleto.test(valor)) {
+            // Verifica se a string tem pelo menos um espaço no meio
+            return 'Por favor, insira o nome completo (nome e sobrenome).';
+        }
+
+        const temComprimentoMinimo = id.length >= 10
+        if (!temComprimentoMinimo) {
+
+            return 'O nome deve ter no mínimo 10 caracteres.';
+        }
+
+
+
+    }
 
     const validarsenha = (valor) => {
 
@@ -102,109 +102,106 @@ const CadUsuario = () => {
 
     }
 
-const cadastrar = (e) => {
-  
-          e.preventDefault();
-  
-          if (isValidate()) {
-  
-              const mensagemErro = validarNomeCompleto(id);
-              const errosenha = validarsenha(senha);
-  
-              if (mensagemErro) {
-                  setErro(mensagemErro);
-                  console.log('Erro de validação:', mensagemErro);
-              } else {
-  
-                  if(errosenha){
-                      setErro(errosenha);
-                      console.log('Erro de validação:', errosenha);
-                  }else{            
-                            
-                  const password = senha;
-                  const hashedPassword = bcrypt.hashSync(password, 10)
-                  const user = id;
-                  window.localStorage.setItem('Login', JSON.stringify({ user, hashedPassword }))
-  
-                  const cadobj = { id, hashedPassword }
-                  //console.log(cadobj) 
-                  Swal.fire({
-                      title: "Deseja salvar ?",
-                      showDenyButton: true,
-                      showCancelButton: true,
-                      confirmButtonText: "Salvar",
-                      denyButtonText: `Não salvar`
-                  }).then((result) => {
-  
-                      if (result.isConfirmed) {
-  
-                          fetch("https://lojamcserver.onrender.com/usuarios", {
-                              method: "POST",
-                              headers: { 'content-type': 'application/json' },
-                              body: JSON.stringify(cadobj)
-                              
-                          }).then((res) => {
-                              toast.success('Cadastrado com sucesso !')
-                              setId('');
-                              setSenha('');
-  
-  
-                          }).catch((err) => {
-                              toast.error('Erro ! :' + err.message)
-                          })
-                          //Swal.fire("Salvo!", "", "success");
-                      } else if (result.isDenied) {
-                          Swal.fire("Nada salvo", "", "info");
-                      }
-                  });
-  
-              }
-             }
+    const cadastrar = (e) => {
+
+        e.preventDefault();
+
+        if (isValidate()) {
+
+            const mensagemErro = validarNomeCompleto(id);
+            const errosenha = validarsenha(senha);
+
+            if (mensagemErro) {
+                setErro(mensagemErro);
+                console.log('Erro de validação:', mensagemErro);
+            } else {
+
+                if (errosenha) {
+                    setErro(errosenha);
+                    console.log('Erro de validação:', errosenha);
+                } else {
+
+                    const password = senha;
+                    const hashedPassword = bcrypt.hashSync(password, 10)
+                    const user = id;
+                    window.localStorage.setItem('Login', JSON.stringify({ user, hashedPassword }))
+
+                    const cadobj = { id, hashedPassword }
+                    //console.log(cadobj) 
+                    Swal.fire({
+                        title: "Deseja salvar ?",
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: "Salvar",
+                        denyButtonText: `Não salvar`
+                    }).then((result) => {
+
+                        if (result.isConfirmed) {
+
+                            fetch("https://lojamcserver.onrender.com/usuarios", {
+                                method: "POST",
+                                headers: { 'content-type': 'application/json' },
+                                body: JSON.stringify(cadobj)
+
+                            }).then((res) => {
+                                toast.success('Cadastrado com sucesso !')
+                                setId('');
+                                setSenha('');
+
+
+                            }).catch((err) => {
+                                toast.error('Erro ! :' + err.message)
+                            })
+                            //Swal.fire("Salvo!", "", "success");
+                        } else if (result.isDenied) {
+                            Swal.fire("Nada salvo", "", "info");
+                        }
+                    });
+
+                }
             }
         }
-          
-      
+    }
 
-  
+
+
     return (
-
-        
 
         <div className="">
 
-            <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-                <Link to="/" className="navbar-brand fs-4 fw-bolder text-white" >Inicio:</Link>
+            <div className="bg-secondary" style={{ height: 75 }}>
+                <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
             </div>
 
             <div className='d-flex justify-content-center align-items-center vh-100'>
-                <div className='bg-white p-3 rounded w-25 border'>
-                    <div className='text-danger'></div>
-                    <h3><center>Cadastrar Usuario:</center></h3><br />
+                <div className='bg-white p-0 border' style={{ width: '17%', height: '290px' }}>
+                    <div className='text-danger'></div>  <br />
+                    <h5><center>Cadastrar Usuario:</center></h5><br />
                     <form action='' onSubmit={cadastrar}>
                         <div className='mb3'>
-                            <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 25 }}>Usuario:</label>
+                            <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 13 }}>Usuario:</label>
                             <input type="text" placeholder='Entre com o nome:' onKeyUp={MostraUsuario}
-                                className='form-control rounded-0' style={{ width: 320, margin: '0 40px', fontSize: 20 }}
+                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize: 13 }}
                                 id='id' value={id} onChange={e => setId(e.target.value)}
                             />
                         </div>
                         <br />
                         <div className='mb3'>
-                            <label htmlFor="senha" style={{ margin: '0 40px', fontSize: 25 }}>Senha:</label>
+                            <label htmlFor="senha" style={{ margin: '0 40px', fontSize: 13 }}>Senha:</label>
                         </div>
                         <div className='d-flex'>
                             <input type="password" placeholder='Entre com a senha:'
-                                className='form-control rounded-0' style={{ width: 320, margin: '0 40px', fontSize: 20 }}
+                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize: 13 }}
                                 id='senha' onKeyUp={MostraSenha} value={senha} onChange={e => setSenha(e.target.value)}
 
                             />
-                            <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 25 }}></i>
+                            <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin: '0 -26px' }}></i>
                         </div>
                         <br />
                         <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
-                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 120, margin: '0 40px' }} >Cadastrar:</button>
-                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 0px', fontSize: '16px', width: 120 }}>Login:</Link>
+                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13 }} >Cadastrar:</button>
+                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 0px', fontSize: '13px', width: 60 }}>Login:</Link>
                         <ToastContainer />
                     </form>
                 </div>
@@ -219,9 +216,6 @@ const cadastrar = (e) => {
             </footer>
 
         </div>
-
-
-
 
     )
 }
