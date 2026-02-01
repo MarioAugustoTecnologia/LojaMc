@@ -174,9 +174,9 @@ const validarsenha = (valor) => {
             </div><br /><br />
 
             <div className=''>
-                <div className='bg-white' style={{width:'17%', height:'290px'}}>
+                <div className='bg-white' style={{width:'17%', height:'290px', margin:'0 250px'}}>
                     <div className='text-danger'></div>  <br />
-                    <label style={{fontSize:'15px', margin:'0 60px'}}>Cadastrar Usuario:</label><br /><br />
+                    <label style={{fontSize:'13px', margin:'0 60px'}}>Cadastrar Usuario:</label><br /><br />
                     <form action='' onSubmit={cadastrar}>
                         <div className='mb3'>
                             <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 13 }}>Usuario:</label>
@@ -199,23 +199,19 @@ const validarsenha = (valor) => {
                         </div>
                         <br />
                         <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
-                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13, height:30}} >Cadastrar:</button>
-                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 -22px', fontSize: '13px', width:60, height:30 }}>Login:</Link>
+                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 60, margin: '0 40px', fontSize: 10, height:25}} >Cadastrar:</button>
+                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '-30px', fontSize: '10px', width:60, height:25 }}>Login:</Link>
                         <ToastContainer />
                     </form>
                 </div>
 
             </div>
-
-
-
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
             </footer>
 
         </div>
-
 
     )
 }
