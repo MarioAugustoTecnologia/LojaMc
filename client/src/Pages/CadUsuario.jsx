@@ -166,17 +166,17 @@ const validarsenha = (valor) => {
 
     return (
 
-       <div className="">
+     <div className="">
 
             <div className="bg-secondary" style={{height:75}}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
             </div><br /><br />
 
-            <div className='d-flex justify-content-center align-items-center'>
-                <div className='bg-white p-0 border' style={{width:'17%', height:'290px'}}>
+            <div className=''>
+                <div className='bg-white' style={{width:'17%', height:'290px'}}>
                     <div className='text-danger'></div>  <br />
-                    <h7><center>Cadastrar Usuario:</center></h7><br />
+                    <label style={{fontSize:'15px', margin:'0 60px'}}>Cadastrar Usuario:</label><br /><br />
                     <form action='' onSubmit={cadastrar}>
                         <div className='mb3'>
                             <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 13 }}>Usuario:</label>
@@ -198,7 +198,7 @@ const validarsenha = (valor) => {
                             <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 -26px' }}></i>
                         </div>
                         <br />
-                        <center>{erro && <p style={{ color: 'red', fontSize:'14px' }}>{erro}</p>}</center>
+                        <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
                         <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13, height:30}} >Cadastrar:</button>
                         <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 -22px', fontSize: '13px', width:60, height:30 }}>Login:</Link>
                         <ToastContainer />
@@ -206,6 +206,8 @@ const validarsenha = (valor) => {
                 </div>
 
             </div>
+
+
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
