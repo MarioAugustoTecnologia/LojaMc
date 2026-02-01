@@ -89,15 +89,14 @@ const CadUsuario = () => {
 
 
     }
-
-    const validarsenha = (valor) => {
+const validarsenha = (valor) => {
 
         const senhavalida = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,10}$/
 
 
         if (!senhavalida.test(valor)) {
             // Verifica se a string tem pelo menos um espaço no meio
-            return 'Senha deve conter: letras maiusculas e minusculas, numeros, caracter especial e de 8 a 10 digitos !';
+            return 'Senha deve conter: letras maiuscula e minuscula, numeros, caracter especial e de 8 a 10 digitos !';
         }
 
     }
@@ -199,7 +198,7 @@ const CadUsuario = () => {
                             <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 -26px' }}></i>
                         </div>
                         <br />
-                        <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
+                        <center>{erro && <p style={{ color: 'red', fontSize:'14px' }}>{erro}</p>}</center>
                         <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13, height:30}} >Cadastrar:</button>
                         <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 -22px', fontSize: '13px', width:60, height:30 }}>Login:</Link>
                         <ToastContainer />
