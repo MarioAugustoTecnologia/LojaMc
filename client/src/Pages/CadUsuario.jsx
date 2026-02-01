@@ -166,46 +166,51 @@ const validarsenha = (valor) => {
 
     return (
 
-     <div className="">
 
-            <div className="bg-secondary" style={{height:75}}>
+           <div className="">
+
+            <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
             </div><br /><br />
 
-            <div className=''>
-                <div className='bg-white' style={{width:'17%', height:'290px', margin:'0 250px'}}>
-                    <div className='text-danger'></div>  <br />
-                    <label style={{fontSize:'13px', margin:'0 60px'}}>Cadastrar Usuario:</label><br /><br />
-                    <form action='' onSubmit={cadastrar}>
-                        <div className='mb3'>
-                            <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 13 }}>Usuario:</label>
-                            <input type="text" placeholder='Entre com o nome:' onKeyUp={MostraUsuario}
-                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize:13 }}
-                                id='id' value={id} onChange={e => setId(e.target.value)}
-                            />
-                        </div>
-                        <br />
-                        <div className='mb3'>
-                            <label htmlFor="senha" style={{ margin: '0 40px', fontSize: 13 }}>Senha:</label>
-                        </div>
-                        <div className='d-flex'>
-                            <input type="password" placeholder='Entre com a senha:'
-                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize: 13 }}
-                                id='senha' onKeyUp={MostraSenha} value={senha} onChange={e => setSenha(e.target.value)}
+            <form className="mobile-form" onSubmit={cadastrar}>
+                <h5>Cadastrar Usuario:</h5>
 
-                            />
-                            <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 -26px' }}></i>
-                        </div>
-                        <br />
-                        <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
-                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 60, margin: '0 40px', fontSize: 10, height:25}} >Cadastrar:</button>
-                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '-30px', fontSize: '10px', width:60, height:25 }}>Login:</Link>
-                        <ToastContainer />
-                    </form>
-                </div>
+                <div className="form-group">
+                    <label htmlFor="nome">Nome:</label><br />
 
-            </div>
+                    <input
+                        type="text"
+                        id="id"
+                        name="nome"
+                        value={id}
+                        onChange={e => setId(e.target.value)}
+                        placeholder="Seu nome completo"
+                        onKeyUp={MostraUsuario}
+              
+                    />
+                </div>             
+
+                <div className="form-group">
+                    <label htmlFor="senha">Senha:</label><br />
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        value={senha}
+                        onChange={e => setSenha(e.target.value)}
+                        onKeyUp={MostraSenha}
+                        
+                    />
+                </div><br />
+
+                <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
+                <button onClick={Login} style={{backgroundColor:'orange', color:'white', margin:'0 30px', width:'90px'}}>Login:</button>
+                <ToastContainer />
+            </form>
+
+
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
@@ -213,6 +218,11 @@ const validarsenha = (valor) => {
 
         </div>
 
+
+
+
+
+ 
     )
 }
 
