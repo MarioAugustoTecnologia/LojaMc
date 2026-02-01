@@ -170,7 +170,7 @@ const validarsenha = (valor) => {
 
     return (
 
-       <div className="">
+     <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
@@ -178,7 +178,7 @@ const validarsenha = (valor) => {
             </div><br /><br />
        
 
-            <form className="mobile-form" style={{margin:'0 200px'}} onSubmit={cadastrar}>
+            <form className="mobile-form" style={{margin:'0 100px'}} onSubmit={cadastrar}>
                 <h5>Cadastrar Usuario:</h5>
 
                 <div className="form-group">
@@ -223,6 +223,7 @@ const validarsenha = (valor) => {
             </footer>
 
         </div>
+
 
     )
 }
