@@ -124,8 +124,8 @@ return (
       <div className="bg-secondary" style={{height:75}}>
          <div className="d-flex"> 
                <label htmlFor="" style={{color:'white', margin:'0 10px'}}>Busca:</label>
-               <input type="search" style={{ width: "130px", height: '25px', margin:'0 5px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
-               <Link to="/carrinho" className=" text-white" style={{ margin: '0 12px' }}><BsCart style={{fontSize: '20px' }} />{cart.length} </Link>
+               <input type="search" style={{ width: "100px", height: '25px', margin:'0 5px'}} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+               <Link to="/carrinho" className=" text-white" style={{ margin: '0 8px' }}><BsCart style={{fontSize: '20px' }} />{cart.length} </Link>
                <div className="">
                   <Link to="" style={{ color: 'white', fontSize: '13px'}} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />                        
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
