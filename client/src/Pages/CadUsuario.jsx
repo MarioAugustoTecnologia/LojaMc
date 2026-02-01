@@ -167,22 +167,22 @@ const CadUsuario = () => {
 
     return (
 
-        <div className="">
+       <div className="">
 
-            <div className="bg-secondary" style={{ height: 75 }}>
+            <div className="bg-secondary" style={{height:75}}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
-            </div>
+            </div><br /><br />
 
-            <div className='d-flex justify-content-center align-items-center vh-100'>
-                <div className='bg-white p-0 border' style={{ width: '17%', height: '290px' }}>
+            <div className='d-flex justify-content-center align-items-center'>
+                <div className='bg-white p-0 border' style={{width:'17%', height:'290px'}}>
                     <div className='text-danger'></div>  <br />
-                    <h5><center>Cadastrar Usuario:</center></h5><br />
+                    <h7><center>Cadastrar Usuario:</center></h7><br />
                     <form action='' onSubmit={cadastrar}>
                         <div className='mb3'>
                             <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 13 }}>Usuario:</label>
                             <input type="text" placeholder='Entre com o nome:' onKeyUp={MostraUsuario}
-                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize: 13 }}
+                                className='form-control rounded-0' style={{ width: 160, margin: '0 40px', fontSize:13 }}
                                 id='id' value={id} onChange={e => setId(e.target.value)}
                             />
                         </div>
@@ -196,19 +196,17 @@ const CadUsuario = () => {
                                 id='senha' onKeyUp={MostraSenha} value={senha} onChange={e => setSenha(e.target.value)}
 
                             />
-                            <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin: '0 -26px' }}></i>
+                            <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 -26px' }}></i>
                         </div>
                         <br />
                         <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
-                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13 }} >Cadastrar:</button>
-                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 0px', fontSize: '13px', width: 60 }}>Login:</Link>
+                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 75, margin: '0 40px', fontSize: 13, height:30}} >Cadastrar:</button>
+                        <Link to='/login' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 -22px', fontSize: '13px', width:60, height:30 }}>Login:</Link>
                         <ToastContainer />
                     </form>
                 </div>
 
             </div>
-
-
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
@@ -216,6 +214,7 @@ const CadUsuario = () => {
             </footer>
 
         </div>
+
 
     )
 }
