@@ -162,7 +162,11 @@ const validarsenha = (valor) => {
         }
     }
 
+    function Login(){
+      
+        navigate('/login')
 
+    }
 
     return (
 
