@@ -227,21 +227,22 @@ function SairdaConta() {
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
-            <Link to="/" className="navbar-brand fs-4 fw-bolder text-white">Inicio:</Link>
+            <Link to="/" className="navbar-brand fs-5 fw-bolder text-white">Inicio:</Link>
             <Link className="navbar-link fs-5 text-white"><BsCart />{cart.length}<h6 onClick={limpar}>Limpar Carrinho:</h6><h6 onClick={SairdaConta}>Sair:</h6></Link>
 
          </div><br />
          <div className="container mt-3" style={{ fontFamily: 'arial' }}>
             <div className="row ">
-               <div className="col-8">
-                  {cart.map(p => (
-                     <CartProd produto={p}></CartProd>
-                  ))}
+               <div className="col-8">              
+                     {cart.map(p => (
+                        <CartProd produto={p}></CartProd> 
+                        
+                      ))} <br />                               
                </div>
                <div className="col-4">
                   <div className="bg-secondary p-3 text-white">
-                     <h5>Total Itens:   {totalitens(cart)}</h5>
-                     <h5>Total Geral: R${(totalpreco(cart)).toFixed(2)}</h5>
+                     <h7>Total Itens:    {totalitens(cart)}</h7><br />
+                     <h7>Total Geral: R${(totalpreco(cart)).toFixed(2)}</h7>
 
                   </div>
 
@@ -251,33 +252,33 @@ function SairdaConta() {
             <h3 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h3><br />
 
             <form action="" onSubmit={cadastrar}>
-               <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '20px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
-               <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '18px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label>
-               <textarea onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" id="dados" style={{ width: '900px', height: '250px', fontSize: '20px' }} className="form-control" /> <br /><br />
+               <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '15px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
+               <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label>
+               <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} className="form-control" /> <br /><br />
                <h3 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h3><br />
 
-               <label htmlFor="nome" style={{ fontWeight: 'bold', fontSize: '20px' }}>Nome:</label>
-               <label htmlFor="cidade" style={{ fontWeight: 'bold', fontSize: '20px', margin: '0 344px' }}>Cidade:</label>
+               <label htmlFor="nome" style={{ fontWeight: 'bold', fontSize: '15px' }}>Nome:</label>
+               <label htmlFor="cidade" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 160px' }}>Cidade:</label>
                <br />
-               <input onKeyUp={MudaCorNome} value={nome} onChange={e => setNome(e.target.value)} type="text" id="nome" style={{ width: '350px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorCidade} value={cidade} onChange={e => setCidade(e.target.value)} type="text" id="cidade" style={{ width: '350px', fontSize: '20px', padding: '2px', margin: '0 402px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="bairro" style={{ fontWeight: 'bold', fontSize: '20px' }}>Bairro:</label>
-               <label htmlFor="cep" style={{ fontWeight: 'bold', fontSize: '20px', margin: '0 345px' }}>Cep:</label><br />
-               <input onKeyUp={MudaCorBairro} value={bairro} onChange={e => setBairro(e.target.value)} type="text" id="bairro" style={{ width: '350px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorCep} value={cep} onChange={e => setCep(e.target.value)} type="text" id="cep" style={{ width: '200px', fontSize: '20px', padding: '2px', margin: '0 402px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="rua" style={{ fontWeight: 'bold', fontSize: '20px' }}>Rua /Avenida:</label>
-               <label htmlFor="numero" style={{ fontWeight: 'bold', fontSize: '20px', margin: '0 344px' }}>Numero:</label><br />
-               <input onKeyUp={MudaCorRuaAv} value={ruaav} onChange={e => setRuaav(e.target.value)} type="text" id="rua" style={{ width: '350px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorNumero} value={numero} onChange={e => setNumero(e.target.value)} type="text" id="numero" style={{ width: '200px', fontSize: '20px', padding: '2px', margin: '0 470px', marginTop: '-37px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="formapag" style={{ fontWeight: 'bold', fontSize: '20px' }}>Forma de Pagamento:</label>
-               <label htmlFor="telefone" style={{ fontWeight: 'bold', fontSize: '20px', margin: '0 20px' }}>Telefones:</label> <label htmlFor="" style={{ fontSize: '18px', fontStyle: 'italic' }}>Ao menos um telefone*</label>
-               <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" className="form-control rounded-0" style={{ width: '100px', fontSize: '20px' }}>
+               <input onKeyUp={MudaCorNome} value={nome} onChange={e => setNome(e.target.value)} type="text" id="nome" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
+               <input onKeyUp={MudaCorCidade} value={cidade} onChange={e => setCidade(e.target.value)} type="text" id="cidade" style={{ width: '175px', fontSize: '20px', padding: '2px', margin: '0 200px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
+               <label htmlFor="bairro" style={{ fontWeight: 'bold', fontSize: '15px' }}>Bairro:</label>
+               <label htmlFor="cep" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 160px' }}>Cep:</label><br />
+               <input onKeyUp={MudaCorBairro} value={bairro} onChange={e => setBairro(e.target.value)} type="text" id="bairro" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
+               <input onKeyUp={MudaCorCep} value={cep} onChange={e => setCep(e.target.value)} type="text" id="cep" style={{ width: '175px', fontSize: '20px', padding: '2px', margin: '0 200px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
+               <label htmlFor="rua" style={{ fontWeight: 'bold', fontSize: '15px' }}>Rua /Avenida:</label>
+               <label htmlFor="numero" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 120px' }}>Numero:</label><br />
+               <input onKeyUp={MudaCorRuaAv} value={ruaav} onChange={e => setRuaav(e.target.value)} type="text" id="rua" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
+               <input onKeyUp={MudaCorNumero} value={numero} onChange={e => setNumero(e.target.value)} type="text" id="numero" style={{ width: '100px', fontSize: '20px', padding: '2px', margin: '0 210px', marginTop: '-37px' }} className="form-control rounded-0" /> <br />
+               <label htmlFor="formapag" style={{ fontWeight: 'bold', fontSize: '15px' }}>Forma de Pagamento:</label>
+               <label htmlFor="telefone" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 20px' }}>Telefones:</label> <label htmlFor="" style={{ fontSize: '18px', fontStyle: 'italic' }}>Ao menos um telefone*</label>
+               <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" className="form-control rounded-0" style={{ width: '100px', fontSize: '15px' }}>
                   <option value=""></option>
                   <option value="Debito">Debito</option>
                   <option value="Credito">Credito</option>
                   <option value="Pix">Pix</option>
                </select><br />
-               <input type="tel" onKeyUp={MudaCorFone} value={fone} onChange={e => setFone(e.target.value)} id="fone" style={{ width: '300px', fontSize: '20px', padding: '2px', margin: '0 235px', marginTop: '-63px' }} className="form-control rounded-0" placeholder="(99)99999-9999 (99)99999-9999" /> <br />
+               <input type="tel" onKeyUp={MudaCorFone} value={fone} onChange={e => setFone(e.target.value)} id="fone" style={{ width: '250px', fontSize: '20px', padding: '2px', margin: '0 175px', marginTop: '-63px' }} className="form-control rounded-0" placeholder="(99)99999-9999 (99)99999-9999" /> <br />
 
                <button type="submit" class="btn btn-success">Salvar:</button>
                <ToastContainer />
