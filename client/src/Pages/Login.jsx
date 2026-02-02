@@ -137,7 +137,7 @@ const Login = () => {
 
     function CadUsuario(){
       
-        navigate('/login')
+        navigate('/cadusuario')
 
     }
 
@@ -188,8 +188,7 @@ const Login = () => {
                     
                 <div className='d-flex'>
                     <button onClick={(e) => LoginForm(e)} type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Login:</button>
-                    <button onClick={CadUsuario} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Cadastro:</button>
-  
+                    <button onClick={CadUsuario} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Cadastro:</button>  
                 </div>    
                 <ToastContainer />
             </form>
