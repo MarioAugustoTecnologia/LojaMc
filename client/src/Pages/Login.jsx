@@ -1,6 +1,6 @@
 import React, { useState } from 'react';//4=> criação do Login...
 import { toast, ToastContainer } from 'react-toastify';
-import { useNavigate, Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import bcrypt from 'bcryptjs';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Swal from 'sweetalert2';
