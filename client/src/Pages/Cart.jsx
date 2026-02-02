@@ -249,13 +249,13 @@ function SairdaConta() {
                </div>
 
             </div><br />
-            <h3 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h3><br />
+            <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h5><br />
 
             <form action="" onSubmit={cadastrar}>
                <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '15px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
                <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label>
                <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} className="form-control" /> <br /><br />
-               <h3 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h3><br />
+               <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h5><br />
 
                <label htmlFor="nome" style={{ fontWeight: 'bold', fontSize: '15px' }}>Nome:</label>
                <label htmlFor="cidade" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 160px' }}>Cidade:</label>
