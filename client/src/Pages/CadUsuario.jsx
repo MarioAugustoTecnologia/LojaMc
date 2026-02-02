@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -162,6 +162,8 @@ const validarsenha = (valor) => {
         }
     }
 
+    const navigate = useNavigate()
+
     function Login(){
       
         navigate('/login')
@@ -170,7 +172,8 @@ const validarsenha = (valor) => {
 
     return (
 
-      <div className="">
+      
+        <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
@@ -226,6 +229,7 @@ const validarsenha = (valor) => {
             </footer>
 
         </div>
+
 
     )
 }

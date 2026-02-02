@@ -1,6 +1,6 @@
 import React, { useState } from 'react';//4=> criação do Login...
 import { toast, ToastContainer } from 'react-toastify';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useNavigate } from 'react-router-dom';
 import bcrypt from 'bcryptjs';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Swal from 'sweetalert2';
@@ -10,7 +10,7 @@ const Login = () => {
 
   const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
-  const navigate = useNavigate()
+
 
 
   const LoginForm = (e) => {
@@ -133,55 +133,74 @@ const Login = () => {
     }
   }
 
+  const navigate = useNavigate()
+
+    function CadUsuario(){
+      
+        navigate('/login')
+
+    }
+
 
 
   return (
 
     <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-        <Link to="/" className="navbar-brand fs-4 fw-bolder text-white" >Inicio:</Link>
+            <div className="bg-secondary" style={{ height: 75 }}>
+                <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
-      </div>
+            </div><br /><br />
+       
 
-      <div className='d-flex justify-content-center align-items-center vh-100'>
-        <div className='bg-white p-3 rounded w-25 border'>
-          <div className='text-danger'></div>
-          <h2><center>Login:</center></h2><br />
-          <form action=''>
-            <div className='mb3'>
-              <label htmlFor="nome" style={{ margin: '0 40px', fontSize: 25 }}>Usuario:</label>
-              <input type="text" placeholder='Entre com o nome:'
-                className='form-control rounded-0' style={{ width: 320, margin: '0 40px', fontSize: 20 }}
-                value={usuario} onChange={e => setUsuario(e.target.value)} id='usuario' onKeyUp={MostraUsuario}
-              />
-            </div>
-            <br />
-            <div className='mb3'>
-              <label htmlFor="senha" style={{ margin: '0 40px', fontSize: 25 }}>Senha:</label>
-            </div>
-            <div className='d-flex'>
-              <input type="password" placeholder='Entre com a senha:'
-                className='form-control rounded-0' style={{ width: 320, margin: '0 40px', fontSize: 20 }}
-                value={senha} onChange={e => setSenha(e.target.value)} id='senha' onKeyUp={MostraSenha}
+            <form className="mobile-form" style={{margin:'0 100px'}}>
+                <h5>Login:</h5>
 
-              />
-              <i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 25 }}></i>
-            </div>
-            <br />
-            <button type='submit' onClick={(e) => LoginForm(e)} className='btn btn-success rounded-0' style={{ width: 120, margin: '0 40px' }}>Entrar:</button>
-            <Link to='/cadusuario' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 0px', fontSize: '16px', width: 120 }}>Criar Conta:</Link>
-            <ToastContainer />
-          </form>
+                <div className="form-group">
+                    <label htmlFor="nome">Nome:</label><br />
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="nome"
+                        value={usuario}
+                        onChange={e => setUsuario(e.target.value)}
+                        placeholder="Seu nome completo"
+                        onKeyUp={MostraUsuario}
+                        style={{width:'150px'}}
+              
+                    />
+                </div>             
+
+                <div className="form-group">
+                    <label htmlFor="senha">Senha:</label><br />
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        value={senha}
+                        onChange={e => setSenha(e.target.value)}
+                        onKeyUp={MostraSenha}
+                        style={{width:'150px'}}
+                        
+                    /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
+                </div><br /><br />
+                    
+                <div className='d-flex'>
+                    <button onClick={(e) => LoginForm(e)} type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Login:</button>
+                    <button onClick={CadUsuario} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Cadastro:</button>
+  
+                </div>    
+                <ToastContainer />
+            </form>
+
+
+            <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
+                <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
+
+            </footer>
+
         </div>
-
-      </div>
-
-      <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
-        <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
-
-      </footer>
-    </div>
 
   )
 }
