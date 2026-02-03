@@ -277,6 +277,7 @@ function SairdaConta() {
                         placeholder="Seu nome completo:"
                         onKeyUp={MudaCorNome}
                         style={{width:'150px'}}
+                        className="form-control"
               
                     />
                       <input
@@ -286,9 +287,10 @@ function SairdaConta() {
                         value={cidade}
                         onChange={e => setCidade(e.target.value)}
                         onKeyUp={MudaCorCidade}
-                        style={{margin:'0 20px'}}
+                        style={{margin:'0 20px', width:'15%'}}
                         placeholder="Sua Cidade:"
-                        
+                        className="form-control"
+                                              
                     />
                    
                   
@@ -308,6 +310,7 @@ function SairdaConta() {
                         placeholder="Seu bairro:"
                         onKeyUp={MudaCorBairro}
                         style={{width:'150px'}}
+                        className="form-control"
               
                     />
                       <input
@@ -317,8 +320,9 @@ function SairdaConta() {
                         value={cep}
                         onChange={e => setCep(e.target.value)}
                         onKeyUp={MudaCorCep}
-                        style={{margin:'0 20px'}}
+                        style={{margin:'0 20px', width:'15%'}}
                         placeholder="Seu Cep:"
+                        className="form-control"
                         
                     />
                    
@@ -339,6 +343,7 @@ function SairdaConta() {
                         placeholder="Sua Rua/Av:"
                         onKeyUp={MudaCorRuaAv}
                         style={{width:'150px'}}
+                        className="form-control"
               
                     />
                       <input
@@ -350,6 +355,7 @@ function SairdaConta() {
                         onKeyUp={MudaCorNumero}
                         style={{margin:'0 20px', width:'80px'}}
                         placeholder="Seu Numero:"
+                        className="form-control"
                       
                         
                     />
@@ -363,7 +369,7 @@ function SairdaConta() {
 
                 <div className="d-flex">
                   
-                  <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" >
+                  <select className="form-control" onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" style={{width:'10%'}} >
                        <option value=""></option>
                        <option value="Debito">Debito</option>
                        <option value="Credito">Credito</option>
@@ -376,8 +382,9 @@ function SairdaConta() {
                         value={fone}
                         onChange={e => setFone(e.target.value)}
                         onKeyUp={MudaCorFone}
-                        style={{margin:'0 100px', width:'130px'}}
+                        style={{margin:'0 53px', width:'15%'}}
                         placeholder="Seu Telefone:"
+                        className="form-control"
 
                         
                     />
