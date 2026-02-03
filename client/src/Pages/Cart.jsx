@@ -84,8 +84,12 @@ const Cart = () => {
          isproceed = false
          //errormessage += 'Telefone:' 
       }
+      if (dados === null || dados === '') {
 
-
+         document.getElementById('dados').style.borderColor = 'red';
+         isproceed = false
+         //errormessage += 'Telefone:' 
+      }
       if (!isproceed) {
          toast.warning(errormessage)
       }
