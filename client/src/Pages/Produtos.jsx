@@ -130,7 +130,7 @@ return (
                   <Link to="" style={{ color: 'white', fontSize: '13px'}} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />                        
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
                   <Link style={{ color: 'white', fontSize:'15px'}} onClick={SairdaConta}>Sair:</Link>
-                  <h6 style={{color:'white', margin:'0 -200px', marginTop:'-25px'}} id="user">{usuario}</h6>
+                  <a style={{color:'white', margin:'0 -240px', marginTop:'-25px', fontSize:'14px'}} id="user">{usuario}</a> 
                </div>            
 
          </div>         
