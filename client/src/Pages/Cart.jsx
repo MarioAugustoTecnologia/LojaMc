@@ -225,13 +225,15 @@ function SairdaConta() {
    
 }  
 
+ const usuario = localStorage.getItem('usuario')
+
 
    return (
    <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
-            <Link to="/" className="navbar-brand fs-5 fw-bolder text-white">Inicio:</Link>
+            <Link to="/" className="navbar-brand fs-5 fw-bolder text-white">Inicio:<h6>{usuario}</h6></Link>
             <Link className="navbar-link fs-5 text-white"><BsCart />{cart.length}<h6 onClick={limpar}>Limpar Carrinho:</h6><h6 onClick={SairdaConta}>Sair:</h6></Link>
 
          </div><br />
