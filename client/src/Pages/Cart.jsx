@@ -276,7 +276,7 @@ return (
                         placeholder="Seu nome completo:"
                         onKeyUp={MudaCorNome}
                         style={{width:'150px'}}
-                        className="form-control"
+                        
               
                     />
                       <input
@@ -286,10 +286,9 @@ return (
                         value={cidade}
                         onChange={e => setCidade(e.target.value)}
                         onKeyUp={MudaCorCidade}
-                        style={{margin:'0 20px', width:'25%'}}
+                        style={{margin:'0 20px'}}
                         placeholder="Sua Cidade:"
-                        className="form-control"
-                                              
+                        
                     />
                    
                   
@@ -309,7 +308,6 @@ return (
                         placeholder="Seu bairro:"
                         onKeyUp={MudaCorBairro}
                         style={{width:'150px'}}
-                        className="form-control"
               
                     />
                       <input
@@ -319,9 +317,8 @@ return (
                         value={cep}
                         onChange={e => setCep(e.target.value)}
                         onKeyUp={MudaCorCep}
-                        style={{margin:'0 20px', width:'25%'}}
+                        style={{margin:'0 20px'}}
                         placeholder="Seu Cep:"
-                        className="form-control"
                         
                     />
                    
@@ -342,7 +339,6 @@ return (
                         placeholder="Sua Rua/Av:"
                         onKeyUp={MudaCorRuaAv}
                         style={{width:'150px'}}
-                        className="form-control"
               
                     />
                       <input
@@ -352,9 +348,8 @@ return (
                         value={numero}
                         onChange={e => setNumero(e.target.value)}
                         onKeyUp={MudaCorNumero}
-                        style={{margin:'0 20px', width:'25%'}}
+                        style={{margin:'0 20px', width:'80px'}}
                         placeholder="Seu Numero:"
-                        className="form-control"
                       
                         
                     />
@@ -363,12 +358,12 @@ return (
                </div><br />
                 <div className="d-flex">
                     <label htmlFor="formapag">Forma de Pagamento:</label>
-                    <label htmlFor="telefone" style={{margin:'0 70px'}}>Telefones:</label>                    
+                    <label htmlFor="telefone" style={{margin:'0 20px'}}>Telefones:</label>                    
                 </div>             
 
                 <div className="d-flex">
                   
-                  <select className="form-control" onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" style={{width:'15%'}} >
+                  <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" >
                        <option value=""></option>
                        <option value="Debito">Debito</option>
                        <option value="Credito">Credito</option>
@@ -381,9 +376,8 @@ return (
                         value={fone}
                         onChange={e => setFone(e.target.value)}
                         onKeyUp={MudaCorFone}
-                        style={{margin:'0 36px', width:'20%'}}
+                        style={{margin:'0 100px', width:'130px'}}
                         placeholder="Seu Telefone:"
-                        className="form-control"
 
                         
                     />
@@ -405,7 +399,7 @@ return (
 
 
 
-      </div>   
+      </div>
       )
 }
 
