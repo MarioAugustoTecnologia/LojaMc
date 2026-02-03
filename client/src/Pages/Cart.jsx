@@ -317,7 +317,7 @@ return (
                         value={cep}
                         onChange={e => setCep(e.target.value)}
                         onKeyUp={MudaCorCep}
-                        style={{margin:'0 20px'}}
+                        style={{margin:'0 20px', width:'120px'}}
                         placeholder="Seu Cep:"
                         
                     />
