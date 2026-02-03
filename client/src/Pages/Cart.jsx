@@ -223,7 +223,7 @@ function SairdaConta() {
 
 
    return (
-      <div className="">
+   <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
@@ -233,11 +233,11 @@ function SairdaConta() {
          </div><br />
          <div className="container mt-3" style={{ fontFamily: 'arial' }}>
             <div className="row ">
-               <div className="col-8">              
-                     {cart.map(p => (
-                        <CartProd produto={p}></CartProd> 
-                        
-                      ))} <br />                               
+               <div className="col-8">
+                  {cart.map(p => (
+                     <CartProd produto={p}></CartProd>
+
+                  ))} <br />
                </div>
                <div className="col-4">
                   <div className="bg-secondary p-3 text-white">
@@ -250,41 +250,140 @@ function SairdaConta() {
 
             </div><br />
             <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h5><br />
-
-            <form action="" onSubmit={cadastrar}>
+            <form action="" onSubmit={cadastrar} className="mobile-form">
                <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '15px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
                <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label>
                <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} className="form-control" /> <br /><br />
                <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h5><br />
 
-               <label htmlFor="nome" style={{ fontWeight: 'bold', fontSize: '15px' }}>Nome:</label>
-               <label htmlFor="cidade" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 160px' }}>Cidade:</label>
-               <br />
-               <input onKeyUp={MudaCorNome} value={nome} onChange={e => setNome(e.target.value)} type="text" id="nome" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorCidade} value={cidade} onChange={e => setCidade(e.target.value)} type="text" id="cidade" style={{ width: '175px', fontSize: '20px', padding: '2px', margin: '0 200px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="bairro" style={{ fontWeight: 'bold', fontSize: '15px' }}>Bairro:</label>
-               <label htmlFor="cep" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 160px' }}>Cep:</label><br />
-               <input onKeyUp={MudaCorBairro} value={bairro} onChange={e => setBairro(e.target.value)} type="text" id="bairro" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorCep} value={cep} onChange={e => setCep(e.target.value)} type="text" id="cep" style={{ width: '175px', fontSize: '20px', padding: '2px', margin: '0 200px', marginTop: '-34px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="rua" style={{ fontWeight: 'bold', fontSize: '15px' }}>Rua /Avenida:</label>
-               <label htmlFor="numero" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 120px' }}>Numero:</label><br />
-               <input onKeyUp={MudaCorRuaAv} value={ruaav} onChange={e => setRuaav(e.target.value)} type="text" id="rua" style={{ width: '175px', fontSize: '20px', padding: '2px' }} className="form-control rounded-0" />
-               <input onKeyUp={MudaCorNumero} value={numero} onChange={e => setNumero(e.target.value)} type="text" id="numero" style={{ width: '100px', fontSize: '20px', padding: '2px', margin: '0 210px', marginTop: '-37px' }} className="form-control rounded-0" /> <br />
-               <label htmlFor="formapag" style={{ fontWeight: 'bold', fontSize: '15px' }}>Forma de Pagamento:</label>
-               <label htmlFor="telefone" style={{ fontWeight: 'bold', fontSize: '15px', margin: '0 20px' }}>Telefones:</label> <label htmlFor="" style={{ fontSize: '18px', fontStyle: 'italic' }}>Ao menos um telefone*</label>
-               <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" className="form-control rounded-0" style={{ width: '100px', fontSize: '15px' }}>
-                  <option value=""></option>
-                  <option value="Debito">Debito</option>
-                  <option value="Credito">Credito</option>
-                  <option value="Pix">Pix</option>
-               </select><br />
-               <input type="tel" onKeyUp={MudaCorFone} value={fone} onChange={e => setFone(e.target.value)} id="fone" style={{ width: '250px', fontSize: '20px', padding: '2px', margin: '0 175px', marginTop: '-63px' }} className="form-control rounded-0" placeholder="(99)99999-9999 (99)99999-9999" /> <br />
+                 <div className="d-flex">
+                    <label htmlFor="nome">Nome:</label>
+                    <label htmlFor="cidade" style={{margin:'0 120px'}}>Cidade:</label>                    
+                </div>             
 
-               <button type="submit" class="btn btn-success">Salvar:</button>
-               <ToastContainer />
-            </form>
+                <div className="d-flex">
+                  <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        value={nome}
+                        onChange={e => setNome(e.target.value)}
+                        placeholder="Seu nome completo:"
+                        onKeyUp={MudaCorNome}
+                        style={{width:'150px'}}
+              
+                    />
+                      <input
+                        type="text"
+                        id="cidade"
+                        name="cidade"
+                        value={cidade}
+                        onChange={e => setCidade(e.target.value)}
+                        onKeyUp={MudaCorCidade}
+                        style={{margin:'0 20px'}}
+                        placeholder="Sua Cidade:"
+                        
+                    />
+                   
+                  
+               </div><br /> 
+               <div className="d-flex">
+                    <label htmlFor="bairro">Bairro:</label>
+                    <label htmlFor="cep" style={{margin:'0 120px'}}>Cep:</label>                    
+                </div>             
 
+                <div className="d-flex">
+                  <input
+                        type="text"
+                        id="bairro"
+                        name="bairro"
+                        value={bairro}
+                        onChange={e => setBairro(e.target.value)}
+                        placeholder="Seu bairro:"
+                        onKeyUp={MudaCorBairro}
+                        style={{width:'150px'}}
+              
+                    />
+                      <input
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        value={cep}
+                        onChange={e => setCep(e.target.value)}
+                        onKeyUp={MudaCorCep}
+                        style={{margin:'0 20px'}}
+                        placeholder="Seu Cep:"
+                        
+                    />
+                   
+                  
+               </div><br />
+               <div className="d-flex">
+                    <label htmlFor="ruaav">Rua/Avenida:</label>
+                    <label htmlFor="numero" style={{margin:'0 80px'}}>Numero:</label>                    
+                </div>             
 
+                <div className="d-flex">
+                  <input
+                        type="text"
+                        id="ruaav"
+                        name="ruaav"
+                        value={ruaav}
+                        onChange={e => setRuaav(e.target.value)}
+                        placeholder="Sua Rua/Av:"
+                        onKeyUp={MudaCorRuaAv}
+                        style={{width:'150px'}}
+              
+                    />
+                      <input
+                        type="text"
+                        id="numero"
+                        name="numero"
+                        value={numero}
+                        onChange={e => setNumero(e.target.value)}
+                        onKeyUp={MudaCorNumero}
+                        style={{margin:'0 20px', width:'80px'}}
+                        placeholder="Seu Numero:"
+                      
+                        
+                    />
+                   
+                  
+               </div><br />
+                <div className="d-flex">
+                    <label htmlFor="formapag">Forma de Pagamento:</label>
+                    <label htmlFor="telefone" style={{margin:'0 20px'}}>Telefones:</label>                    
+                </div>             
+
+                <div className="d-flex">
+                  
+                  <select onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" >
+                       <option value=""></option>
+                       <option value="Debito">Debito</option>
+                       <option value="Credito">Credito</option>
+                       <option value="Pix">Pix</option>
+                  </select>
+                   <input
+                        type="text"
+                        id="fone"
+                        name="fone"
+                        value={fone}
+                        onChange={e => setFone(e.target.value)}
+                        onKeyUp={MudaCorFone}
+                        style={{margin:'0 100px', width:'130px'}}
+                        placeholder="Seu Telefone:"
+
+                        
+                    />
+                   
+                  
+               </div><br />  
+                 <button type="submit" class="btn btn-success">Salvar:</button>
+                <ToastContainer />  
+ 
+
+           </form>             
+              
          </div>
 
          <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
