@@ -227,9 +227,8 @@ function SairdaConta() {
 
  const usuario = localStorage.getItem('usuario')
 
-
-   return (
-   <div className="">
+return (
+  <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
@@ -287,7 +286,7 @@ function SairdaConta() {
                         value={cidade}
                         onChange={e => setCidade(e.target.value)}
                         onKeyUp={MudaCorCidade}
-                        style={{margin:'0 20px', width:'15%'}}
+                        style={{margin:'0 20px', width:'25%'}}
                         placeholder="Sua Cidade:"
                         className="form-control"
                                               
@@ -320,7 +319,7 @@ function SairdaConta() {
                         value={cep}
                         onChange={e => setCep(e.target.value)}
                         onKeyUp={MudaCorCep}
-                        style={{margin:'0 20px', width:'15%'}}
+                        style={{margin:'0 20px', width:'25%'}}
                         placeholder="Seu Cep:"
                         className="form-control"
                         
@@ -353,7 +352,7 @@ function SairdaConta() {
                         value={numero}
                         onChange={e => setNumero(e.target.value)}
                         onKeyUp={MudaCorNumero}
-                        style={{margin:'0 20px', width:'80px'}}
+                        style={{margin:'0 20px', width:'25%'}}
                         placeholder="Seu Numero:"
                         className="form-control"
                       
@@ -364,12 +363,12 @@ function SairdaConta() {
                </div><br />
                 <div className="d-flex">
                     <label htmlFor="formapag">Forma de Pagamento:</label>
-                    <label htmlFor="telefone" style={{margin:'0 20px'}}>Telefones:</label>                    
+                    <label htmlFor="telefone" style={{margin:'0 70px'}}>Telefones:</label>                    
                 </div>             
 
                 <div className="d-flex">
                   
-                  <select className="form-control" onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" style={{width:'10%'}} >
+                  <select className="form-control" onClick={MudaCorForma} value={formapag} onChange={e => setformapag(e.target.value)} name="formapag" id="formapag" style={{width:'15%'}} >
                        <option value=""></option>
                        <option value="Debito">Debito</option>
                        <option value="Credito">Credito</option>
@@ -382,7 +381,7 @@ function SairdaConta() {
                         value={fone}
                         onChange={e => setFone(e.target.value)}
                         onKeyUp={MudaCorFone}
-                        style={{margin:'0 53px', width:'15%'}}
+                        style={{margin:'0 36px', width:'20%'}}
                         placeholder="Seu Telefone:"
                         className="form-control"
 
@@ -406,8 +405,8 @@ function SairdaConta() {
 
 
 
-      </div>
-   )
+      </div>   
+      )
 }
 
 export default Cart
