@@ -228,7 +228,7 @@ function SairdaConta() {
  const usuario = localStorage.getItem('usuario')
 
 return (
-   
+
   <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
@@ -349,7 +349,7 @@ return (
                         value={numero}
                         onChange={e => setNumero(e.target.value)}
                         onKeyUp={MudaCorNumero}
-                        style={{margin:'0 20px', width:'80px'}}
+                        style={{margin:'0 20px', width:'120px'}}
                         placeholder="Seu Numero:"
                       
                         
