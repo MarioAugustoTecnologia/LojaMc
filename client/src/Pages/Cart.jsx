@@ -257,8 +257,8 @@ return (
             </div><br />
             <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h5><br />
             <form action="" onSubmit={cadastrar} className="mobile-form">
-               <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '15px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
-               <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label><br />
+               <label htmlFor="descricao" style={{ fontWeight: 'bold'}}>Descreva o nome e quantidade de cada item do pedido: </label>
+               <label style={{ fontStyle: 'italic', margin: '0 10px'}}>Ex: Pc Home Pichau HM181, AMD ...;  1</label><br />
                <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} /> <br /><br /><br />
                <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h5><br />
 
