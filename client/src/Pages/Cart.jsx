@@ -233,7 +233,7 @@ return (
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
-            <Link to="/" className="navbar-brand fs-5 fw-bolder text-white">Inicio:<h6>{usuario}</h6></Link>
+            <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" style={{marginLeft:'-40px'}}>Inicio:<h6>{usuario}</h6></Link>
             <Link className="navbar-link fs-5 text-white"><BsCart />{cart.length}<h6 onClick={limpar}>Limpar Carrinho:</h6><h6 onClick={SairdaConta}>Sair:</h6></Link>
 
          </div><br />
