@@ -175,8 +175,7 @@ const Cart = () => {
                      headers: { 'content-type': 'application/json' },
                      body: JSON.stringify(caddados)
                   }).then((res) => {
-                     toast.success('Cadastrado com Sucesso !')
-
+                     limpar();
 
                   }).catch((err) => {
                      toast.error('Erro ! :' + err.message)
@@ -184,6 +183,9 @@ const Cart = () => {
 
                } else if (result.isDenied) {
                   Swal.fire("Nada salvo", "", "info");
+               }
+               if(result.isConfirmed){
+                  toast.success('Pedido Cadastrado com Sucesso !')
                }
             });
          }
