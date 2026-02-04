@@ -327,7 +327,7 @@ return (
                </div><br />
                <div className="d-flex">
                     <label htmlFor="ruaav" style={{fontWeight:'bold'}}>Rua/Avenida:</label>
-                    <label htmlFor="numero" style={{margin:'0 80px', fontWeight:'bold'}}>Numero:</label>                    
+                    <label htmlFor="numero" style={{margin:'0 70px', fontWeight:'bold'}}>Numero:</label>                    
                 </div>             
 
                 <div className="d-flex">
@@ -357,7 +357,7 @@ return (
                </div><br />
                 <div className="d-flex">
                     <label htmlFor="formapag" style={{fontWeight:'bold'}}>Forma de Pagamento:</label>
-                    <label htmlFor="telefone" style={{margin:'0 20px', fontWeight:'bold'}}>Telefones:</label>                    
+                    <label htmlFor="telefone" style={{margin:'0 10px', fontWeight:'bold'}}>Telefones:</label>                    
                 </div>             
 
                 <div className="d-flex">
