@@ -349,12 +349,10 @@ return (
                         value={numero}
                         onChange={e => setNumero(e.target.value)}
                         onKeyUp={MudaCorNumero}
-                        style={{margin:'0 20px', width:'120px'}}
+                        style={{margin:'0 20px', width:'80px'}}
                         placeholder="Seu Numero:"
-                      
-                        
-                    />
-                   
+                                              
+                    />                   
                   
                </div><br />
                 <div className="d-flex">
