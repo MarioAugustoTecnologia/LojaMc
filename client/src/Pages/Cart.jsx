@@ -228,6 +228,7 @@ function SairdaConta() {
  const usuario = localStorage.getItem('usuario')
 
 return (
+   
   <div className="">
 
          <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
@@ -257,13 +258,13 @@ return (
             <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Descrição do Pedido:</h5><br />
             <form action="" onSubmit={cadastrar} className="mobile-form">
                <label htmlFor="descricao" style={{ fontWeight: 'bold', fontSize: '15px' }}>Descreva o nome e quantidade de cada item do pedido: </label>
-               <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label>
-               <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} className="form-control" /> <br /><br />
+               <label style={{ fontStyle: 'italic', margin: '0 10px', fontSize: '15px' }}>Ex: Pc Home Pichau HM181, AMD ...;  1</label><br />
+               <textarea id="dados" onKeyUp={MudaCorDados} value={dados} onChange={e => setDados(e.target.value)} type="text" style={{ width: '400px', height: '250px', fontSize: '20px' }} /> <br /><br /><br />
                <h5 style={{ color: 'blue', fontFamily: 'arial' }}>Dados Pessoais e de Endereço p/ Entrega:</h5><br />
 
                  <div className="d-flex">
-                    <label htmlFor="nome">Nome:</label>
-                    <label htmlFor="cidade" style={{margin:'0 120px'}}>Cidade:</label>                    
+                    <label htmlFor="nome" style={{fontWeight:'bold'}}>Nome:</label>
+                    <label htmlFor="cidade" style={{margin:'0 120px', fontWeight:'bold'}}>Cidade:</label>                    
                 </div>             
 
                 <div className="d-flex">
@@ -294,8 +295,8 @@ return (
                   
                </div><br /> 
                <div className="d-flex">
-                    <label htmlFor="bairro">Bairro:</label>
-                    <label htmlFor="cep" style={{margin:'0 120px'}}>Cep:</label>                    
+                    <label htmlFor="bairro" style={{fontWeight:'bold'}}>Bairro:</label>
+                    <label htmlFor="cep" style={{margin:'0 120px', fontWeight:'bold'}}>Cep:</label>                    
                 </div>             
 
                 <div className="d-flex">
@@ -325,8 +326,8 @@ return (
                   
                </div><br />
                <div className="d-flex">
-                    <label htmlFor="ruaav">Rua/Avenida:</label>
-                    <label htmlFor="numero" style={{margin:'0 80px'}}>Numero:</label>                    
+                    <label htmlFor="ruaav" style={{fontWeight:'bold'}}>Rua/Avenida:</label>
+                    <label htmlFor="numero" style={{margin:'0 80px', fontWeight:'bold'}}>Numero:</label>                    
                 </div>             
 
                 <div className="d-flex">
@@ -357,8 +358,8 @@ return (
                   
                </div><br />
                 <div className="d-flex">
-                    <label htmlFor="formapag">Forma de Pagamento:</label>
-                    <label htmlFor="telefone" style={{margin:'0 20px'}}>Telefones:</label>                    
+                    <label htmlFor="formapag" style={{fontWeight:'bold'}}>Forma de Pagamento:</label>
+                    <label htmlFor="telefone" style={{margin:'0 20px', fontWeight:'bold'}}>Telefones:</label>                    
                 </div>             
 
                 <div className="d-flex">
@@ -400,7 +401,9 @@ return (
 
 
       </div>
-      )
+      
+   
+   )
 }
 
 export default Cart
