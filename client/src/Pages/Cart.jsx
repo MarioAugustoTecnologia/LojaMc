@@ -184,9 +184,7 @@ const Cart = () => {
                } else if (result.isDenied) {
                   Swal.fire("Nada salvo", "", "info");
                }
-               if(result.isConfirmed){
-                  toast.success('Pedido Cadastrado com Sucesso !')
-               }
+            
             });
          }
       }
