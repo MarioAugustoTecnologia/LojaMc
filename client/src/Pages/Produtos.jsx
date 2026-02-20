@@ -50,7 +50,7 @@ const Produtos = () => {
 
    useEffect(() => {
     
-      fetch('"https://lojamcserver.onrender.com/produtos')
+      fetch("https://lojamcserver.onrender.com/produtos")
          .then(response => response.json())
          .then(data => {
             setProdutodata(data); // Armazena o array completo no estado
@@ -163,7 +163,7 @@ const Produtos = () => {
                   produtos.map((produto) => (
 
                      <div className='box'>
-                        <img src={`"https://lojamcserver.onrender.com${produto.imagem}`} />
+                        <img src={`https://lojamcserver.onrender.com${produto.imagem}`} />
                         <br />
                         <span id="desc">{produto.descricao}</span>
                         <h5 style={{ color: 'DarkMagenta', fontWeight: 'bold' }} id="preco">{"R$" + produto.preco}</h5>
