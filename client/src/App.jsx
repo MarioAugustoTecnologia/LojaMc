@@ -11,6 +11,7 @@ import ConsultaStatus from './Pages/ConsultaStatus'
 import CadProdutos from './Pages/CadProdutos'
 import ListaProdutos from './Pages/ListaProdutos'
 import EditProdutos from './Pages/EditProdutos'
+import MeusPedidos from './Pages/MeusPedidos'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path='/carrinho' element={<Cart />}></Route>
               <Route path='/cadusuario' element={<CadUsuario />}></Route>
               <Route path='/login' element={<Login />}></Route>
+               <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>
               <Route path='/adminroot/pedidos' element={<PrivateRoutes><Pedidos /></PrivateRoutes>}></Route>
               <Route path='/adminroot/pedidos/status/editar/:pedidocod' element={<PrivateRoutes><EditStatusPed /></PrivateRoutes>}></Route>
               <Route path='/adminroot/pedidos/consulta/nome' element={<PrivateRoutes><ConsultaNome /></PrivateRoutes>}></Route>
