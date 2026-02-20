@@ -22,7 +22,7 @@ function App() {
          <BrowserRouter>
            <Routes>
               <Route path='/' element={<Produtos />}></Route>
-              <Route path='/carrinho' element={<Cart />}></Route>
+              <Route path='/carrinho/:pcod' element={<Cart />}></Route>
               <Route path='/cadusuario' element={<CadUsuario />}></Route>
               <Route path='/login' element={<Login />}></Route>
                <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>
