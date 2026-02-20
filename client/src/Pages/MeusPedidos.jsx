@@ -40,7 +40,7 @@ const MeusPedidos = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/pedidos").then((res) => {
+    fetch("https://lojamcserver.onrender.com/pedidos").then((res) => {
 
       return res.json()
 
