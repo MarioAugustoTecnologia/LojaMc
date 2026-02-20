@@ -26,13 +26,13 @@ const CartReducer = (state, action) => {
 
     case "Increase":
        const indexI = state.findIndex(p => p.id === action.id)
-       state[indexI].quant = state[indexI].quant + 0.5;        
+       state[indexI].quant = state[indexI].quant + 1;        
        return [...state]
 
 
     case "Decrease":
            const indexD = state.findIndex(p => p.id === action.id)
-           state[indexD].quant = state[indexD].quant - 0.5;
+           state[indexD].quant = state[indexD].quant - 1;
            return  [...state]
         
         
