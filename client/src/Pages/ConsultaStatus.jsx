@@ -29,8 +29,10 @@ const ConsultaStatus = ({item}) => {
   const [pedido, setPedidos] = useState([])  
   const [buscapedido, setBuscaPedido] = React.useState("")
   const buscarap = buscapedido.toLowerCase()
-  
-  var table = pedido.filter(item => item.status.toLowerCase().includes(buscarap))
+
+
+    var table = pedido.filter(item => item.status.toLowerCase().includes(buscarap))
+
 
 
   useEffect(() => {
@@ -144,6 +146,8 @@ const ConsultaStatus = ({item}) => {
               <th className="th" scope="col">Id:</th>
               <th className="th" scope="col">Nome:</th>
               <th className="th" scope="col">Pedido:</th>
+              <th className="th" scope="col">Total Itens:</th>
+              <th className="th" scope="col">Preço:</th>
               <th className="th" scope="col">Total:</th>
               <th className="th" scope="col">Forma Pgto:</th>
               <th className="th" scope="col">Cidade:</th>
@@ -163,7 +167,9 @@ const ConsultaStatus = ({item}) => {
                 <tr key={item.id}>
                   <td className="td">{item.id}</td>
                   <td className="td">{item.nome}</td>
-                  <td className="td">{item.dados}</td>
+                  <td className="td">{item.descricao}</td>
+                  <td className="td">{item.quant}</td>
+                  <td className="td">{item.preco}</td>
                   <td className="td">{item.total}</td>
                   <td className="td">{item.formapag}</td>
                   <td className="td">{item.cidade}</td>

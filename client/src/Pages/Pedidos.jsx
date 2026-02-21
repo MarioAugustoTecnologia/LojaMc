@@ -140,6 +140,8 @@ const Pedidos = ({ item }) => {
               <th className="th" scope="col">Id:</th>
               <th className="th" scope="col">Nome:</th>
               <th className="th" scope="col">Pedido:</th>
+              <th className="th" scope="col">Total Itens:</th>
+              <th className="th" scope="col">Preço:</th>
               <th className="th" scope="col">Total:</th>
               <th className="th" scope="col">Forma Pgto:</th>
               <th className="th" scope="col">Cidade:</th>
@@ -159,7 +161,9 @@ const Pedidos = ({ item }) => {
                 <tr key={item.id}>
                   <td className="td">{item.id}</td>
                   <td className="td">{item.nome}</td>
-                  <td className="td">{item.dados}</td>
+                  <td className="td">{item.descricao}</td>
+                  <td className="td">{item.quant}</td>
+                  <td className="td">{item.preco}</td>
                   <td className="td">{item.total}</td>
                   <td className="td">{item.formapag}</td>
                   <td className="td">{item.cidade}</td>
