@@ -500,7 +500,7 @@ const Cart = () => {
 
                      <br />
                      <div className='detail ms-4'>
-                        <input type="text" id="desc" readOnly style={{ border: 'none', width:'400px', fontSize: '18px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br /><br />
+                        <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br /><br />
                         <input type="text" onKeyDown={validarnumero} onKeyUp={MudaCorItens} id="itens" style={{width: '50px', fontSize: '20px' }} value={itens} onChange={e => itenschange(e.target.value)} /> <br /><br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px' }} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px' }} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
