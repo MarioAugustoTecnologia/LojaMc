@@ -505,9 +505,10 @@ const Cart = () => {
                </div>
                <div className="col-4" >
                   <div className="p-3">
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-30px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>{totalitens(cart)}</a> </h7><br />
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-30px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>R${totalgeral}</a> </h7><br />
-                  
+
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-39px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>{totalitens(cart)}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-39px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>R${totalgeral}</a> </h7><br />
+                                      
                   </div>
 
                </div>
