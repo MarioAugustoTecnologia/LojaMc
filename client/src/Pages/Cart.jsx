@@ -467,14 +467,8 @@ const Cart = () => {
         if (!numero.test(valor)) {
             // Verifica se a string tem pelo menos um espaço no meio
             return 'Numeros de 1 a 9';
-        }     
-
-
-
+        }  
     }
-
-
- 
 
 
    return (
@@ -492,7 +486,6 @@ const Cart = () => {
                <div className="col-8">
 
                   <div className=' border mb-3'>
-
                      {cart.map(p => (
                         <CartProd produto={p}></CartProd>
 
@@ -501,11 +494,10 @@ const Cart = () => {
                      <br />
                      <div className='detail ms-4'>
                         <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br /><br />
-                        <input type="text" onKeyDown={validarnumero} onKeyUp={MudaCorItens} id="itens" style={{width: '50px', fontSize: '20px' }} value={itens} onChange={e => itenschange(e.target.value)} /> <br /><br />
-                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px' }} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
-                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px' }} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
+                        <input type="text" onKeyDown={validarnumero} onKeyUp={MudaCorItens} id="itens" style={{width: '50px', fontSize: '20px'}} value={itens} onChange={e => itenschange(e.target.value)} /> <br /><br />
+                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width:'160px'}} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
+                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width:'200px'}} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                         <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>
-
 
                      </div>
                   </div>
@@ -513,11 +505,9 @@ const Cart = () => {
                </div>
                <div className="col-4" >
                   <div className="p-3">
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}} >{totalitens(cart)}</a> </h7><br />
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}} >R$ {totalgeral}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-30px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>{totalitens(cart)}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-30px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>R${totalgeral}</a> </h7><br />
                   
-
-
                   </div>
 
                </div>
