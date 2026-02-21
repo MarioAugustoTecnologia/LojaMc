@@ -485,7 +485,7 @@ const Cart = () => {
             <div className="row ">
                <div className="col-8">
 
-                  <div className=' border mb-3'>
+                  <div className=' border mb-3' style={{width:"40%"}}>
                      {cart.map(p => (
                         <CartProd produto={p}></CartProd>
 
@@ -506,8 +506,8 @@ const Cart = () => {
                <div className="col-4" >
                   <div className="p-3">
 
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-39px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>{totalitens(cart)}</a> </h7><br />
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-39px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>R${totalgeral}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-550px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>{totalitens(cart)}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-550px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>R${totalgeral}</a> </h7><br />
                                       
                   </div>
 
