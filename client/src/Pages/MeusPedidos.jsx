@@ -69,20 +69,20 @@ const MeusPedidos = () => {
                   
          </div><br /><br /><br />
 
-         <div className="container border" style={{width:'40%'}}>
+         <div className="container border" style={{width:'20%'}}>
             <br /><br />
 
-            {
+           {
               table.map(item => (
                 <tr key={item.id}>
             
-                  <h5 style={{margin:'0 10px'}}>{item.descricao}</h5>
+                  <h6>{item.descricao}</h6>
              
-                  <h5>{item.preco}</h5>
-                  <h5>{item.quant}</h5>
-                  <h5 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h5>
-                  <h5>{item.data_cad}</h5>
-                  <h5>{item.total}</h5>
+                  <h6>{item.preco}</h6>
+                  <h6>{item.quant}</h6>
+                  <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
+                  <h6>{item.data_cad}</h6>
+                  <h6>{item.total}</h6>
                   <hr />
 
                 </tr>
