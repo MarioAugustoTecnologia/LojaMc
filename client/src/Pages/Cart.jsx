@@ -351,6 +351,25 @@ const Cart = () => {
    const data_cad = formataData();
    const usuario = localStorage.getItem('usuario')
    const nome = usuario
+
+   if (nome == null) {
+
+      navigate('/')
+       Swal.fire("Usuario não Logado e/ou não Cadastrado !");
+      
+
+   }
+   else {
+
+         history.pushState(null, null, location.href);
+         window.onpopstate = function () {
+         history.go(1);
+         Swal.fire("Decida a compra antes !")
+
+
+      }
+   }   
+
    const total = (totalpreco(cart)).toFixed(2);
 
    const cadastrar = (e) => {
@@ -506,8 +525,8 @@ const Cart = () => {
                <div className="col-4" >
                   <div className="p-3">
 
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-550px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>{totalitens(cart)}</a> </h7><br />
-                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'15px', margin:'-550px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'15px'}}>R${totalgeral}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-550px'}}>Total Itens: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>{totalitens(cart)}</a> </h7><br />
+                     <h7 style={{color:'navy', backgroundColor:'white', fontWeight:'bold', fontSize:'17px', margin:'-550px'}}>Total Geral: <a style={{color:'green', backgroundColor:'white', fontWeight:'bold', fontSize:'17px'}}>R${totalgeral}</a> </h7><br />
                                       
                   </div>
 
