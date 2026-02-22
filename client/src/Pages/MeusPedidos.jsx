@@ -69,7 +69,7 @@ const MeusPedidos = () => {
                   
          </div><br /><br /><br />
 
-         <div className="container border" style={{width:'25%'}}>
+         <div className="container border" style={{width:'100%'}}>
             <br /><br />
 
            {
