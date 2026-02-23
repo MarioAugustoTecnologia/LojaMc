@@ -490,13 +490,12 @@ const Cart = () => {
                   <div className='border mb-3'>
                      {cart.map(p => (
                         <CartProd produto={p}></CartProd>
-
                      ))}
 
                      <br />
                      <div className='detail ms-4'>
-                        <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br /><br />
-                        <input type="text" id="itens" style={{width: '50px', fontSize: '20px', fontWeight:'bold', border:"none"}} value={variaquant(cart)}  /> <br /><br />
+                        <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
+                        <input type="text" id="itens" style={{width: '50px', fontSize: '20px', fontWeight:'bold', border:"none"}} value={variaquant(cart)}  /> <br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width:'160px'}} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width:'200px'}} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                         <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>
