@@ -3,7 +3,7 @@ import { CartContext } from "../Features/ContextProvider";
 import CartProd from "./CartProd";
 import { useContext, useState, useEffect } from "react";
 import { BsCart } from "react-icons/bs"
-import { totalitens, totalpreco, totalsub } from "../Features/CartReducer";
+import { totalitens, totalpreco, totalsub, variaquant } from "../Features/CartReducer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
@@ -50,9 +50,8 @@ const Cart = () => {
    const [descricao, descchange] = useState("")
    const [preco, precochange] = useState("")
    //const [quant, quantchange] = useState("")
-   const [itens, itenschange] = useState("")
-   const [statusprod, statuschange] = useState("")
-
+   //const [itens, itenschange] = useState("")
+   const [statusprod, statuschange] = useState("")   
    // const navigate = useNavigate()
 
 
@@ -66,12 +65,9 @@ const Cart = () => {
      }
 
 
-
    const comprar = (e) => {
 
-      e.preventDefault();
-
-      
+      e.preventDefault();      
           
          if(statusprod == 'Produto Indisponivel'){
 
@@ -90,18 +86,11 @@ const Cart = () => {
 
          }).then((result) => {            
 
-            if (result.isConfirmed) {
-               
-               const mensagemErro = validarnumero(itens)
-
-               if(mensagemErro){
-                    Swal.fire("Informe a quantidade igual ao numero acima!", "", "error");
-                    document.getElementById('itens').style.borderColor = 'red'
-
-               }else{
+            if (result.isConfirmed) {              
+             
                
                    const status = '_/_'
-                   const quant = itens;
+                   const quant = variaquant(cart);
 
                    const caddados = { nome, descricao, preco, quant, status }
 
@@ -145,7 +134,7 @@ const Cart = () => {
 
                
                   
-             }             
+              
               
             } else if (result.isDenied) {
 
@@ -507,7 +496,7 @@ const Cart = () => {
                      <br />
                      <div className='detail ms-4'>
                         <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br /><br />
-                        <input type="text" onKeyDown={validarnumero} onKeyUp={MudaCorItens} id="itens" style={{width: '50px', fontSize: '20px'}} value={itens} onChange={e => itenschange(e.target.value)} /> <br /><br />
+                        <input type="text" id="itens" style={{width: '50px', fontSize: '20px', fontWeight:'bold'}} value={variaquant(cart)}  /> <br /><br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width:'160px'}} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width:'200px'}} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                         <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>

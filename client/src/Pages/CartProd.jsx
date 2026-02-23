@@ -3,8 +3,6 @@ import {CartContext} from "../Features/ContextProvider"
 
 
 const CartProd = ({produto}) => {  
-
-
   
 
   const {cart, dispatch} = useContext(CartContext)
@@ -42,8 +40,7 @@ return (
                 <button className='rounded-circle px-2' onClick={() => Decrease(produto.id)}><b>-</b></button>
                 <button className='rounded'>{produto.quant}</button>
                 <button className='rounded-circle px-2' onClick={() => Increase(produto.id)}><b>+</b></button>
-          </div>
-   
+          </div>  
 
             
   </div> 

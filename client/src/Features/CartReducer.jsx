@@ -3,6 +3,11 @@ export const totalitens = (cart) => {
     return cart.reduce((sum, produto) => sum + produto.quant, 0 )
 }
 
+export const variaquant = (cart) => {
+
+    return cart.reduce((sum, produto) => produto.quant + 1 - 1, 0)
+}
+
 export const totalpreco = (cart) => {
 
     return cart.reduce((total, produto) => total + produto.quant * produto.preco, 0 )
@@ -12,6 +17,8 @@ export const totalsub = (cart) => {
 
     return cart.reduce((total, produto) => total - produto.preco * -1, 0 )
 }
+
+
 
 
 const CartReducer = (state, action) => {
