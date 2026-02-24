@@ -149,6 +149,7 @@ const ConsultaStatus = ({item}) => {
               <th className="th" scope="col">Total Itens:</th>
               <th className="th" scope="col">Preço:</th>
               <th className="th" scope="col">Total:</th>
+              <th className="th" scope="col">Taxa:</th>
               <th className="th" scope="col">Forma Pgto:</th>
               <th className="th" scope="col">Cidade:</th>
               <th className="th" scope="col">Bairro:</th>
@@ -171,6 +172,7 @@ const ConsultaStatus = ({item}) => {
                   <td className="td">{item.quant}</td>
                   <td className="td">{item.preco}</td>
                   <td className="td">{item.total}</td>
+                  <td className="td">{item.taxaentrega}</td>
                   <td className="td">{item.formapag}</td>
                   <td className="td">{item.cidade}</td>
                   <td className="td">{item.bairro}</td>

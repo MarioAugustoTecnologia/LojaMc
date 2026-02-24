@@ -401,8 +401,9 @@ const Cart = () => {
 
                      if (totalitens(cart) <= 5) {
 
-                        const taxaentrega = "5.00"
-                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxaentrega);
+                        const taxa = "5.00"
+                        const taxaentrega = "Taxa de Entrega: R$5.00"
+                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
                         const total = soma.toFixed(2);
                         const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
@@ -422,8 +423,9 @@ const Cart = () => {
 
                      } else {
 
-                        const taxaentrega = "10.00"
-                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxaentrega);
+                        const taxa = "10.00"
+                        const taxaentrega = "Taxa de Entrega: R$10.00"
+                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
                         const total = soma.toFixed(2);
                         const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
