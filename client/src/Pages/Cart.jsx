@@ -359,119 +359,148 @@ const Cart = () => {
 
       e.preventDefault();
 
-      const loggedIn = localStorage.getItem('userLoggedIn');
+      const quant = totalitens(cart);
 
-      if (loggedIn !== 'true') {
-         Swal.fire("Usuario não Logado e/ou não Cadastrado !");
-         //return false
+      if (isValidate()) {
 
-      } else {
+         Swal.fire({
+            title: "Deseja Concluir ?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "concluir",
+            denyButtonText: `Não concluir`,
+            cancelButtonText: "cancelar"
+         }).then((result) => {
 
-         const quant = totalitens(cart);
+            if (result.isConfirmed) {
+
+               Swal.fire({
+                  title: "Retirada no Estabelecimento ?",
+                  showDenyButton: true,
+                  confirmButtonText: "sim",
+                  denyButtonText: `não`
+
+               }).then((result) => {
+
+                  if (result.isConfirmed) {
+                     const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
+
+                     fetch("https://lojamcserver.onrender.com/pedidos", {
+                        method: "POST",
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(caddados)
+                     }).then((res) => {
+                        Swal.fire("Compra Concluida com Sucesso !", "", "success");
+                        cart.length = cart.length - cart.length;
+                        navigate('/')
+
+                     }).catch((err) => {
+                        toast.error('Erro ! :' + err.message)
+                     })
+                  } else if (result.isDenied) {
+
+                     if (totalitens(cart) <= 5) {
+
+                        const taxaentrega = "5.00"
+                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxaentrega);
+                        console.log(soma)
+                        const total = soma.toFixed(2);
+                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
+
+                        fetch("https://lojamcserver.onrender.com/pedidos", {
+                           method: "POST",
+                           headers: { 'content-type': 'application/json' },
+                           body: JSON.stringify(caddados)
+                        }).then((res) => {
+                           Swal.fire("Compra Concluida com Sucesso !", "", "success");
+                           cart.length = cart.length - cart.length;
+                           navigate('/')
+
+                        }).catch((err) => {
+                           toast.error('Erro ! :' + err.message)
+                        })
+
+                     } else {
+
+                        const taxaentrega = "10.00"
+                        const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxaentrega);
+                        console.log(soma)
+                        const total = soma.toFixed(2);
+                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
+
+                        fetch("https://lojamcserver.onrender.com/pedidos", {
+                           method: "POST",
+                           headers: { 'content-type': 'application/json' },
+                           body: JSON.stringify(caddados)
+                        }).then((res) => {
+                           Swal.fire("Compra Concluida com Sucesso !", "", "success");
+                           cart.length = cart.length - cart.length;
+                           navigate('/')
+
+                        }).catch((err) => {
+                           toast.error('Erro ! :' + err.message)
+                        })
+
+                     }
+
+                  }
+               })
+
+            }
+            else if (result.isDenied) {
+
+               Swal.fire("Nada Concluido", "", "info");
+               cart.length = cart.length - cart.length;
+
+               const status = "Cancelado"
+
+               const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
+
+               fetch("https://lojamcserver.onrender.com/pedidos", {
+                  method: "POST",
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify(caddados)
+               }).then((res) => {
+
+                  navigate('/')
+
+               }).catch((err) => {
+                  toast.error('Erro ! :' + err.message)
+               })
 
 
-         if (isValidate()) {
+            } else if (result.isDismissed) {
 
-            Swal.fire({
-               title: "Deseja Concluir ?",
-               showDenyButton: true,
-               showCancelButton: true,
-               confirmButtonText: "concluir",
-               denyButtonText: `Não concluir`,
-               cancelButtonText: "cancelar"
-            }).then((result) => {
+               Swal.fire("Compra Cancelada !", "", "Info");
+               cart.length = cart.length - cart.length;
 
-               if (result.isConfirmed) {
+               const status = "Cancelado"
 
-                  const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
+               const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
 
-                  fetch("https://lojamcserver.onrender.com/pedidos", {
-                     method: "POST",
-                     headers: { 'content-type': 'application/json' },
-                     body: JSON.stringify(caddados)
-                  }).then((res) => {
-                     Swal.fire("Compra Concluida com Sucesso !", "", "success");
-                     cart.length = cart.length - cart.length;
-                     navigate('/')
+               fetch("https://lojamcserver.onrender.com/pedidos", {
+                  method: "POST",
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify(caddados)
+               }).then((res) => {
 
-                  }).catch((err) => {
-                     toast.error('Erro ! :' + err.message)
-                  })
+                  navigate('/')
 
-               } else if (result.isDenied) {
-
-                  Swal.fire("Nada Concluido", "", "info");
-                  cart.length = cart.length - cart.length;
-
-                  const status = "Cancelado"
-
-                  const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
-
-                  fetch("https://lojamcserver.onrender.com/pedidos", {
-                     method: "POST",
-                     headers: { 'content-type': 'application/json' },
-                     body: JSON.stringify(caddados)
-                  }).then((res) => {
-
-                     navigate('/')
-
-                  }).catch((err) => {
-                     toast.error('Erro ! :' + err.message)
-                  })
+               }).catch((err) => {
+                  toast.error('Erro ! :' + err.message)
+               })
 
 
-               } else if (result.isDismissed) {
+            }
 
-                  Swal.fire("Compra Cancelada !", "", "Info");
-                  cart.length = cart.length - cart.length;
+         });
 
-                  const status = "Cancelado"
-
-                  const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
-
-                  fetch("https://lojamcserver.onrender.com/pedidos", {
-                     method: "POST",
-                     headers: { 'content-type': 'application/json' },
-                     body: JSON.stringify(caddados)
-                  }).then((res) => {
-
-                     navigate('/')
-
-                  }).catch((err) => {
-                     toast.error('Erro ! :' + err.message)
-                  })
-
-
-               }
-
-            });
-         }
 
       }
 
-
    }
 
-   function MudaCorItens(){
-
-        document.getElementById("itens").style.borderColor = "gainsboro"
-
-
-   }
-
-
-   const validarnumero = (valor) => {
-
-
-        const numero = /^[0-9]$/
-
-
-        if (!numero.test(valor)) {
-            // Verifica se a string tem pelo menos um espaço no meio
-            return 'Numeros de 1 a 9';
-        }  
-    }
-
+   
 
    return (
 
