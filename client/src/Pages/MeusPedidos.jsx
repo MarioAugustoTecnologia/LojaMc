@@ -76,12 +76,12 @@ const MeusPedidos = () => {
               table.map(item => (
                 <tr key={item.id}>
             
-                  <h6>{item.descricao}</h6>
-             
+                  <h6>{item.descricao}</h6>             
                   <h6>{item.preco}</h6>
                   <h6>{item.quant}</h6>
                   <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
                   <h6>{item.data_cad}</h6>
+                  <h6>{item.taxaentrega}</h6>
                   <h6>{item.total}</h6>
                   <hr />
 
