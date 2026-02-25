@@ -186,27 +186,7 @@ const Cart = () => {
 
                   } else if (result.isDenied) {
 
-                      if (cart.length == 1) {
-                            cart.length = cart.length - 1;
-                            totalgeral = (totalsub(cart)).toFixed(2);
-                            console.log(totalgeral);
-                            navigate('/')
-
-
-                     } else {
-                           if (cart.length >= 2) {
-
-                               cart.length = cart.length - 1;                               
-
-                               totalgeral = (totalsub(cart)).toFixed(2);
-                               console.log(totalgeral);
-                               navigate('/')                              
-
-                        }
-
-
-                     }                     
-
+                      Swal.fire("Você Permanece Aqui !", "", "info");     
                   }
                })
 
