@@ -337,8 +337,9 @@ const Cart = () => {
 
    if (nome == null) {
 
-      navigate('/')
+       navigate('/')
        Swal.fire("Usuario não Logado e/ou não Cadastrado !");
+       cart.length = cart.length - cart.length;
       
 
    }
