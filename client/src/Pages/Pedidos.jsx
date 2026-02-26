@@ -117,13 +117,13 @@ const Pedidos = ({ item }) => {
 
     <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{height:120 }}>
+      <div className="d-flex text-white bg-secondary" style={{height:120 }}>
         <Link to="/" className="navbar-brandt text-white" style={{fontSize:'18px'}}>Inicio:</Link>
 
-        <div className="">          
-           <Link to="/adminroot/pedidos/consulta/nome" style={{color:"white", margin:'-1550px'}} >Consulta por nome:</Link><br />
-           <Link to="/adminroot/pedidos/consulta/status" style={{color:"white", margin:'-1550px'}} >Consulta por status:</Link><br />
-           <Link to="/adminroot/pedidos/consulta/produtos" style={{color:"white", margin:'-1550px'}} >Consulta Produtos:</Link><br />  
+        <div className="" style={{margin:'20px'}}>          
+           <Link to="/adminroot/pedidos/consulta/nome" style={{color:"white"}} >Consulta por nome:</Link><br />
+           <Link to="/adminroot/pedidos/consulta/status" style={{color:"white"}} >Consulta por status:</Link><br />
+           <Link to="/adminroot/pedidos/consulta/produtos" style={{color:"white"}} >Consulta Produtos:</Link><br />  
             <Link style={{color: 'white', margin:'-1550px' }} onClick={SairdaConta}>Sair da Conta:</Link>          
         </div>
 
@@ -177,8 +177,9 @@ const Pedidos = ({ item }) => {
 
       </footer>
 
-    </div>
-   )
+    </div>   
+    
+  )
 }
 
 export default Pedidos
