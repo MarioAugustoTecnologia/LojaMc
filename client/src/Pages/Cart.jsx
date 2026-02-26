@@ -86,9 +86,8 @@ const Cart = () => {
 
          }).then((result) => {            
 
-            if (result.isConfirmed) {              
+            if (result.isConfirmed) {             
              
-               
                    const status = '_/_'
                    const quant = variaquant(cart);
 
@@ -130,10 +129,8 @@ const Cart = () => {
 
                }).catch((err) => {
                   toast.error('Erro ! :' + err.message)
-               })
-
-               
-                  
+               })           
+                 
               
               
             } else if (result.isDenied) {
@@ -158,7 +155,6 @@ const Cart = () => {
                         statuschange('')
                         navigate('/')
 
-
                      } else {
                            if (cart.length >= 2) {
 
@@ -169,18 +165,10 @@ const Cart = () => {
                                descchange('')
                                precochange('')
                                statuschange('')
+                               navigate('/')
 
-                               Swal.fire("Informe os dados de Endereço para Concluir !", "", "info");
-                               document.getElementById('cidade').style.borderColor = 'lime'
-                               document.getElementById('bairro').style.borderColor = 'lime'
-                               document.getElementById('cep').style.borderColor = 'lime'
-                               document.getElementById('ruaav').style.borderColor = 'lime'
-                               document.getElementById('numero').style.borderColor = 'lime'
-                               document.getElementById('formapag').style.borderColor = 'lime'
-
+                      
                         }
-
-
 
                      }
 
@@ -193,7 +181,6 @@ const Cart = () => {
             }
 
          });
-
       
 
  }
