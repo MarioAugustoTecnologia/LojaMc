@@ -131,70 +131,49 @@ const Pedidos = ({ item }) => {
 
       </div><br />
 
-      <div className='mt-3'>
+      <h5 style={{fontWeight:'bold', margin:'0 400px'}}>Pedidos:</h5><br />
+      
+         <div className="container border" style={{width:'100%'}}>
+            <br /><br />
 
-        <h3><center>Pedidos:</center></h3><br />
-        <table className="table" style={{ fontFamily: 'arial', fontSize: '17px', width: '2746px', margin: '0 50px' }} id="table">
-          <thead>
-            <tr>
-              <th className="th" scope="col">Id:</th>
-              <th className="th" scope="col">Nome:</th>
-              <th className="th" scope="col">Pedido:</th>
-              <th className="th" scope="col">Total Itens:</th>
-              <th className="th" scope="col">Preço:</th>
-              <th className="th" scope="col">Total:</th>
-              <th className="th" scope="col">Taxa:</th>
-              <th className="th" scope="col">Forma Pgto:</th>
-              <th className="th" scope="col">Cidade:</th>
-              <th className="th" scope="col">Bairro:</th>
-              <th className="th" scope="col">Cep:</th>
-              <th className="th" scope="col">Rua/ Av:</th>
-              <th className="th" scope="col">nº:</th>
-              <th className="th" scope="col">Telefone:</th>
-              <th className="th" scope="col">Status:</th>
-              <th className="th" scope="col">Data Pedido:</th>
-              <th className="th" scope="col">Ação:</th>
-            </tr>
-          </thead>
-          <tbody>
             {
               pedido.map(item => (
                 <tr key={item.id}>
-                  <td className="td">{item.id}</td>
-                  <td className="td">{item.nome}</td>
-                  <td className="td">{item.descricao}</td>
-                  <td className="td">{item.quant}</td>
-                  <td className="td">{item.preco}</td>
-                  <td className="td">{item.total}</td>
-                  <td className="td">{item.taxaentrega}</td>
-                  <td className="td">{item.formapag}</td>
-                  <td className="td">{item.cidade}</td>
-                  <td className="td">{item.bairro}</td>
-                  <td className="td">{item.cep}</td>
-                  <td className="td">{item.ruaav}</td>
-                  <td className="td">{item.numero}</td>
-                  <td className="td">{item.fone}</td>
-                  <td className="td" style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</td>
-                  <td className="td">{item.data_cad}</td>
-                  <td>
+                  <h6>{item.id}</h6>
+                  <h6>{item.nome}</h6>
+                  <h6>{item.descricao}</h6>
+                  <h6>{item.quant}</h6>
+                  <h6>{item.preco}</h6>
+                  <h6>{item.total}</h6>
+                  <h6>{item.taxaentrega}</h6>
+                  <h6>{item.formapag}</h6>
+                  <h6>{item.cidade}</h6>
+                  <h6>{item.bairro}</h6>
+                  <h6>{item.cep}</h6>
+                  <h6>{item.ruaav}</h6>
+                  <h6>{item.numero}</h6>
+                  <h6>{item.fone}</h6>
+                  <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
+                  <h6>{item.data_cad}</h6>
+                  <h6>
                     <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                     <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>
 
-                  </td>
+                  </h6>
+                    <hr />                 
+                
 
                 </tr>
+              
               ))
 
             }
+          
 
+         </div>          
+ 
 
-          </tbody>
-
-        </table>
-
-
-      </div>
-
+     
       <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px", width: "160%" }}>
         <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
