@@ -117,14 +117,14 @@ const ConsultaNome = ({item}) => {
 
 
   return (
-    <div className="">
+   <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ width: "160%" }}>
-        <Link to="/adminroot/pedidos" className="navbar-brand fs-4 fw-bolder text-white">Pedidos:</Link>
+      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >
+        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:'18px'}}>Pedidos:</Link>
 
         <div className="d-flex">
-            <a href="" className="navbar-brand text-white fs-5">Pesquisar:</a>
-             <input placeholder="Digite o nome do cliente:" type="search" style={{ margin: "0 15px", width: "300px" }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+            <a href="" className="navbar-brand text-white" style={{fontSize:'18px'}}>Pesquisar:</a>
+             <input placeholder="Nomes dos Clientes" type="search" style={{ width: "200px", height: '25px', margin: '0 15px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>
 
         <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
@@ -132,9 +132,7 @@ const ConsultaNome = ({item}) => {
 
       </div><br />
 
-    <h5 style={{fontWeight:'bold', margin:'0 400px'}}>Pedidos:</h5><br />
-      
-         <div className="container border" style={{width:'100%'}}>
+     <div className="container border" style={{width:'100%'}}>
             <br /><br />
 
             {
@@ -172,8 +170,8 @@ const ConsultaNome = ({item}) => {
           
 
          </div>          
- 
-      <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px", width: "160%" }}>
+
+      <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px"}}>
         <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
       </footer>

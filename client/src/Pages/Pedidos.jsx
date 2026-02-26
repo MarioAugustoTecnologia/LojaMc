@@ -114,24 +114,23 @@ const Pedidos = ({ item }) => {
 
  
   return (
+
     <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ width: "160%", height:100 }}>
-        <Link to="/" className="navbar-brand fs-4 fw-bolder text-white">Inicio:</Link>
+      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{height:120 }}>
+        <Link to="/" className="navbar-brandt text-white" style={{fontSize:'18px'}}>Inicio:</Link>
 
         <div className="">          
-            <Link to="/adminroot/pedidos/consulta/nome" className="text-white" style={{margin:"-1250px"}}>Consulta por nome:</Link><br />
-          <Link to="/adminroot/pedidos/consulta/status" className="text-white" style={{margin:"-1250px"}}>Consulta por status:</Link><br />
-          <Link to="/adminroot/pedidos/consulta/produtos" className="text-white" style={{margin:"-1250px"}}>Consulta Produtos:</Link><br />
-            
+           <Link to="/adminroot/pedidos/consulta/nome" style={{color:"white", margin:'-1550px'}} >Consulta por nome:</Link><br />
+           <Link to="/adminroot/pedidos/consulta/status" style={{color:"white", margin:'-1550px'}} >Consulta por status:</Link><br />
+           <Link to="/adminroot/pedidos/consulta/produtos" style={{color:"white", margin:'-1550px'}} >Consulta Produtos:</Link><br />  
+            <Link style={{color: 'white', margin:'-1550px' }} onClick={SairdaConta}>Sair da Conta:</Link>          
         </div>
 
-        <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
-
-
+       
       </div><br />
-
-      <h5 style={{fontWeight:'bold', margin:'0 400px'}}>Pedidos:</h5><br />
+      <br />
+         <h5 style={{fontWeight:'bold', margin:'0 300px'}}>Pedidos:</h5><br />
       
          <div className="container border" style={{width:'100%'}}>
             <br /><br />
@@ -172,15 +171,14 @@ const Pedidos = ({ item }) => {
 
          </div>          
  
-
-     
-      <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px", width: "160%" }}>
+      
+      <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px"}}>
         <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
       </footer>
 
     </div>
-  )
+   )
 }
 
 export default Pedidos
