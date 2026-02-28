@@ -273,12 +273,9 @@ const EditStatusPed = () => {
                     />
                 </div><br />
 
-                <div className='d-flex'>
-                    <button type="submit" style={{ backgroundColor: 'green', color: 'white', width: '100px' }} onClick={NovoTotal}>Novo Total:</button>
-                    
-                </div>
                 <ToastContainer />
             </form>
+            <button style={{ backgroundColor: 'green', color: 'white', width: '100px', margin:'0 100px' }} onClick={NovoTotal}>Novo Total:</button>
 
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
