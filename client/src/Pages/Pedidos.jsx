@@ -31,18 +31,27 @@ const Pedidos = ({ item }) => {
   const [pedido, setPedidos] = useState([])
 
   useEffect(() => {
-    fetch("https://lojamcserver.onrender.com/pedidos").then((res) => {
+    fetch("https://lojamcserver.onrender.com/pedidos")
+      .then((response) => response.json())
+      .then((result) => {
+        // Verifica se o array retornado está vazio
+        if (Array.isArray(result) && result.length === 0) {
+          // Redireciona para outra página
+          navigate('/');
+          Swal.fire({
+            position: "center",
+            icon: "info",
+            title: "Não há Pedidos !",
+            showConfirmButton: false,
+            timer: 1800
+          })
 
-      return res.json()
-
-    }).then((resp) => {
-
-      setPedidos(resp)
-
-    }).catch((err) => {
-      console.log(err.message)
-    })
-  }, [])
+        } else {
+          setPedidos(result);
+        }
+      })
+      .catch((error) => console.error('Erro:', error));
+  }, []); // navigate deve estar nas dependências
 
   const navigate = useNavigate()
 
