@@ -64,57 +64,86 @@ const CadProdutos = () => {
 
     }
 
-
-
-
-
     return (
 
-        <div className="">
+       <div className="">
 
-            <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-                <Link to="/adminroot/pedidos/consulta/produtos" className="navbar-brand fs-4 fw-bolder text-white" >Produtos:</Link>
+            <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 75 }}>
+                <Link to="/adminroot/pedidos/consulta/produtos" className="navbar-brand fw-bolder text-white" style={{ fontSize: '18px' }} >Produtos:</Link>
+               <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
+            </div><br /><br />
 
-            </div>
+            <form className="mobile-form" style={{ margin: '0 100px' }} onSubmit={cadastrar}>
+                <h5>Cadastrar Produto:</h5>
 
-            <h4 style={{ margin: '0 771px', marginTop: '100px', fontSize:'25px', fontWeight:'bold', width:'300px' }}>Cadastrar Produto:</h4>
+                <div className="form-group">
+                    <label htmlFor="desc">Descrição:</label><br />
 
+                    <input
+                        type="text"
+                        id="desc"
+                        name="desc"
+                        className='form-control'
+                        value={descricao}
+                        onChange={e => setDesc(e.target.value)}
 
-            <div className='d-flex justify-content-center align-items-center vh-100'>
-                <div className='bg-white p-3 rounded border' style={{ marginTop: '-450px', width:'45%'}}>
+                        style={{ width: '150px' }}
 
-                    <form class="row g-3" onSubmit={cadastrar}>
-                        <div class="col-md-6">
-                            <label for="desc" class="form-label" style={{fontSize:'22px'}}>Descrição</label>
-                            <input  style={{fontSize:'22px'}} type="text" class="form-control" id="desc" value={descricao} onChange={(e) => setDesc(e.target.value)} />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="preco" class="form-label" style={{fontSize:'22px'}}>Preço:</label>
-                            <input type="decimal" class="form-control" id="preco" onKeyDown={handleKeyDown} value={preco} onChange={(e) => setPreco(e.target.value)} style={{width:'160px', fontSize:'22px'}} />
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="preco">Preço:</label><br />
+                    <input
+                        type="text"
+                        id="preco"
+                        name="preco"
+                        className='form-control'
+                        value={preco}
+                        onChange={e => setPreco(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        style={{ width: '150px' }}
 
-                        </div>
-                        <div class="col-12">
-                            <label for="imagem" class="form-label"  style={{fontSize:'22px'}}>Imagem</label>
-                            <input  style={{fontSize:'22px', width:'400px'}} type="text" class="form-control" id="imagem" placeholder="/Images/nomedaimagem.jpg" value={imagem} onChange={(e) => setImagem(e.target.value)} />
-                        </div>
-                        <div class="col-12">
-                            <label for="status" class="form-label"  style={{fontSize:'22px'}}>Status:</label>
-                            <select type="select" class="form-control" id="status" style={{ width: '220px', fontSize:'22px' }} value={status} onChange={(e) => setStatus(e.target.value)} >
-                                <option value=""></option>
-                                <option value="Produto Disponivel">Produto Disponivel</option>
-                                <option value="Produto Indisponivel">Produto Indisponivel</option>
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="imagem">Imagem:</label><br />
+                    <input
+                        type="text"
+                        id="imagem"
+                        name="imagem"
+                        className='form-control'
+                        placeholder="/Images/nomedaimagem.jpg"
+                        value={imagem}
+                        onChange={e => setImagem(e.target.value)}
 
+                        style={{ width: '150px' }}
 
-                            </select>
-                        </div>
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="status">Status:</label><br />
+                    <select
+                        type="select"
+                        id="status"
+                        className='form-control'
+                        name="status"
+                        value={status}
+                        onChange={e => setStatus(e.target.value)}
+                        style={{ width: '150px' }}
 
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-success">Cadastrar:</button>
-                            <Link to="/adminroot/pedidos/consulta/produtos" className="btn border rounded" style={{ color: 'white', backgroundColor: 'orange', margin: '0 20px', fontSize: '16px', width: 120 }}>Voltar:</Link>
-                        </div>
-                        <ToastContainer />
-                    </form>
-                </div></div>
+                    >
+                        <option value=""></option>
+                        <option value="Produto Disponivel">Produto Disponivel</option>
+                        <option value="Produto Indisponivel">Produto Indisponivel</option>
+                    </select>
+                </div><br /><br />
+
+                <div className='d-flex'>
+                    <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
+                    <button style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Voltar:</button>
+                </div>
+                <ToastContainer />
+            </form>
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
@@ -122,9 +151,6 @@ const CadProdutos = () => {
             </footer>
 
         </div>
-
-
-
 
     )
 }

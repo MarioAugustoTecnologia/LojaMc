@@ -117,58 +117,51 @@ const ListaProdutos = ({ item }) => {
     <div className="">
 
       <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 80 }}>
-        <Link to="/adminroot/pedidos" className="navbar-brand fs-4 fw-bolder text-white">Pedidos:</Link>
+        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:'18px'}}>Pedidos:</Link>
          <div className="">          
-            <Link to="/adminroot/pedidos/cadprodutos" className="text-white" style={{margin:"-330px"}}>Cadastrar Produto:</Link>
+            <Link to="/adminroot/pedidos/cadprodutos" className="text-white" style={{margin:"-330px", fontSize:'18px'}}>Cadastrar Produto:</Link>
           
         </div>
 
-        <div className="d-flex justify-content-center">
-          <center><a href="" className="navbar-brand text-white fs-5">Pesquisar:</a></center>
-          <input type="search" style={{ margin: "0 12px", width: "300px", height: '35px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+        <div className="d-flex">
+          <center><a href="" className="navbar-brand text-white">Pesquisar:</a></center>
+          <input type="search" style={{ margin: "0 12px", width: "220px", height: '25px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
         </div>
         <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
 
 
       </div><br />
 
-      <div className='mt-3'>
+      <h5 style={{ fontWeight: 'bold', margin: '0 120px' }}>Produtos:</h5><br />
 
-        <h3><center>Produtos:</center></h3><br /><br />
-        <table className="table" style={{ fontFamily: 'arial', fontSize: '17px', margin: '0 160px', width: 1450 }} id="table">
-          <thead>
-            <tr>
-              <th className="th" scope="col">Id:</th>
-              <th className="th" scope="col">Descrição:</th>
-              <th className="th" scope="col">Preço:</th>
-              <th className="th" scope="col">Status:</th>
-              <th className="th" scope="col">Imagem:</th>
-              <th className="th" scope="col">Ação:</th>
+      <div className="container border" style={{ width: '100%' }}>
+        <br /><br />
+
+        {
+          produtos.map(item => (
+            <tr key={item.id}>
+              <h6>{item.id}</h6>
+    
+              <h6>{item.descricao}</h6>
+       
+              <h6>{"R$" + item.preco}</h6>
+              
+              <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
+              <h6><img src={`http://localhost:8000${item.imagem}`} />{item.imagem}</h6>
+              <h6>
+                <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
+                <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>
+
+              </h6>
+                 
+              <hr />
+
+
             </tr>
-          </thead>
-          <tbody>
-            {
-              produtos.map(item => (
-                <tr key={item.id}>
-                  <td className="td">{item.id}</td>
-                  <td className="td">{item.descricao}</td>
-                  <td className="td">{item.preco}</td>
-                  <td className="td" style={{ fontWeight: 'bold', color: getColor(item.status) }}>{item.status}</td>
-                  <td className="td"><img src={`https://lojamcserver.onrender.com${item.imagem}`} />{item.imagem}</td>
-                  <td>
-                    <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
-                    <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>
 
-                  </td>
+          ))
 
-                </tr>
-              ))
-
-            }
-
-          </tbody>
-
-        </table>
+        }
 
 
       </div>
