@@ -196,7 +196,7 @@ const validarsenha = (valor) => {
                         onChange={e => setId(e.target.value)}
                         placeholder="Seu nome completo"
                         onKeyUp={MostraUsuario}
-                        style={{ width: '200px' }}
+                        style={{ width: '180px' }}
 
                     />
                 </div>
