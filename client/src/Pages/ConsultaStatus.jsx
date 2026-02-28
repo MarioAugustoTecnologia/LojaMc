@@ -124,7 +124,7 @@ const ConsultaStatus = ({item}) => {
     <div className="">
 
       <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:"18px"}}>Pedidos:</Link>
+        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:"18px", margin:'0 -30px'}}>Pedidos:</Link>
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"18px"}}>Pesquisar:</a>
