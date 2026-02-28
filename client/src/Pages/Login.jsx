@@ -168,7 +168,7 @@ const Login = () => {
                         onChange={e => setUsuario(e.target.value)}
                         placeholder="Seu nome completo"
                         onKeyUp={MostraUsuario}
-                        style={{width:'150px'}}
+                        style={{width:'180px'}}
               
                     />
                 </div>             
@@ -184,7 +184,7 @@ const Login = () => {
                         value={senha}
                         onChange={e => setSenha(e.target.value)}
                         onKeyUp={MostraSenha}
-                        style={{width:'150px'}}
+                        style={{width:'180px'}}
                         
                     /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
 
