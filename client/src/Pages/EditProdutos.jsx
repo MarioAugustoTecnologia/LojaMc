@@ -96,75 +96,108 @@ const EditProdutos = () => {
 
  return (
 
-        <div className="">
+         <div className="">
 
-            <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >
+            <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 75 }} >
 
-                <Link to="/adminroot/pedidos" className="navbar-brand fs-4 fw-bolder text-white">Pedidos:</Link>
+                <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white">Pedidos:</Link>
 
-                
-            </div><br />
 
-            <div className='d-flex justify-content-center align-items-center vh-100'>
-                <div className='bg-white p-3 rounded w-25 border'>
-                    
-                    <h3><center>Atualizar Produto:</center></h3><br />
-                    <form action='' onSubmit={editar}>
-                        <div className='mb3'>
-                            <label htmlFor="id" style={{ margin: '0 40px', fontSize: 25 }}>Id:</label>
-                            <input type="text" className='form-control rounded-0' style={{ width: 60, margin:'0 40px', fontSize: 20 }}
-                                value={id} onChange={e => idchange(e.target.value)} id='id'
-                            />
-                        </div>
-                        <div className='mb3'>
-                            <label htmlFor="status" style={{ margin: '0 40px', fontSize: 25 }}>Descrição:</label>
-                            <input type="text"
-                                className='form-control rounded-0' style={{ width: 360, margin:'0 40px', fontSize: 20 }}
-                                value={descricao} onChange={e => descchange(e.target.value)} id='id'
-                            />
+            </div><br /><br />
 
-                        </div>
-                          <div className='mb3'>
-                            <label htmlFor="status" style={{ margin: '0 40px', fontSize: 25 }}>Imagem:</label>
-                            <input type="text" placeholder="/Images/nome.jpg"
-                                className='form-control rounded-0' style={{ width: 360, margin:'0 40px', fontSize: 20 }}
-                                value={imagem} onChange={e => imagemchange(e.target.value)} id='id'
-                            />
-                        </div>
-                          <div className='mb3'>
-                            <label htmlFor="status" style={{ margin: '0 40px', fontSize: 25 }}>Preço:</label>
-                           <input type="text" 
-                                className='form-control rounded-0' style={{ width: 162, margin:'0 40px', fontSize: 20 }}
-                                value={preco} onChange={e => precochange(e.target.value)} id='id'
-                            />
+            <form className="mobile-form" style={{ margin: '0 100px' }} onSubmit={editar}>
+                <h5>Atualizar Produto:</h5>
 
-                        </div>                        
-                          <div className='mb3'>
-                            <label htmlFor="status" style={{ margin: '0 40px', fontSize: 25 }}>Status:</label>
-                            <select style={{ fontSize: '20px', width: 280, margin: '0 40px', fontWeight: 'bold', color: 'navy' }} name='status' id='status' className='form-select' onChange={(e) => setValues({ ...values, id: e.target.value })}>
-                                <option value=""></option>
-                                {statusprod.map(val => {
-                                    return <option value={val.status}>{val.status}</option>
-                                })}
+                <div className="form-group">
+                    <label htmlFor="id">Id:</label><br />
 
-                            </select>                         
+                    <input
+                        type="text"
+                        id="id"
+                        name="id"
+                        className='form-control'
+                        value={id}
+                        onChange={e => idchange(e.target.value)}
 
-                        </div> <br />
+                        style={{ width: '50px' }}
 
-                        <button type='submit' className='btn btn-success rounded-0' style={{ width: 120, margin: '0 40px' }} >Atualizar:</button>
-                         <Link to='/adminroot/pedidos/consulta/produtos' className="btn border rounded-0" style={{ color: 'white', backgroundColor: 'orange', margin: '0 0px', fontSize: '16px', width: 120 }}>Voltar:</Link>
-                        <ToastContainer />                   
-                    </form>
+                    />
                 </div>
 
-            </div>
-            <footer className="py-4 bg-secondary d-flex justify-content-center">
+                <div className="form-group">
+                    <label htmlFor="desc">Descrição:</label><br />
+
+                    <input
+                        type="text"
+                        id="desc"
+                        name="desc"
+                        className='form-control'
+                        value={descricao}
+                        onChange={e => descchange(e.target.value)}
+
+                        style={{ width: '200px' }}
+
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="preco">Preço:</label><br />
+                    <input
+                        type="text"
+                        id="preco"
+                        name="preco"
+                        className='form-control'
+                        value={preco}
+                        onChange={e => precochange(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        style={{ width: '150px' }}
+
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="imagem">Imagem:</label><br />
+                    <input
+                        type="text"
+                        id="imagem"
+                        name="imagem"
+                        className='form-control'
+                        placeholder="/Images/nomedaimagem.jpg"
+                        value={imagem}
+                        onChange={e => imagemchange(e.target.value)}
+
+                        style={{ width: '205px' }}
+
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="status">Status:</label><br />
+                    <select
+                        type="select"
+                        id="status"
+                        className='form-control'
+                        name="status"
+                        onChange={(e) => setValues({ ...values, id: e.target.value })}
+                        style={{ width: '150px' }}
+                    >
+                        <option value=""></option>
+                        {statusprod.map(val => {
+                            return <option value={val.status}>{val.status}</option>
+                        })}
+                    </select>
+                </div><br /><br />
+
+                <div className='d-flex'>
+                    <button type="submit" style={{ backgroundColor: 'green', color: 'white', width: '90px' }}>Cadastrar:</button>
+                    <button type='button' onClick={Retornar} style={{ backgroundColor: 'orange', color: 'white', margin: '0 15px', width: '90px' }}>Voltar:</button>
+                </div>
+                <ToastContainer />
+            </form>
+
+            <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
 
             </footer>
 
         </div>
-
 
     )
 }

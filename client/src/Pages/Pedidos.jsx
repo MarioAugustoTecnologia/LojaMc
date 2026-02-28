@@ -130,7 +130,7 @@ const Pedidos = ({ item }) => {
        
       </div><br />
       <br />
-         <h5 style={{fontWeight:'bold', margin:'0 120px'}}>Pedidos:</h5><br />
+         <h5 style={{fontWeight:'bold', margin:'0 200px'}}>Pedidos:</h5><br />
       
          <div className="container border" style={{width:'100%'}}>
             <br /><br />

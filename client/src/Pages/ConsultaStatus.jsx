@@ -124,11 +124,11 @@ const ConsultaStatus = ({item}) => {
     <div className="">
 
       <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:"18px", margin:'0 -30px'}}>Pedidos:</Link>
+       
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"18px"}}>Pesquisar:</a>
-             <input placeholder="Digite o status do pedido:" type="search" style={{ margin: "0 15px", width: "220px", height: '25px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+             <input placeholder="Digite o status do pedido:" type="search" style={{ margin: "0 15px", width: "240px", height: '25px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>
 
         <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>

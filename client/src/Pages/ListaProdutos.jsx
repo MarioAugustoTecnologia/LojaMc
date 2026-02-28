@@ -114,20 +114,19 @@ const ListaProdutos = ({ item }) => {
 
 
   return (
-    <div className="">
+   <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" style={{ height: 80 }}>
-        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:'18px'}}>Pedidos:</Link>
-         <div className="">          
-            <Link to="/adminroot/pedidos/cadprodutos" className="text-white" style={{margin:"-330px", fontSize:'18px'}}>Cadastrar Produto:</Link>
-          
-        </div>
+      <div className="bg-secondary text-white" style={{ height: 80 }}>      
+      
 
         <div className="d-flex">
-          <center><a href="" className="navbar-brand text-white">Pesquisar:</a></center>
-          <input type="search" style={{ margin: "0 12px", width: "220px", height: '25px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+          <a href="" className="navbar-brand text-white">Pesquisar:</a>
+          <input type="search" style={{ margin: "0 12px", width: "160px", height: '25px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} />
+           <Link style={{ fontSize: "16px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
         </div>
-        <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
+       <br />
+        <Link to="/adminroot/pedidos/cadprodutos" className="text-white" style={{fontSize:'15px'}}>Cadastrar Produto:</Link>
+         <a href="/adminroot/pedidos" className="navbar-brand text-white" style={{margin:'120px'}}>Pedidos:</a>
 
 
       </div><br />
@@ -147,7 +146,7 @@ const ListaProdutos = ({ item }) => {
               <h6>{"R$" + item.preco}</h6>
               
               <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
-              <h6><img src={`http://localhost:8000${item.imagem}`} />{item.imagem}</h6>
+              <h6><img src={`https://lojamcserver.onrender.com${item.imagem}`} />{item.imagem}</h6>
               <h6>
                 <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                 <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>

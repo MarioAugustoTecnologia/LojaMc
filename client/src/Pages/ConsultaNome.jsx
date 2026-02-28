@@ -119,12 +119,11 @@ const ConsultaNome = ({item}) => {
   return (
    <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >
-        <Link to="/adminroot/pedidos" className="navbar-brand fw-bolder text-white" style={{fontSize:'18px', margin:'0 -30px'}}>Pedidos:</Link>
+      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >       
 
         <div className="d-flex">
             <a href="" className="navbar-brand text-white" style={{fontSize:'18px'}}>Pesquisar:</a>
-             <input placeholder="Nomes dos Clientes" type="search" style={{ width: "200px", height: '25px', margin: '0 15px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+             <input placeholder="Nomes dos Clientes" type="search" style={{ width: "240px", height: '25px', margin: '0 15px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>
 
         <Link style={{ fontSize: "18px", color: 'white' }} onClick={SairdaConta}>Sair da Conta:</Link>
