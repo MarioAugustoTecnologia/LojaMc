@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -93,6 +93,14 @@ const CadProdutos = () => {
 
    }
 
+     const navigate = useNavigate()
+
+      function Retornar(){
+
+         navigate("/adminroot/pedidos/consulta/produtos")
+
+      }
+
     return (
 
        <div className="">
@@ -169,7 +177,7 @@ const CadProdutos = () => {
 
                 <div className='d-flex'>
                     <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
-                    <button style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Voltar:</button>
+                    <button onClick={Retornar} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Voltar:</button>
                 </div>
                 <ToastContainer />
             </form>

@@ -54,6 +54,13 @@ const EditProdutos = () => {
         id: ''
     })
 
+
+       const handleKeyDown = (evento) => {
+        // Código da tecla para vírgula é 188 ou 'Comma' dependendo do navegador/teclado
+        if (evento.key === ',') { // Você pode adicionar o ponto se quiser também
+            evento.preventDefault(); // Impede a ação padrão (digitar a vírgula)
+        }
+ }
   
 
     const editar = (e) => {
