@@ -63,6 +63,35 @@ const CadProdutos = () => {
         });
 
     }
+    function SairdaConta() {
+
+      const loggedIn = localStorage.getItem('userLoggedIn');
+
+      if (loggedIn === 'true') {
+
+         Swal.fire({
+            title: "Deseja sair ?",
+            text: "Você não poderá reverter isso !",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim"
+         }).then((result) => {
+
+            if (result.isConfirmed) {
+
+               document.getElementById('user').style.display = "none";
+               localStorage.clear()
+               console.clear();
+               window.location.href = '/login';
+            }
+         });
+
+
+      }
+
+   }
 
     return (
 
