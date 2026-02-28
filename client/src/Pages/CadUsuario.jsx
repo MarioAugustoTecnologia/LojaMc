@@ -179,9 +179,9 @@ const validarsenha = (valor) => {
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
 
             </div><br /><br />
-       
 
-            <form className="mobile-form" style={{margin:'0 100px'}} onSubmit={cadastrar}>
+
+            <form className="mobile-form" style={{ margin: '0 100px' }} onSubmit={cadastrar}>
                 <h5>Cadastrar Usuario:</h5>
 
                 <div className="form-group">
@@ -191,34 +191,41 @@ const validarsenha = (valor) => {
                         type="text"
                         id="id"
                         name="nome"
+                        className='form-control'
                         value={id}
                         onChange={e => setId(e.target.value)}
                         placeholder="Seu nome completo"
                         onKeyUp={MostraUsuario}
-                        style={{width:'150px'}}
-              
+                        style={{ width: '150px' }}
+
                     />
-                </div>             
+                </div>
 
                 <div className="form-group">
                     <label htmlFor="senha">Senha:</label><br />
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        value={senha}
-                        onChange={e => setSenha(e.target.value)}
-                        onKeyUp={MostraSenha}
-                        style={{width:'150px'}}
-                        
-                    /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
+
+                    <div className='d-flex'>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            className='form-control'
+                            value={senha}
+                            onChange={e => setSenha(e.target.value)}
+                            onKeyUp={MostraSenha}
+                            style={{ width: '150px' }}
+
+                        /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin: '0 20px' }}></i>
+
+                    </div>
                 </div><br /><br />
-                    <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
+                <center>{erro && <p style={{ color: 'red' }}>{erro}</p>}</center>
                 <div className='d-flex'>
-                    <button type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Cadastrar:</button>
-                    <button onClick={Login} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Login:</button>
-  
-                </div>    
+                    <button type="submit" style={{ backgroundColor: 'green', color: 'white', width: '90px' }}>Cadastrar:</button>
+                    <button type='button' onClick={Login} style={{ backgroundColor: 'orange', color: 'white', margin: '0 15px', width: '90px' }}>Login:</button>
+
+                </div>
                 <ToastContainer />
             </form>
 
@@ -229,6 +236,7 @@ const validarsenha = (valor) => {
             </footer>
 
         </div>
+
 
 
     )

@@ -145,7 +145,7 @@ const Login = () => {
 
   return (
 
-    <div className="">
+     <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
                 <Link to="/" className="navbar-brand fs-5 fw-bolder text-white" >Inicio:</Link>
@@ -163,6 +163,7 @@ const Login = () => {
                         type="text"
                         id="usuario"
                         name="nome"
+                        className='form-control'
                         value={usuario}
                         onChange={e => setUsuario(e.target.value)}
                         placeholder="Seu nome completo"
@@ -174,21 +175,27 @@ const Login = () => {
 
                 <div className="form-group">
                     <label htmlFor="senha">Senha:</label><br />
-                    <input
+                    <div className='d-flex'>
+                      <input
                         type="password"
                         id="senha"
                         name="senha"
+                        className='form-control'
                         value={senha}
                         onChange={e => setSenha(e.target.value)}
                         onKeyUp={MostraSenha}
                         style={{width:'150px'}}
                         
                     /><i class="bi bi-eye-fill" id='mostrasenha' onClick={MostraTexto} style={{ fontSize: 20, margin:'0 20px'}}></i>
+
+                    </div>
+                    
                 </div><br /><br />
                     
                 <div className='d-flex'>
                     <button onClick={(e) => LoginForm(e)} type="submit" style={{backgroundColor:'green', color:'white', width:'90px'}}>Login:</button>
-                    <button onClick={CadUsuario} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Cadastro:</button>  
+                    <button type='button' onClick={CadUsuario} style={{backgroundColor:'orange', color:'white', margin:'0 15px', width:'90px'}}>Cadastro:</button>
+  
                 </div>    
                 <ToastContainer />
             </form>
