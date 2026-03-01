@@ -261,11 +261,11 @@ const EditStatusPed = () => {
 
                     <input
                         type="decimal"
-                        id="novototal"
+                        id="ntotal"
                         name="novototal"
                         className='form-control'
-                        value={total}
-                        onChange={e => totalchange(e.target.value)}
+                        value={novototal}
+                        onChange={e => novototalchange(e.target.value)}
                         
 
                         style={{ width: '150px' }}
