@@ -14,8 +14,7 @@ const EditProdutos = () => {
     const [id, idchange] = useState("")    
     const [descricao, descchange] = useState("") 
     const [imagem, imagemchange] = useState("")    
-    const [preco, precochange] = useState("")  
-    
+    const [preco, precochange] = useState("")      
    
 
     useEffect(() => {
@@ -100,6 +99,14 @@ const EditProdutos = () => {
 
   
     }
+
+      const navigate = useNavigate()
+    
+        function Retornar(){
+
+         navigate("/adminroot/pedidos/consulta/produtos")
+
+      }
 
  return (
 

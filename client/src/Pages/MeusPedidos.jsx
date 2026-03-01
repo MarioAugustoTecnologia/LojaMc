@@ -7,6 +7,11 @@ import { BsCart } from "react-icons/bs"
 
 const MeusPedidos = () => {
 
+  
+      history.pushState(null, null, location.href);
+      window.onpopstate = function () {
+         history.go(0)};
+
 
   const getColor = (status) => {
 
@@ -26,7 +31,6 @@ const MeusPedidos = () => {
 
         }
       }
-
 
     }
   }
