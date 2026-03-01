@@ -200,7 +200,7 @@ const EditProdutos = () => {
                 </div><br /><br />
 
                 <div className='d-flex'>
-                    <button type="submit" style={{ backgroundColor: 'green', color: 'white', width: '90px' }}>Cadastrar:</button>
+                    <button type="submit" style={{ backgroundColor: 'green', color: 'white', width: '90px' }}>Atualizar:</button>
                     <button type='button' onClick={Retornar} style={{ backgroundColor: 'orange', color: 'white', margin: '0 15px', width: '90px' }}>Voltar:</button>
                 </div>
                 <ToastContainer />
