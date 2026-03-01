@@ -37,6 +37,7 @@ const MeusPedidos = () => {
   const [pedido, setPedidos] = useState([])
 
   var table = pedido.filter(item => item.nome == usuario)
+  const navigate = useNavigate()
 
 
  useEffect(() => {
@@ -61,7 +62,6 @@ const MeusPedidos = () => {
        })
        .catch((error) => console.error('Erro:', error));
    }, []); // navigate deve estar nas dependências
-
  
 
      const { cart } = useContext(CartContext)
