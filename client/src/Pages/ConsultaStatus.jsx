@@ -126,10 +126,8 @@ const ConsultaStatus = ({item}) => {
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"16px", margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ margin: "0 15px", width: "120px", height: '25px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
-        </div>
-
-   
+             <input type="search" style={{ margin: "0 15px", width: "160x", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+        </div>  
 
 
       </div><br />

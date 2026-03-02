@@ -123,7 +123,7 @@ const ConsultaNome = ({item}) => {
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:'16px', margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ width: "120px", height: '25px', margin: '0 15px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+             <input type="search" style={{ width: "160px", height: '25px', margin: '0 15px' }} placeholder="Digite o nome do Cliente:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>
         
 
