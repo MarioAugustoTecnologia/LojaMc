@@ -126,7 +126,7 @@ const ConsultaStatus = ({item}) => {
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"16px", margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ margin: "0 15px", width: "160x", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+             <input type="search" style={{ margin: "0 15px", width: "150x", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>  
 
 
@@ -134,7 +134,6 @@ const ConsultaStatus = ({item}) => {
 
     <div className="container border" style={{width:'100%'}}>
             <br /><br />
-
             {
               table.map(item => (
                 <tr key={item.id}>
