@@ -86,37 +86,7 @@ const ConsultaStatus = ({item}) => {
     });
 
   }
-
-
-  function SairdaConta() {
-
-    Swal.fire({
-      title: "Deseja sair ?",
-      text: "Você não poderá reverter isso !",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sim"
-    }).then((result) => {
-
-      if (result.isConfirmed) {
-
-        const loggedIn = localStorage.getItem('userLoggedIn');
-
-        if (loggedIn === 'true') {
-
-          localStorage.clear()
-          console.clear();
-          window.location.href = '/login';
-
-        }
-
-      }
-    });
-
-  } 
-
+ 
 
   return (
     <div className="">
@@ -126,7 +96,7 @@ const ConsultaStatus = ({item}) => {
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"16px", margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ margin: "0 15px", width: "200px", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+             <input type="search" style={{ margin: "0 15px", width: "210px", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>  
 
 
