@@ -97,6 +97,7 @@ const EditStatusPed = () => {
         if (isValidate()) {
 
             const status = document.getElementById('status').value;
+            const total = document.getElementById('total').value
 
             const edtobj = { id, status, total, quant }
 
@@ -151,6 +152,8 @@ const EditStatusPed = () => {
         var vdesc = desc * number;
         var resultado = number - vdesc;
         document.getElementById('ntotal').value = 'R$' + (resultado).toFixed(2);
+        totalchange('')
+        document.getElementById('total').value = 'R$' + (resultado).toFixed(2);
 
     }
     const navigate = useNavigate()

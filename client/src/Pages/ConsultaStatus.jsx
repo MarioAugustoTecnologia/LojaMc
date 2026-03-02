@@ -135,8 +135,7 @@ const ConsultaStatus = ({item}) => {
               
               ))
 
-            }
-          
+            }         
 
          </div>          
 

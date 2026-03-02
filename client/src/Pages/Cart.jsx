@@ -48,12 +48,8 @@ const Cart = () => {
 
 
    const [descricao, descchange] = useState("")
-   const [preco, precochange] = useState("")
-   //const [quant, quantchange] = useState("")
-   //const [itens, itenschange] = useState("")
-   const [statusprod, statuschange] = useState("")   
-   // const navigate = useNavigate()
-
+   const [prec, precochange] = useState("")
+   const [statusprod, statuschange] = useState("") 
 
    const { cart } = useContext(CartContext)
 
@@ -90,6 +86,7 @@ const Cart = () => {
              
                    const status = '_/_'
                    const quant = variaquant(cart);
+                   const preco = "R$" + prec;
 
                    const caddados = { nome, descricao, preco, quant, status }
 
@@ -321,7 +318,7 @@ const Cart = () => {
       }
    }   
 
-   const total = (totalpreco(cart)).toFixed(2);
+   const total = 'R$' + (totalpreco(cart)).toFixed(2);
 
    const cadastrar = (e) => {
 
@@ -373,7 +370,7 @@ const Cart = () => {
                         const taxaentrega = "Taxa de Entrega: R$5.00"
                         const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
-                        const total = soma.toFixed(2);
+                        const total = 'R$' + soma.toFixed(2);
                         const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
 
                         fetch("https://lojamcserver.onrender.com/pedidos", {
@@ -395,7 +392,7 @@ const Cart = () => {
                         const taxaentrega = "Taxa de Entrega: R$10.00"
                         const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
-                        const total = soma.toFixed(2);
+                        const total = 'R$' + soma.toFixed(2);
                         const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
 
                         fetch("https://lojamcserver.onrender.com/pedidos", {
@@ -495,7 +492,7 @@ const Cart = () => {
                      <div className='detail ms-4'>
                         <input type="text" id="desc" readOnly style={{ border: 'none', width:'225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
                         <input type="text" id="itens" style={{width: '50px', fontSize: '20px', fontWeight:'bold', border:"none"}} value={variaquant(cart)}  /> <br />
-                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width:'160px'}} value={"R$" + preco} onChange={e => precochange(e.target.value)}></input> <br />
+                        <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width:'160px'}} value={"R$" + prec} onChange={e => precochange(e.target.value)}></input> <br />
                         <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width:'200px'}} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                         <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>
 
