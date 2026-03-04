@@ -63,9 +63,16 @@ const Produtos = () => {
    }, []);
 
 
-   function SairdaConta() {
+  function SairdaConta() {
 
-      const loggedIn = localStorage.getItem('userLoggedIn');
+      if(cart.length !== 0)
+      {
+          
+            Swal.fire("Decida a compra antes !")
+            
+      }else{
+
+          const loggedIn = localStorage.getItem('userLoggedIn');
 
       if (loggedIn === 'true') {
 
@@ -91,6 +98,9 @@ const Produtos = () => {
 
       }
 
+      }
+
+     
    }
 
 
