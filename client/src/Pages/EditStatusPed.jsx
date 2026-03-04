@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 const EditStatusPed = () => {
 
+
     const { pedidocod } = useParams()
     const [statusped, setStatus] = useState([])
     const [id, idchange] = useState("")
@@ -14,6 +15,7 @@ const EditStatusPed = () => {
     const [desc, descchange] = useState("")
     const [novototal, novototalchange] = useState("")
     const [quant, quantchange] = useState("")
+    const [desconto, descontochange] = useState("")
 
     useEffect(() => {
         fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod).then((res) => {
@@ -22,6 +24,7 @@ const EditStatusPed = () => {
             idchange(resp.id);
             totalchange(resp.total)
             quantchange(resp.quant)
+            descontochange(resp.desconto)
 
         }).catch((err) => {
             console.log(err.message);
@@ -80,13 +83,6 @@ const EditStatusPed = () => {
 
     }
 
-    function MostraStatus() {
-
-
-        document.getElementById('status').style.borderColor = 'GainsBoro';
-
-
-    }
 
 
     const editar = (e) => {
@@ -99,7 +95,7 @@ const EditStatusPed = () => {
             const status = document.getElementById('status').value;
             const total = document.getElementById('total').value
 
-            const edtobj = { id, status, total, quant }
+            const edtobj = { id, status, total, quant, desconto }
 
             Swal.fire({
                 title: "Deseja salvar ?",
@@ -155,6 +151,7 @@ const EditStatusPed = () => {
         totalchange('')
         document.getElementById('total').value = 'R$' + (resultado).toFixed(2);
 
+
     }
     const navigate = useNavigate()
     
@@ -163,9 +160,9 @@ const EditStatusPed = () => {
          navigate("/adminroot/pedidos")
 
       }
-        
 
- return (
+
+    return (
 
         <div className="">
 
@@ -256,9 +253,7 @@ const EditStatusPed = () => {
                         style={{ width: '100px' }}
 
                     />
-                </div>
-
-               
+                </div>               
                 <div className="form-group">
                     <label htmlFor="total">Novo Total:</label><br />
 
@@ -275,11 +270,29 @@ const EditStatusPed = () => {
 
                     />
                 </div><br />
+                <div className="form-group">
+                    <label htmlFor="desconto">Desconto:</label><br />
+                    <select
+                        type="select"
+                        id="desconto"
+                        name="desconto"
+                        className='form-control'
+                        value={desconto}
+                        onChange={e => descontochange(e.target.value)}                       
 
-                <ToastContainer />
-            </form>
-            <button style={{ backgroundColor: 'green', color: 'white', width: '100px', margin:'0 100px' }} onClick={NovoTotal}>Novo Total:</button>
+                        style={{ width: '100px' }}
 
+                    > <option value=""></option>
+                      <option value="Desconto: Sim">Desconto: Sim</option>
+                      <option value="Desconto: Não">Desconto: Não</option></select>                     
+                </div><br />
+          
+                  <ToastContainer />
+              </form>
+        
+                 <button style={{ backgroundColor: 'green', color: 'white', width: '100px', margin:'0 100px' }} onClick={NovoTotal}>Novo Total:</button>
+                    
+             
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
@@ -287,6 +300,7 @@ const EditStatusPed = () => {
             </footer>
 
         </div>
+
 
     )
 }

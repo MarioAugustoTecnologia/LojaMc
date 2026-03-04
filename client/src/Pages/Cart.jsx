@@ -348,7 +348,9 @@ const Cart = () => {
                }).then((result) => {
 
                   if (result.isConfirmed) {
-                     const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant }
+
+                     const desconto = 'Desconto: Não'; 
+                     const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, desconto }
 
                      fetch("https://lojamcserver.onrender.com/pedidos", {
                         method: "POST",
@@ -366,12 +368,14 @@ const Cart = () => {
 
                      if (totalitens(cart) <= 5) {
 
+                        const desconto = 'Desconto: Não'; 
                         const taxa = "5.00"
                         const taxaentrega = "Taxa de Entrega: R$5.00"
                         const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
                         const total = 'R$' + soma.toFixed(2);
-                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
+
+                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
                         fetch("https://lojamcserver.onrender.com/pedidos", {
                            method: "POST",
@@ -387,13 +391,13 @@ const Cart = () => {
                         })
 
                      } else {
-
+                        const desconto = 'Desconto: Não'; 
                         const taxa = "10.00"
                         const taxaentrega = "Taxa de Entrega: R$10.00"
                         const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                         console.log(soma)
                         const total = 'R$' + soma.toFixed(2);
-                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega }
+                        const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
                         fetch("https://lojamcserver.onrender.com/pedidos", {
                            method: "POST",

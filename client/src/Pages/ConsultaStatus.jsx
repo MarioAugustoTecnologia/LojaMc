@@ -84,8 +84,7 @@ const ConsultaStatus = ({item}) => {
       }
     });
 
-  }
- 
+  } 
 
   return (
     <div className="">
