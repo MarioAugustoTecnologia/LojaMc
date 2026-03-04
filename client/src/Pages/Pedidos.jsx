@@ -155,6 +155,7 @@ const Pedidos = ({ item }) => {
                   <h6>{item.total}</h6>
                   <h6>{item.taxaentrega}</h6>
                   <h6>{item.formapag}</h6>
+                  <h6>{item.desconto}</h6>
                   <h6>{item.cidade}</h6>
                   <h6>{item.bairro}</h6>
                   <h6>{item.cep}</h6>
