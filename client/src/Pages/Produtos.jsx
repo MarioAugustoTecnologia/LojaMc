@@ -127,12 +127,13 @@ const Produtos = () => {
 
    }
 
-   function VerificaUsuario(){
+    function VerificaUsuario(){
 
-      if(usuario){
+      if(usuario && cart.length === 0){
          navigate('/meuspedidos')
       }
    }
+
 
 
   
