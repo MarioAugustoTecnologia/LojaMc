@@ -47,7 +47,6 @@ const Produtos = () => {
    const produtos = produtodata.filter(produto => produto.descricao.toLowerCase().includes(buscarap))
 
 
-
    useEffect(() => {
     
       fetch("https://lojamcserver.onrender.com/produtos")

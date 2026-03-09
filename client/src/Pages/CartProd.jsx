@@ -87,8 +87,9 @@ const CartProd = () => {
     
           const quant = "Total Itens:" + variaquant(cart);
           const preco = "R$" + prec;
+          const status = "n/d"
 
-          const caddados = { nome, descricao, preco, quant}
+          const caddados = { nome, descricao, preco, quant, status}
 
           fetch("https://lojamcserver.onrender.com/pedidos", {
             method: "POST",
