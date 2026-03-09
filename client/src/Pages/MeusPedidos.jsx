@@ -88,7 +88,7 @@ const MeusPedidos = () => {
            {
               table.map(item => (
                 <tr key={item.id}>
-            
+                  <img src={`https://lojamcserver.onrender.com${item.imagem}`}/>            
                   <h6>{item.descricao}</h6>             
                   <h6>{item.preco}</h6>
                   <h6>{item.quant}</h6>

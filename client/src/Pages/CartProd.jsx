@@ -87,7 +87,7 @@ const CartProd = () => {
     
           const quant = "Total Itens:" + variaquant(cart);
           const preco = "R$" + prec;
-          const status = "n/d"
+          const status = "_"
 
           const caddados = { nome, descricao, preco, quant, status}
 

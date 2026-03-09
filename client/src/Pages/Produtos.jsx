@@ -138,7 +138,7 @@ const Produtos = () => {
 
     function VerificaUsuario(){
 
-      if(usuario && cart.length === 0){
+      if(usuario && cart.length === 0 || cart.length !== 0){
          navigate('/meuspedidos')
       }
    }

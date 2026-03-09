@@ -148,6 +148,7 @@ const Pedidos = ({ item }) => {
               pedido.map(item => (
                 <tr key={item.id}>
                   <h6>{item.id}</h6>
+                  <img src={`https://lojamcserver.onrender.com${item.imagem}`}/>
                   <h6>{item.nome}</h6>
                   <h6>{item.descricao}</h6>
                   <h6>{item.quant}</h6>
