@@ -1,6 +1,5 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Produtos from './Pages/Produtos'
-import Cart from './Pages/Cart'
 import CadUsuario from './Pages/CadUsuario'
 import Login from './Pages/Login'
 import Pedidos from './Pages/Pedidos'
@@ -12,6 +11,7 @@ import CadProdutos from './Pages/CadProdutos'
 import ListaProdutos from './Pages/ListaProdutos'
 import EditProdutos from './Pages/EditProdutos'
 import MeusPedidos from './Pages/MeusPedidos'
+import CartProd from './Pages/CartProd'
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
          <BrowserRouter>
            <Routes>
               <Route path='/' element={<Produtos />}></Route>
-              <Route path='/carrinho/:pcod' element={<Cart />}></Route>
+              <Route path='/cartprod/:pcod' element={<CartProd />}></Route>          
               <Route path='/cadusuario' element={<CadUsuario />}></Route>
               <Route path='/login' element={<Login />}></Route>
                <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>

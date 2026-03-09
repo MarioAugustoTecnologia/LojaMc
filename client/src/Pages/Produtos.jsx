@@ -35,7 +35,7 @@ const Produtos = () => {
   const handleInsertBuy = (id) => {
       
     
-      navigate("/carrinho/" + id);  
+      navigate("/cartprod/" + id);  
 
 } 
 
