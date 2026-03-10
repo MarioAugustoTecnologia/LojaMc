@@ -87,11 +87,12 @@ const CartProd = () => {
     
           const quant = "Total Itens:" + variaquant(cart);
           const preco = "R$" + prec;
-          const status = "_"
+          const status = "__"
 
-          const caddados = { nome, descricao, preco, quant, status}
+          const caddados = {imagem, nome, descricao, preco, quant, status}
 
           fetch("https://lojamcserver.onrender.com/pedidos", {
+            
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(caddados)
