@@ -10,7 +10,7 @@ const MeusPedidos = () => {
   
       history.pushState(null, null, location.href);
       window.onpopstate = function () {
-         history.go(0)};
+         history.go(1)};
 
 
   const getColor = (status) => {
