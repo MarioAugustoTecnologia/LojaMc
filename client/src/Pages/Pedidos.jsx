@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { useEffect, useState } from "react";
 
 
-const Pedidos = ({ item }) => {
+const Pedidos = () => {
 
   const getColor = (status) => {
 
@@ -139,10 +139,11 @@ const Pedidos = ({ item }) => {
        
       </div><br />
       <br />
-         <h5 style={{fontWeight:'bold', margin:'0 200px'}}>Pedidos:</h5><br />
+            <p style={{fontSize:'20px', fontWeight:'bold', margin:'0 350px'}}>Pedidos:</p>
+            <br />   
       
          <div className="container border" style={{width:'100%'}}>
-            <br /><br />
+
 
             {
               pedido.map(item => (

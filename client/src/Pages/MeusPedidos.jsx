@@ -80,7 +80,10 @@ const MeusPedidos = () => {
            <Link className="navbar-link fs-5 text-white" ><BsCart />{cart.length}</Link>
      
                   
-         </div><br /><br /><br />
+         </div><br /><br />
+           <p style={{fontSize:'20px', fontWeight:'bold', margin:'0 350px'}}>Meus Pedidos:</p>
+         
+         <br />
 
          <div className="container border" style={{width:'100%'}}>
             <br /><br />
