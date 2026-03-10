@@ -7,8 +7,8 @@ import Swal from 'sweetalert2';
 
 
 
-const Produtos = () => { 
- 
+const Produtos = () => {
+
 
    const getColor = (status) => {
 
@@ -21,23 +21,23 @@ const Produtos = () => {
       }
    }
 
-   
+
    const usuario = localStorage.getItem('usuario');
 
-   
+
    const { cart } = useContext(CartContext)
    const { dispatch } = useContext(CartContext)
 
-    const navigate = useNavigate()
- 
-   
+   const navigate = useNavigate()
 
-  const handleInsertBuy = (id) => {
-      
-    
-      navigate("/cartprod/" + id);  
 
-} 
+
+   const handleInsertBuy = (id) => {
+
+
+      navigate("/cartprod/" + id);
+
+   }
 
    const [produtodata, setProdutodata] = useState([])
    const [buscanome, setBuscaNome] = React.useState("")
@@ -48,7 +48,7 @@ const Produtos = () => {
 
 
    useEffect(() => {
-    
+
       fetch("https://lojamcserver.onrender.com/produtos")
          .then(response => response.json())
          .then(data => {
@@ -62,44 +62,43 @@ const Produtos = () => {
    }, []);
 
 
-  function SairdaConta() {
+   function SairdaConta() {
 
-      if(cart.length !== 0)
-      {
-          
-            Swal.fire("Decida a compra antes !")
-            
-      }else{
+      if (cart.length !== 0) {
 
-          const loggedIn = localStorage.getItem('userLoggedIn');
+         Swal.fire("Decida a compra antes !")
 
-      if (loggedIn === 'true') {
+      } else {
 
-         Swal.fire({
-            title: "Deseja sair ?",
-            text: "Você não poderá reverter isso !",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Sim"
-         }).then((result) => {
+         const loggedIn = localStorage.getItem('userLoggedIn');
 
-            if (result.isConfirmed) {
+         if (loggedIn === 'true') {
 
-               document.getElementById('user').style.display = "none";
-               localStorage.clear()
-               console.clear();
-               window.location.href = '/login';
-            }
-         });
+            Swal.fire({
+               title: "Deseja sair ?",
+               text: "Você não poderá reverter isso !",
+               icon: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#3085d6",
+               cancelButtonColor: "#d33",
+               confirmButtonText: "Sim"
+            }).then((result) => {
 
+               if (result.isConfirmed) {
+
+                  document.getElementById('user').style.display = "none";
+                  localStorage.clear()
+                  console.clear();
+                  window.location.href = '/login';
+               }
+            });
+
+
+         }
 
       }
 
-      }
 
-     
    }
 
 
@@ -136,16 +135,15 @@ const Produtos = () => {
 
    }
 
-    function VerificaUsuario(){
 
-      if(usuario && cart.length === 0 || cart.length !== 0){
+   const VerifyUser = () => {
+
+      if (usuario && cart.length === 0 || usuario && cart.length !== 0) {
          navigate('/meuspedidos')
       }
+
    }
 
-
-
-  
    return (
 
       <div className="">
@@ -158,9 +156,9 @@ const Produtos = () => {
                <div className="">
                   <Link to="" style={{ color: 'white', fontSize: '13px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
-                  <Link style={{ color: 'white', fontSize: '15px' }} onClick={SairdaConta}>Sair:</Link>               
+                  <Link style={{ color: 'white', fontSize: '15px' }} onClick={SairdaConta}>Sair:</Link>
                   <a style={{ color: 'white', margin: '0 -240px', marginTop: '-25px', fontSize: '14px' }} id="user">{usuario}</a><br />
-                  <a onClick={VerificaUsuario} style={{ color: 'white', fontSize:'14px', cursor:'pointer'}} >Meus Pedidos:</a>
+                  <a onClick={VerifyUser} style={{ color: 'white', fontSize: '14px', cursor: 'pointer' }} >Meus Pedidos:</a>
                </div>
 
             </div>
@@ -179,13 +177,13 @@ const Produtos = () => {
                         <h5 style={{ color: 'DarkMagenta', fontWeight: 'bold' }} id="preco">{"R$" + produto.preco}</h5>
                         <h5 style={{ fontWeight: 'bold', color: getColor(produto.status) }} id="status">{produto.status}</h5>
                         <br />
-                        <button style={{ fontSize: '13px' }} id="botao" className='btn btn-primary' onClick={() => {handleInsertBuy(produto.id)}} onMouseDown={() => dispatch({ type: "Add", produto: produto })}>adicionar ao carrinho</button>            
-                                                  
+                        <button style={{ fontSize: '13px' }} id="botao" className='btn btn-primary' onClick={() => { handleInsertBuy(produto.id) }} onMouseDown={() => dispatch({ type: "Add", produto: produto })}>adicionar ao carrinho</button>
+
                      </div>
                   ))}
             </div>
 
-   
+
 
          </div>
 
