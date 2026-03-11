@@ -525,7 +525,7 @@ const total = "Total R$:" + (totalpreco(cart)).toFixed(2);
 
             <div className='border mb-3'>
 
-              <img src={`http://localhost:8000${imagem}`} alt="" className='w-25 h-25' />
+              <img src={`https://lojamcserver.onrender.com${imagem}`} alt="" className='w-25 h-25' />
               <div className='buttons'>
                 <button onClick={() => Decrease(id)} className='rounded-circle px-2'><b>-</b></button>
                 <button className='rounded' id="btn">{variaquant(cart)}</button>
