@@ -101,6 +101,7 @@ const MeusPedidos = () => {
               <h6>{item.descricao}</h6>
               <h6>{item.preco}</h6>
               <h6>{item.quant}</h6>
+              <h6>{item.taxaentrega}</h6>
               <h6>{item.total}</h6>
               <h6>{item.desconto}</h6>
               <h6>{item.data_cad}</h6>
