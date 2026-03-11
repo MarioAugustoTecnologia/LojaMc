@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../Features/ContextProvider";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Swal from 'sweetalert2';
-
+import { totalitens } from "../Features/CartReducer";
 
 
 const Produtos = () => {
@@ -21,9 +21,7 @@ const Produtos = () => {
       }
    }
 
-
    const usuario = localStorage.getItem('usuario');
-
 
    const { cart } = useContext(CartContext)
    const { dispatch } = useContext(CartContext)
@@ -152,7 +150,7 @@ const Produtos = () => {
             <div className="d-flex">
                <label htmlFor="" style={{ color: 'white', margin: '0 10px' }}>Busca:</label>
                <input type="search" autoFocus style={{ width: "100px", height: '25px', margin: '0 5px' }} className="form-control rounded-0" value={buscanome} onChange={(e) => setBuscaNome(e.target.value)} id="busca" />
-               <Link to="" className=" text-white" style={{ margin: '0 8px' }}><BsCart style={{ fontSize: '20px' }} />{cart.length} </Link>
+               <Link to="" className=" text-white" style={{ margin: '0 8px' }}><BsCart style={{ fontSize: '20px' }} />{totalitens(cart)} </Link>
                <div className="">
                   <Link to="" style={{ color: 'white', fontSize: '13px' }} onClick={ComparaCadastro}>Não Possui Conta ? Criar:</Link><br />
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
