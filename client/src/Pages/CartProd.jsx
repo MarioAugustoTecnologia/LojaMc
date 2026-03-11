@@ -379,7 +379,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
                 const taxaentrega = "Taxa de Entrega: R$5.00"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                 console.log(soma)
-                const total = 'Total: R$:' + soma.toFixed(2);
+                const total = 'Total: R$' + soma.toFixed(2);
 
                 const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
