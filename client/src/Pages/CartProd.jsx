@@ -94,7 +94,7 @@ const CartProd = () => {
           const status = '_'      
 
       
-          const caddados = {imagem, nome, descricao, preco, quant, status}
+          const caddados = {imagem, descricao, preco, quant, status}
 
           fetch("https://lojamcserver.onrender.com/pedidos", {
             method: "POST",
@@ -323,7 +323,7 @@ const CartProd = () => {
     }
   }
 
-const total = "Total R$:" + (totalpreco(cart)).toFixed(2);
+const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
 
   const cadastrar = (e) => {
 

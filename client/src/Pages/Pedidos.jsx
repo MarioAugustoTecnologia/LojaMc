@@ -151,7 +151,7 @@ const Pedidos = ({ item }) => {
             <tr key={item.id}>
      
               <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}} />
-              <h6>{item.name}</h6>
+              <h6>{item.nome}</h6>
               <h6>{item.descricao}</h6>
               <h6>{item.quant}</h6>
               <h6>{item.preco}</h6>
