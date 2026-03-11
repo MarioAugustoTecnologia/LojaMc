@@ -26,10 +26,7 @@ const Pedidos = ({ item }) => {
 
 
     }
-  }  
-
-
-
+  }
   
   const [pedido, setPedidos] = useState([])
 
@@ -142,16 +139,16 @@ const Pedidos = ({ item }) => {
 
       </div><br />
       <br />
-        
+  
+         <br />   
 
       <div className="container border" style={{ width: '100%' }}>
         
         {
           pedido.map(item => (
-            <tr key={item.id}>
-     
-              <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}} />
-              <h6>{item.nome}</h6>
+            <tr key={item.id}>            
+            
+              <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}}/>
               <h6>{item.descricao}</h6>
               <h6>{item.quant}</h6>
               <h6>{item.preco}</h6>
@@ -167,6 +164,7 @@ const Pedidos = ({ item }) => {
               <h6>{item.fone}</h6>
               <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
               <h6>{item.data_cad}</h6>
+                <h6>{item.nome}</h6>
               <h6>
                 <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                 <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>

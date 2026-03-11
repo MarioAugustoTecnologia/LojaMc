@@ -134,13 +134,15 @@ const Produtos = () => {
    }
 
 
-   const VerifyUser = () => {
+     function VerificaUsuario(){
 
-      if (usuario && cart.length === 0 || usuario && cart.length !== 0) {
-         navigate('/meuspedidos')
-      }
+        console.log(cart.length)
 
-   }
+         if(usuario && cart.length === 0 || usuario && cart.length !== 0){
+
+            navigate('/meuspedidos')
+         }
+   }  
 
    return (
 
@@ -156,7 +158,7 @@ const Produtos = () => {
                   <Link to="" onClick={ComparaLogin} style={{ color: 'white', fontSize: '13px' }}>Já Possui Conta ? - Faça o Login: </Link><br />
                   <Link style={{ color: 'white', fontSize: '15px' }} onClick={SairdaConta}>Sair:</Link>
                   <a style={{ color: 'white', margin: '0 -240px', marginTop: '-25px', fontSize: '14px' }} id="user">{usuario}</a><br />
-                  <a onClick={VerifyUser} style={{ color: 'white', fontSize: '14px', cursor: 'pointer' }} >Meus Pedidos:</a>
+                  <a onClick={VerificaUsuario} style={{ color: 'white', fontSize: '14px', cursor: 'pointer' }} >Meus Pedidos:</a>
                </div>
 
             </div>

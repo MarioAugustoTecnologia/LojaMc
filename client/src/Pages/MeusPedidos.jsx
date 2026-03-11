@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import React, { useEffect, useState, useContext} from "react";
 import { CartContext } from "../Features/ContextProvider";
 import { BsCart } from "react-icons/bs"
-import { totalitens} from "../Features/CartReducer";
+import { totalitens } from "../Features/CartReducer";
 
 const MeusPedidos = () => {
 
@@ -14,6 +14,8 @@ const MeusPedidos = () => {
    
  
    };
+
+    const { cart } = useContext(CartContext)
   
 
   const getColor = (status) => {
@@ -52,9 +54,9 @@ const MeusPedidos = () => {
     fetch("https://lojamcserver.onrender.com/pedidos")
       .then((response) => response.json())
       .then((result) => {
-        // Verifica se o array retornado está vazio
+       
         if (Array.isArray(result) && result.length === 0) {
-          // Redireciona para outra página
+      
           navigate('/');
           Swal.fire({
             position: "center",
@@ -71,7 +73,7 @@ const MeusPedidos = () => {
       .catch((error) => console.error('Erro:', error));
   }, []);
 
-  const { cart } = useContext(CartContext)
+ 
 
  
 
@@ -86,7 +88,7 @@ const MeusPedidos = () => {
 
 
       </div><br /><br />
-  
+
       <br />
 
       <div className="container border" style={{ width: '100%' }}>
@@ -95,14 +97,15 @@ const MeusPedidos = () => {
         {
           table.map(item => (
             <tr key={item.id}>
-              <img id="imagem" src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}}/>
+              <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}}/>
               <h6>{item.descricao}</h6>
               <h6>{item.preco}</h6>
               <h6>{item.quant}</h6>
-              <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
-              <h6>{item.data_cad}</h6>
-              <h6>{item.taxaentrega}</h6>
               <h6>{item.total}</h6>
+              <h6>{item.desconto}</h6>
+              <h6>{item.data_cad}</h6>
+              <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
+       
               <hr />
 
             </tr>

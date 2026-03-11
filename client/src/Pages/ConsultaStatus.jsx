@@ -87,9 +87,6 @@ const ConsultaStatus = () => {
 
   }
 
-
- 
-
  
 
 

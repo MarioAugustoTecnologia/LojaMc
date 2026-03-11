@@ -94,7 +94,7 @@ const CartProd = () => {
           const status = '_'      
 
       
-          const caddados = {imagem, descricao, preco, quant, status}
+          const caddados = {imagem, nome, descricao, preco, quant, status}
 
           fetch("https://lojamcserver.onrender.com/pedidos", {
             method: "POST",
@@ -402,7 +402,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
                 const taxaentrega = "Taxa de Entrega: R$10.00"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa); 
                 console.log(soma)
-                const total = 'Total:  R$' + soma.toFixed(2);
+                const total = 'Total: R$' + soma.toFixed(2);
                 const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
                 fetch("https://lojamcserver.onrender.com/pedidos", {
