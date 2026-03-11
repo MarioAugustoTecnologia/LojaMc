@@ -55,7 +55,11 @@ const CartProd = () => {
 
 
   const {cart, dispatch} = useContext(CartContext)
-  var totalgeral = (totalpreco(cart)).toFixed(2); 
+  var totalgeral = (totalpreco(cart)).toFixed(2);
+
+  //var {carrinho} = useContext(CartContext)
+
+
 
   if (statusprod == 'Produto Indisponivel') {
     document.getElementById('statusprod').style.color = 'red'
@@ -86,13 +90,13 @@ const CartProd = () => {
         if (result.isConfirmed) {
     
           const quant = "Total Itens:" + variaquant(cart);
-          const preco = "R$" + prec;
-          const status = "__"
+          const preco = " Preço:  R$" + prec;
+          const status = '_'      
 
+      
           const caddados = {imagem, nome, descricao, preco, quant, status}
 
           fetch("https://lojamcserver.onrender.com/pedidos", {
-            
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(caddados)
@@ -195,7 +199,6 @@ const CartProd = () => {
   const [formapag, setformapag] = useState("")
   const [fone, setFone] = useState("")
 
- // const compara = (totalpreco(cart)).toFixed(2)
 
   const status = 'Em andamento'
 
@@ -297,7 +300,7 @@ const CartProd = () => {
   }
 
 
-  const data_cad = formataData();
+  const data_cad = 'Data do Pedido:' +  formataData();
   const usuario = localStorage.getItem('usuario')
   const nome = usuario
 
@@ -320,7 +323,7 @@ const CartProd = () => {
     }
   }
 
-const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
+const total = "Total R$:" + (totalpreco(cart)).toFixed(2);
 
   const cadastrar = (e) => {
 
@@ -350,7 +353,8 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
           }).then((result) => {
 
             if (result.isConfirmed) {
-
+             // const cidade = 'cidade' + cidade;
+             
               const desconto = 'Desconto: Não';
               const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, desconto }
 
@@ -375,7 +379,7 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
                 const taxaentrega = "Taxa de Entrega: R$5.00"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                 console.log(soma)
-                const total = 'R$' + soma.toFixed(2);
+                const total = 'Total: R$:' + soma.toFixed(2);
 
                 const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
@@ -398,7 +402,7 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
                 const taxaentrega = "Taxa de Entrega: R$10.00"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa); 
                 console.log(soma)
-                const total = 'R$' + soma.toFixed(2);
+                const total = 'Total:  R$' + soma.toFixed(2);
                 const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
 
                 fetch("https://lojamcserver.onrender.com/pedidos", {
@@ -471,9 +475,7 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
 
     }
 
-  }
-
-  
+  } 
 
 
   const Increase = (id) => {
@@ -484,7 +486,10 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
      if(cart[indexI].quant < 10){
 
         dispatch({type: "Increase", id})
+      
      }
+
+  
 
   } 
 
@@ -497,7 +502,10 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
                 dispatch({type: "Decrease", id})
            }
 
+      
+
   }
+
   
 
 
@@ -508,7 +516,7 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
       <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
 
         <Link className="navbar-brand fs-5 fw-bolder text-white" style={{ marginLeft: '-40px' }} onClick={StatusCampo}>Inicio:<h6>{usuario}</h6></Link>
-        <Link className="navbar-link fs-5 text-white" ><BsCart />{cart.length}</Link>
+        <Link className="navbar-link fs-5 text-white" ><BsCart />{totalitens(cart)}</Link>
 
       </div><br />
       <div className="container mt-3" style={{ fontFamily: 'arial' }}>
@@ -517,11 +525,11 @@ const total = "Total: R$" + (totalpreco(cart)).toFixed(2);
 
             <div className='border mb-3'>
 
-              <img src={`https://lojamcserver.onrender.com${imagem}`} alt="" className='w-25 h-25' />
+              <img src={`http://localhost:8000${imagem}`} alt="" className='w-25 h-25' />
               <div className='buttons'>
                 <button onClick={() => Decrease(id)} className='rounded-circle px-2'><b>-</b></button>
                 <button className='rounded' id="btn">{variaquant(cart)}</button>
-                <button onClick={() => Increase(id)} className='rounded-circle px-2' ><b>+</b></button>
+                <button onClick={() => Increase(id)} className='rounded-circle px-2'><b>+</b></button>
            
               </div>
               <br />

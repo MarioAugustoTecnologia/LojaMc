@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import React, { useEffect, useState } from "react";
 
 
-const ConsultaNome = ({item}) => {
+const ConsultaNome = () => {
 
 
   const getColor = (status) => {
@@ -86,45 +86,19 @@ const ConsultaNome = ({item}) => {
   }
 
 
-  function SairdaConta() {
-
-    Swal.fire({
-      title: "Deseja sair ?",
-      text: "Você não poderá reverter isso !",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sim"
-    }).then((result) => {
-
-      if (result.isConfirmed) {
-
-        const loggedIn = localStorage.getItem('userLoggedIn');
-
-        if (loggedIn === 'true') {
-
-          localStorage.clear()
-          console.clear();
-          window.location.href = '/login';
-
-        }
-
-      }
-    });
-
-  }  
-
+ 
 
   return (
-   <div className="">
+    <div className="">
 
-      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >       
+      <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white" >
+        
 
         <div className="d-flex">
-             <a href="" className="navbar-brand text-white" style={{fontSize:'16px', margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ width: "220px", height: '25px', margin: '0 15px' }} placeholder="Digite o nome do Cliente:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+            <a href="" className="navbar-brand text-white" style={{fontSize:'16px', margin:'-5px'}}>Pesquisar:</a>
+             <input type="search" style={{ width: "120px", height: '25px', margin: '0 15px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
         </div>
+
         
 
 
@@ -135,15 +109,15 @@ const ConsultaNome = ({item}) => {
 
             {
               table.map(item => (
-                <tr key={item.id}>
-                  <h6>{item.id}</h6>
-                  <h6>{item.nome}</h6>
+                <tr key={item.id}>           
+                  <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}}/>              
                   <h6>{item.descricao}</h6>
                   <h6>{item.quant}</h6>
                   <h6>{item.preco}</h6>
                   <h6>{item.total}</h6>
                   <h6>{item.taxaentrega}</h6>
                   <h6>{item.formapag}</h6>
+                  <h6>{item.desconto}</h6>
                   <h6>{item.cidade}</h6>
                   <h6>{item.bairro}</h6>
                   <h6>{item.cep}</h6>
@@ -152,6 +126,7 @@ const ConsultaNome = ({item}) => {
                   <h6>{item.fone}</h6>
                   <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
                   <h6>{item.data_cad}</h6>
+                   <h6>{item.nome}</h6>
                   <h6>
                     <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                     <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>

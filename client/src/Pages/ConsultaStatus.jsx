@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import React, { useEffect, useState } from "react";
 
 
-const ConsultaStatus = ({item}) => {
+const ConsultaStatus = () => {
 
 
   const getColor = (status) => {
@@ -32,6 +32,7 @@ const ConsultaStatus = ({item}) => {
 
 
     var table = pedido.filter(item => item.status.toLowerCase().includes(buscarap))
+
 
 
   useEffect(() => {
@@ -84,18 +85,26 @@ const ConsultaStatus = ({item}) => {
       }
     });
 
-  } 
+  }
+
+
+ 
+
+ 
+
 
   return (
     <div className="">
 
       <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
-       
+        
 
         <div className="d-flex">
              <a href="" className="navbar-brand text-white" style={{fontSize:"16px", margin:'-5px'}}>Pesquisar:</a>
-             <input type="search" style={{ margin: "0 15px", width: "230px", height: '25px' }} placeholder="Digite o status do Pedido:" className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
-        </div>  
+             <input type="search" style={{ margin: "0 15px", width: "120px", height: '25px' }} className="form-control rounded-0" value={buscapedido} onChange={(e) => setBuscaPedido(e.target.value)} />
+        </div>
+
+
 
 
       </div><br />
@@ -105,14 +114,14 @@ const ConsultaStatus = ({item}) => {
             {
               table.map(item => (
                 <tr key={item.id}>
-                  <h6>{item.id}</h6>
-                  <h6>{item.nome}</h6>
+                  <img src={`https://lojamcserver.onrender.com${item.imagem}`} onError={(e) => {e.target.style.display = 'none'}}/>  
                   <h6>{item.descricao}</h6>
                   <h6>{item.quant}</h6>
                   <h6>{item.preco}</h6>
                   <h6>{item.total}</h6>
                   <h6>{item.taxaentrega}</h6>
                   <h6>{item.formapag}</h6>
+                  <h6>{item.desconto}</h6>
                   <h6>{item.cidade}</h6>
                   <h6>{item.bairro}</h6>
                   <h6>{item.cep}</h6>
@@ -121,6 +130,7 @@ const ConsultaStatus = ({item}) => {
                   <h6>{item.fone}</h6>
                   <h6 style={{ color: getColor(item.status), fontWeight: 'bold' }}>{item.status}</h6>
                   <h6>{item.data_cad}</h6>
+                  <h6>{item.nome}</h6>
                   <h6>
                     <button className="editar" onClick={() => { LoadEdit(item.id) }} style={{ color: 'white', backgroundColor: 'blue', border: 'none', borderRadius: '5px' }}>Editar:</button>
                     <button className="excluir" onClick={() => { handleDelete(item.id) }} style={{ color: 'white', backgroundColor: 'red', border: 'none', borderRadius: '5px' }}>Excluir:</button>
@@ -133,7 +143,8 @@ const ConsultaStatus = ({item}) => {
               
               ))
 
-            }         
+            }
+          
 
          </div>          
 
@@ -143,7 +154,6 @@ const ConsultaStatus = ({item}) => {
       </footer>
 
     </div>
-
   )
 }
 
