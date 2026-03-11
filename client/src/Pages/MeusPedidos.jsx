@@ -49,7 +49,7 @@ const MeusPedidos = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("/pedidos")
+    fetch("https://lojamcserver.onrender.com/pedidos")
       .then((response) => response.json())
       .then((result) => {
         // Verifica se o array retornado está vazio
@@ -86,7 +86,7 @@ const MeusPedidos = () => {
 
 
       </div><br /><br />
-      <p style={{fontSize:'20px', fontWeight:'bold', margin:'0 350px'}}>Meus Pedidos:</p>
+  
       <br />
 
       <div className="container border" style={{ width: '100%' }}>

@@ -142,8 +142,7 @@ const Pedidos = ({ item }) => {
 
       </div><br />
       <br />
-         <p style={{fontSize:'20px', fontWeight:'bold', margin:'0 350px'}}> Pedidos:</p>
-         <br />   
+        
 
       <div className="container border" style={{ width: '100%' }}>
         
