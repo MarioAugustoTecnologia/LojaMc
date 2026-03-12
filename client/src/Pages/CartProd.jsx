@@ -89,10 +89,9 @@ const CartProd = () => {
 
         if (result.isConfirmed) {
     
-          const quant = "Total Itens:" + variaquant(cart);
+          const quant = "Total Itens:  " + variaquant(cart);
           const preco = " Preço:  R$" + prec;
-          const status = '_'      
-
+          const status = '_'     
       
           const caddados = {imagem, nome, descricao, preco, quant, status}
 
@@ -134,12 +133,10 @@ const CartProd = () => {
             toast.error('Erro ! :' + err.message)
           })
 
-
-
         } else if (result.isDenied) {
 
           Swal.fire({
-            title: "Deseja Parar por Aqui ?",
+            title: "Deseja Retornar ?",
             showDenyButton: true,
             showConfirmButton: true,
             confirmButtonText: "sim ",
@@ -149,7 +146,7 @@ const CartProd = () => {
 
             if (result.isConfirmed) {
 
-              if (cart.length == 1) {
+              if (cart.length >= 1) {
                   cart.length = cart.length - 1;
                   totalgeral = (totalsub(cart)).toFixed(2);
                   console.log(total);
@@ -158,22 +155,7 @@ const CartProd = () => {
                   statuschange('')
                   navigate('/')
 
-               } else {
-                  if (cart.length >= 2) {
-
-                     cart.length = cart.length - 1;
-
-                     totalgeral = (totalsub(cart)).toFixed(2);
-                     console.log(total);
-                     descchange('')
-                     precochange('')
-                     statuschange('')
-                     navigate('/')
-
-
-                  }
-
-               }
+               } 
 
             } else if (result.isDenied) {
 
@@ -184,7 +166,6 @@ const CartProd = () => {
         }
 
       });
-
 
     }
 
@@ -300,7 +281,7 @@ const CartProd = () => {
   }
 
 
-  const data_cad = 'Data do Pedido:' +  formataData();
+  const data_cad = 'Data do Pedido:  ' +  formataData();
   const usuario = localStorage.getItem('usuario')
   const nome = usuario
 
@@ -329,7 +310,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
 
     e.preventDefault();
 
-      const quant = "Total Itens:" + totalitens(cart);
+      const quant = "Total Itens:  " + totalitens(cart);
 
     if (isValidate()) {
 
@@ -352,8 +333,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
 
           }).then((result) => {
 
-            if (result.isConfirmed) {
-             // const cidade = 'cidade' + cidade;
+            if (result.isConfirmed) {  
              
               const desconto = 'Desconto: Não';
               const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, desconto }
@@ -370,13 +350,11 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
               }).catch((err) => {
                 toast.error('Erro ! :' + err.message)
               })
-            } else if (result.isDenied) {
-
-              if ({itens} <= 5) {
+            } else if (result.isDenied) {         
 
                 const desconto = 'Desconto: Não';
-                const taxa = "5.00"
-                const taxaentrega = "Taxa de Entrega: R$5.00"
+                const taxa = "10.00"
+                const taxaentrega = "Taxa de Entrega:  R$10.00"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                 console.log(soma)
                 const total = 'Total: R$' + soma.toFixed(2);
@@ -394,31 +372,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
 
                 }).catch((err) => {
                   toast.error('Erro ! :' + err.message)
-                })
-
-              } else {
-                const desconto = 'Desconto: Não';
-                const taxa = "10.00"
-                const taxaentrega = "Taxa de Entrega: R$10.00"
-                const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa); 
-                console.log(soma)
-                const total = 'Total: R$' + soma.toFixed(2);
-                const caddados = { nome, cidade, bairro, cep, ruaav, numero, formapag, fone, status, data_cad, total, quant, taxaentrega, desconto }
-
-                fetch("https://lojamcserver.onrender.com/pedidos", {
-                  method: "POST",
-                  headers: { 'content-type': 'application/json' },
-                  body: JSON.stringify(caddados)
-                }).then((res) => {
-                  Swal.fire("Compra Concluida com Sucesso !", "", "success");
-                  cart.length = cart.length - cart.length;
-                  navigate('/')
-
-                }).catch((err) => {
-                  toast.error('Erro ! :' + err.message)
-                })
-
-              }
+                })              
 
             }
           })
