@@ -354,7 +354,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
 
                 const desconto = 'Desconto: Não';             
                 const taxaentrega = "Taxa de Entrega:"
-                const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
+                const soma = Number((totalpreco(cart)).toFixed(2))
                 console.log(soma)
                 const total = 'Total: R$' + soma.toFixed(2);
 
