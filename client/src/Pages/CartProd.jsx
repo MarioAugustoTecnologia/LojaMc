@@ -477,7 +477,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
         <div className="row ">
           <div className="col-8">
 
-            <div className='border mb-3'>
+            <div className='border-none mb-3'>
 
               <img src={`https://lojamcserver.onrender.com${imagem}`} alt="" className='w-25 h-25' />
               <div className='buttons'>
@@ -488,7 +488,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
               </div>
               <br />
               <div className='detail ms-4'>
-                <input type="text" id="desc" readOnly style={{ border: 'none', width: '360px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
+                <input type="text" id="desc" readOnly style={{ border: 'none', width: '500px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
                 <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width: '160px' }} value={"R$" + prec} onChange={e => precochange(e.target.value)}></input> <br />
                 <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width: '200px' }} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                 <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>
