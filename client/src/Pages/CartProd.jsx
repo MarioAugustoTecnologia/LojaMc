@@ -352,9 +352,8 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
               })
             } else if (result.isDenied) {         
 
-                const desconto = 'Desconto: Não';
-                const taxa = "10.00"
-                const taxaentrega = "Taxa de Entrega:  R$10.00"
+                const desconto = 'Desconto: Não';             
+                const taxaentrega = "Taxa de Entrega:"
                 const soma = Number((totalpreco(cart)).toFixed(2)) + Number(taxa);
                 console.log(soma)
                 const total = 'Total: R$' + soma.toFixed(2);
@@ -488,7 +487,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
               </div>
               <br />
               <div className='detail ms-4'>
-                <input type="text" id="desc" readOnly style={{ border: 'none', width: '225px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
+                <input type="text" id="desc" readOnly style={{ border: 'none', width: '300px', fontSize: '17px' }} value={descricao} onChange={e => descchange(e.target.value)} /> <br />
                 <input type="text" readOnly style={{ fontWeight: 'bold', color: 'DarkMagenta', border: 'none', fontSize: '20px', width: '160px' }} value={"R$" + prec} onChange={e => precochange(e.target.value)}></input> <br />
                 <input type="text" readOnly style={{ fontWeight: 'bold', color: 'Green', border: 'none', fontSize: '20px', width: '200px' }} value={statusprod} id="statusprod" onChange={e => statuschange(e.target.value)} /> <br />
                 <button type="submit" className="btn btn-success" onClick={comprar} id="botao">Comprar: </button>
