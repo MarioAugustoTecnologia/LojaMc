@@ -497,7 +497,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
             </div>
 
           </div>
-          <div className="col-4" >
+          <div className="col-4" style={{marginTop:'-30px'}} >
             <div className="p-3">
 
               <h7 style={{ color: 'navy', backgroundColor: 'white', fontWeight: 'bold', fontSize: '17px' }}>Total Itens: <a style={{ color: 'green', backgroundColor: 'white', fontWeight: 'bold', fontSize: '17px' }} id="itens">{totalitens(cart)}</a> </h7><br />
