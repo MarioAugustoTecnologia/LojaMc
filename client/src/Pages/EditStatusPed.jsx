@@ -16,6 +16,7 @@ const EditStatusPed = () => {
     const [novototal, novototalchange] = useState("")
     const [quant, quantchange] = useState("")
     const [desconto, descontochange] = useState("")
+     const [taxaentrega, taxachange] = useState("")
 
     useEffect(() => {
         fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod).then((res) => {
@@ -25,6 +26,7 @@ const EditStatusPed = () => {
             totalchange(resp.total)
             quantchange(resp.quant)
             descontochange(resp.desconto)
+            taxachange(resp.taxaentrega)
 
         }).catch((err) => {
             console.log(err.message);
@@ -95,7 +97,7 @@ const EditStatusPed = () => {
             const status = document.getElementById('status').value;
             const total = document.getElementById('total').value
 
-            const edtobj = { id, status, total, quant, desconto }
+            const edtobj = { id, status, total, quant, desconto, taxaentrega }
 
             Swal.fire({
                 title: "Deseja salvar ?",
@@ -212,6 +214,22 @@ const EditStatusPed = () => {
 
                     </select>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="taxa">Taxa Entrega:</label><br />
+
+                    <input
+                        type="text"
+                        id="taxa"
+                        name="taxa"
+                        className='form-control'
+                        value={taxaentrega}
+                        onChange={e => taxachange(e.target.value)}
+                        
+
+                        style={{ width: '150px' }}
+
+                    />
+                </div><br />
                 <div className="form-group">
                     <label htmlFor="total">Total:</label><br />
 
