@@ -366,6 +366,7 @@ const total = "Total:  R$" + (totalpreco(cart)).toFixed(2);
                   body: JSON.stringify(caddados)
                 }).then((res) => {
                   Swal.fire("Compra Concluida com Sucesso !", "", "success");
+                      Swal.fire("Taxa de Entrega será gerada assim que o Pedido for conhecido !", "", "success");
                   cart.length = cart.length - cart.length;
                   navigate('/')
 
