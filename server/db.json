@@ -170,5 +170,121 @@
       "status": "Produto Indisponivel",
       "id": 2
     }
+  ],
+    "frete": [
+    {
+      "id": 1,
+      "regiao": "Norte",
+      "bairro": "Jardim Paraiso",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 2,
+      "regiao": "Norte",
+      "bairro": "Colinas do Paraiso",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 3,
+      "regiao": "Norte",
+      "bairro": "Altos do Paraiso",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 4,
+      "regiao": "Norte",
+      "bairro": "Vilas Paraiso",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 5,
+      "regiao": "Norte",
+      "bairro": "Jardim Mirante",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 6,
+      "regiao": "Norte",
+      "bairro": "Vila Antartica",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 7,
+      "regiao": "Norte",
+      "bairro": "Jardim Monte Mor",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 8,
+      "regiao": "Norte",
+      "bairro": "Jardim Flamboyant",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 9,
+      "regiao": "Norte",
+      "bairro": "Vila Pinheiro",
+      "valor": "R$40.00"
+    },
+    {
+      "id": 10,
+      "regiao": "Norte",
+      "bairro": "Chácara dos Pinheiros",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 11,
+      "regiao": "Norte",
+      "bairro": "Jardim Iolanda",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 12,
+      "regiao": "Norte",
+      "bairro": "Jardim Continental",
+      "valor": "45.00"
+    },
+    {
+      "id": 13,
+      "regiao": "Norte",
+      "bairro": "Jardim Ipe",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 14,
+      "regiao": "Norte",
+      "bairro": "Jardim Itamaraty",
+      "valor": "45.00"
+    },
+    {
+      "id": 15,
+      "regiao": "Norte",
+      "bairro": "Jardim Cambui",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 16,
+      "regiao": "Norte",
+      "bairro": "Jardim Ouro Verde",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 17,
+      "regiao": "Norte",
+      "bairro": "Jardim Real Park",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 18,
+      "regiao": "Norte",
+      "bairro": "Jardim Italia",
+      "valor": "R$45.00"
+    },
+    {
+      "id": 19,
+      "regiao": "Norte",
+      "bairro": "Jardim Planalto",
+      "valor": "R$45.00"
+    }
   ]
 }

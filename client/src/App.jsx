@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Produtos from './Pages/Produtos'
 import CadUsuario from './Pages/CadUsuario'
 import Login from './Pages/Login'
@@ -12,34 +12,37 @@ import ListaProdutos from './Pages/ListaProdutos'
 import EditProdutos from './Pages/EditProdutos'
 import MeusPedidos from './Pages/MeusPedidos'
 import CartProd from './Pages/CartProd'
+import ConsultaFrete from './Pages/ConsultaFrete'
+import EditarFrete from './Pages/EditarFrete'
 
 
 function App() {
 
   return (
-    
-      <div className='App'>
-         <BrowserRouter>
-           <Routes>
-              <Route path='/' element={<Produtos />}></Route>
-              <Route path='/cartprod/:pcod' element={<CartProd />}></Route>          
-              <Route path='/cadusuario' element={<CadUsuario />}></Route>
-              <Route path='/login' element={<Login />}></Route>
-               <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>
-              <Route path='/adminroot/pedidos' element={<PrivateRoutes><Pedidos /></PrivateRoutes>}></Route>
-              <Route path='/adminroot/pedidos/status/editar/:pedidocod' element={<PrivateRoutes><EditStatusPed /></PrivateRoutes>}></Route>
-              <Route path='/adminroot/pedidos/consulta/nome' element={<PrivateRoutes><ConsultaNome /></PrivateRoutes>}></Route>
-              <Route path='/adminroot/pedidos/consulta/status' element={<PrivateRoutes><ConsultaStatus /></PrivateRoutes>}></Route>                    
-              <Route path='/adminroot/pedidos/cadprodutos' element={<PrivateRoutes><CadProdutos /></PrivateRoutes>}></Route>
-               <Route path='/adminroot/pedidos/consulta/produtos' element={<PrivateRoutes><ListaProdutos /></PrivateRoutes>}></Route>
-               <Route path='/adminroot/pedidos/produtos/editar/:produtocod' element={<PrivateRoutes><EditProdutos /></PrivateRoutes>}></Route>
-         
-           </Routes>
-         </BrowserRouter>        
-        
-        
-      </div> 
-           
+
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Produtos />}></Route>
+          <Route path='/cartprod/:pcod' element={<CartProd />}></Route>
+          <Route path='/cadusuario' element={<CadUsuario />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos' element={<PrivateRoutes><Pedidos /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/status/editar/:pedidocod' element={<PrivateRoutes><EditStatusPed /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/consulta/nome' element={<PrivateRoutes><ConsultaNome /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/consulta/status' element={<PrivateRoutes><ConsultaStatus /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/cadprodutos' element={<PrivateRoutes><CadProdutos /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/consulta/produtos' element={<PrivateRoutes><ListaProdutos /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/produtos/editar/:produtocod' element={<PrivateRoutes><EditProdutos /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/pedidos/consulta/frete' element={<PrivateRoutes><ConsultaFrete /></PrivateRoutes>}></Route>
+          <Route path='/adminroot/frete/valor/editar/:valorcod' element={<PrivateRoutes><EditarFrete /></PrivateRoutes>}></Route>
+        </Routes>
+      </BrowserRouter>
+
+
+    </div>
+
 
   )
 }
