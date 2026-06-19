@@ -285,6 +285,67 @@
       "regiao": "Norte",
       "bairro": "Jardim Planalto",
       "valor": "R$45.00"
+    },
+     {
+      "id": 20,
+      "regiao": "Sul",
+      "bairro": "Cohab 1",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 21,
+      "regiao": "Sul",
+      "bairro": "Jardim Reflorenda",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 22,
+      "regiao": "Sul",
+      "bairro": "Jardim Palos Verdes",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 23,
+      "regiao": "Sul",
+      "bairro": "Jardim Aeroporto",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 24,
+      "regiao": "Sul",
+      "bairro": "Jardim Maria Luiza",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 25,
+      "regiao": "Sul",
+      "bairro": "Santa Maria",
+      "valor": "R$50.00"
+    },
+     {
+      "id": 26,
+      "regiao": "Sul",
+      "bairro": "Santa Monica",
+      "valor": "R$50.00"
+    },
+    {
+      "id": 27,
+      "regiao": "Sul",
+      "bairro": "Convivio",
+      "valor": "R$50.00"
+    },
+      {
+      "id": 28,
+      "regiao": "Sul",
+      "bairro": "Vila Jardim",
+      "valor": "R$50.00"
+    },
+    {
+      "id": 29,
+      "regiao": "Sul",
+      "bairro": "Comerciários 1 2 e 3",
+      "valor": "R$50.00"
     }
+ 
   ]
 }
