@@ -85,8 +85,6 @@ const EditStatusPed = () => {
 
     }
 
-
-
     const editar = (e) => {
 
         e.preventDefault();
@@ -94,39 +92,95 @@ const EditStatusPed = () => {
 
         if (isValidate()) {
 
-            const status = document.getElementById('status').value;
-            const total = document.getElementById('total').value
+            if (taxaentrega !== "") {
 
-            const edtobj = { id, status, total, quant, desconto, taxaentrega }
+                function somarInputs() {
+                    // Pega os valores atuais dos campos de input pelo ID
+                    let valor1 = document.getElementById('taxa').value;
+                    let valor2 = document.getElementById('total').value;
 
-            Swal.fire({
-                title: "Deseja salvar ?",
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: "Salvar",
-                denyButtonText: `Não Salvar`
-            }).then((result) => {
+                    // A expressão regular /[^0-9.]/g remove tudo que não for número ou ponto decimal
+                    let numero1 = parseFloat(valor1.replace(/[^0-9.]/g, '')) || 0;
+                    let numero2 = parseFloat(valor2.replace(/[^0-9.]/g, '')) || 0;
 
-                if (result.isConfirmed) {
-                    fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod, {
-                        method: "PATCH",
-                        headers: { 'content-type': 'application/json' },
-                        body: JSON.stringify(edtobj)
-                    }).then((res) => {
-                        toast.success('Atualizado com sucesso !')
-                        //setStatus('');
-                        idchange('');
-
-                    }).catch((err) => {
-                        toast.error('Erro ! :' + err.message)
-                    })
-                    //Swal.fire("Salvo!", "", "success");
-                } else if (result.isDenied) {
-                    Swal.fire("Nada salvo", "", "info");
+                    // Calcula a soma e exibe na tela
+                    let total = numero1 + numero2;
+                    console.log(total)
+                    document.getElementById('total').value = "Total c/Taxa:   " + "  R$" + total.toFixed(2);
+                   
                 }
-            });
+                 somarInputs()
+                
+                const status = document.getElementById('status').value;
+                const total = document.getElementById('total').value
+              
+
+                const edtobj = { id, status, total, quant, desconto, taxaentrega}
+
+                Swal.fire({
+                    title: "Deseja salvar ?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Salvar",
+                    denyButtonText: `Não Salvar`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod, {
+                            method: "PATCH",
+                            headers: { 'content-type': 'application/json' },
+                            body: JSON.stringify(edtobj)
+                        }).then((res) => {
+                            toast.success('Atualizado com sucesso !')
+                            //setStatus('');
+                            idchange('');
+
+                        }).catch((err) => {
+                            toast.error('Erro ! :' + err.message)
+                        })
+                        //Swal.fire("Salvo!", "", "success");
+                    } else if (result.isDenied) {
+                        Swal.fire("Nada salvo", "", "info");
+                    }
+                });
 
 
+            }else{
+
+                const status = document.getElementById('status').value;
+                const total = document.getElementById('total').value              
+
+                const edtobj = { id, status, total, quant, desconto }
+
+                Swal.fire({
+                    title: "Deseja salvar ?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Salvar",
+                    denyButtonText: `Não Salvar`
+                }).then((result) => {
+
+                    if (result.isConfirmed) {
+                        fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod, {
+                            method: "PATCH",
+                            headers: { 'content-type': 'application/json' },
+                            body: JSON.stringify(edtobj)
+                        }).then((res) => {
+                            toast.success('Atualizado com sucesso !')
+                            //setStatus('');
+                            idchange('');
+
+                        }).catch((err) => {
+                            toast.error('Erro ! :' + err.message)
+                        })
+                        //Swal.fire("Salvo!", "", "success");
+                    } else if (result.isDenied) {
+                        Swal.fire("Nada salvo", "", "info");
+                    }
+                });
+
+
+            }
         }
     }
 
