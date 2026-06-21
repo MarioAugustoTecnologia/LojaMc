@@ -1,13 +1,15 @@
 {
   "pedidos": [],
-  "usuarios": [{
-      "id": "Felipe Luiz",
-      "hashedPassword": "$2b$10$Z6q3YFCnaAqbO.4mmMUo4eB1dd1TbDfb9hpEP4gRmZ1koUIo6iGA6"
-    },
+  "usuarios": [
     {
       "id": "admin",
-      "hashedPassword": "$2b$10$YATna9MiE8oVL6q3CFy.4.X2WMiRsuzoK/d3H9Ltolw2ym2k9TWum"
-    }],  
+      "hashedPassword": "$2b$10$aUuRVJ.IRIFZ7Ai.oYMCqe5uzJctSoobypPL6Nvl1z18Y2s5Z0tqG"
+    },
+    {
+      "id": "Mario Augusto Pisani",
+      "hashedPassword": "$2b$10$4s0icXx7slzSBqtwU.DF9Ohnwun1IenV8coj.pQe4XHXAxPutZPi6"
+    }
+   ],  
  
   "statusped": [
     {
