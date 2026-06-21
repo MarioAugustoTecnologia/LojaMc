@@ -126,7 +126,7 @@ const Pedidos = ({ item }) => {
   return (
     <div className="">
 
-      <div className="d-flex text-white bg-secondary" style={{ height: 120 }}>
+      <div className="d-flex text-white bg-secondary" style={{ height: 160 }}>
         <Link to="/" className="navbar-brandt text-white" style={{ fontSize: '18px' }}>Inicio:</Link>
 
         <div className="" style={{ margin: '20px' }}>
