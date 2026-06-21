@@ -130,12 +130,12 @@ const Pedidos = ({ item }) => {
         <Link to="/" className="navbar-brandt text-white" style={{ fontSize: '18px' }}>Inicio:</Link>
 
         <div className="" style={{ margin: '20px' }}>
-          <Link to="/adminroot/pedidos/consulta/nome" style={{ color: "white" }} >Consulta por nome:</Link><br />
-          <Link to="/adminroot/pedidos/consulta/status" style={{ color: "white" }} >Consulta por status:</Link><br />
+          <Link to="/adminroot/pedidos/consulta/nome" style={{ color: "white" }} >Consulta por Cliente:</Link><br />
+          <Link to="/adminroot/pedidos/consulta/status" style={{ color: "white" }} >Consulta por status:</Link><br />       
           <Link to="/adminroot/pedidos/consulta/produtos" style={{ color: "white" }} >Consulta Produtos:</Link><br />
-          <Link style={{ color: 'white', margin: '-1550px' }} onClick={SairdaConta}>Sair da Conta:</Link>
+          <Link to="/adminroot/pedidos/consulta/frete" style={{ color: "white" }} >Consulta Frete:</Link><br />
+          <Link style={{ color: 'white'}} onClick={SairdaConta}>Sair da Conta:</Link>
         </div>
-
 
       </div><br />
       <br />
