@@ -72,24 +72,29 @@ const CadUsuario = () => {
     const validarNomeCompleto = (valor) => {
 
 
-        const regexNomeCompleto = /^[A-Za-zÀ-ú\s]{3,}(?:\s[A-Za-zÀ-ú\s]{3,})+$/
+        if (id !== 'admin') {
+
+            const regexNomeCompleto = /^[A-Za-zÀ-ú\s]{3,}(?:\s[A-Za-zÀ-ú\s]{3,})+$/
 
 
-        if (!regexNomeCompleto.test(valor)) {
-            // Verifica se a string tem pelo menos um espaço no meio
-            return 'Por favor, insira o nome completo (nome e sobrenome).';
+            if (!regexNomeCompleto.test(valor)) {
+                // Verifica se a string tem pelo menos um espaço no meio
+                return 'Por favor, insira o nome completo (nome e sobrenome).';
+            }
+
+            const temComprimentoMinimo = id.length >= 10
+            if (!temComprimentoMinimo) {
+
+                return 'O nome deve ter no mínimo 10 caracteres.';
+            }
+
+
         }
-
-        const temComprimentoMinimo = id.length >= 10
-        if (!temComprimentoMinimo) {
-
-            return 'O nome deve ter no mínimo 10 caracteres.';
-        }
-
 
 
     }
-const validarsenha = (valor) => {
+
+    const validarsenha = (valor) => {
 
         const senhavalida = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,10}$/
 
@@ -164,15 +169,15 @@ const validarsenha = (valor) => {
 
     const navigate = useNavigate()
 
-    function Login(){
-      
+    function Login() {
+
         navigate('/login')
 
     }
 
     return (
 
-      
+
         <div className="">
 
             <div className="bg-secondary" style={{ height: 75 }}>
@@ -194,7 +199,7 @@ const validarsenha = (valor) => {
                         className='form-control'
                         value={id}
                         onChange={e => setId(e.target.value)}
-                   
+
                         onKeyUp={MostraUsuario}
                         style={{ width: '180px' }}
 
