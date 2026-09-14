@@ -1,7 +1,5 @@
-Usuario Administrador:
+usuario: admin
+Senha: Sys026$#
 
-admin 
-senha: Sys026@#
-
-Usuario Karen Santos de Barros
-senha: Sys026@#
+usuario: Mario Augusto Pisani
+Senha: Sys026@#

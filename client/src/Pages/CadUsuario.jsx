@@ -104,65 +104,117 @@ const CadUsuario = () => {
 
     }
 
-    const cadastrar = (e) => {
+   const cadastrar = (e) => {
 
         e.preventDefault();
 
         if (isValidate()) {
 
-            //const mensagemErro = validarNomeCompleto(id);
-            const errosenha = validarsenha(senha);
+            if (id !== 'admin') {
 
-            //if (mensagemErro) {
-               // setErro(mensagemErro);
-                //console.log('Erro de validação:', mensagemErro);
-            //} else {
+                const mensagemErro = validarNomeCompleto(id);
+                const errosenha = validarsenha(senha);
 
-                if (errosenha) {
-                    setErro(errosenha);
-                    console.log('Erro de validação:', errosenha);
+                if (mensagemErro) {
+                    setErro(mensagemErro);
+                    console.log('Erro de validação:', mensagemErro);
                 } else {
 
-                    const password = senha;
-                    const hashedPassword = bcrypt.hashSync(password, 10)
-                    const user = id;
-                    window.localStorage.setItem('Login', JSON.stringify({ user, hashedPassword }))
+                    if (errosenha) {
+                        setErro(errosenha);
+                        console.log('Erro de validação:', errosenha);
+                    } else {
 
-                    const cadobj = { id, hashedPassword }
-                    //console.log(cadobj) 
-                    Swal.fire({
-                        title: "Deseja salvar ?",
-                        showDenyButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: "Salvar",
-                        denyButtonText: `Não salvar`
-                    }).then((result) => {
+                        const password = senha;
+                        const hashedPassword = bcrypt.hashSync(password, 10)
+                        const user = id;
+                        window.localStorage.setItem('Login', JSON.stringify({ user, hashedPassword }))
 
-                        if (result.isConfirmed) {
+                        const cadobj = { id, hashedPassword }
+                        //console.log(cadobj) 
+                        Swal.fire({
+                            title: "Deseja salvar ?",
+                            showDenyButton: true,
+                            showCancelButton: true,
+                            confirmButtonText: "Salvar",
+                            denyButtonText: `Não salvar`
+                        }).then((result) => {
 
-                            fetch("https://lojamcserver.onrender.com/usuarios", {
-                                method: "POST",
-                                headers: { 'content-type': 'application/json' },
-                                body: JSON.stringify(cadobj)
+                            if (result.isConfirmed) {
 
-                            }).then((res) => {
-                                toast.success('Cadastrado com sucesso !')
-                                setId('');
-                                setSenha('');
+                                fetch("https://lojamcserver.onrender.com/usuarios", {
+                                    method: "POST",
+                                    headers: { 'content-type': 'application/json' },
+                                    body: JSON.stringify(cadobj)
+                                }).then((res) => {
+                                    toast.success('Cadastrado com sucesso !')
+                                    setId('');
+                                    setSenha('');
 
 
-                            }).catch((err) => {
-                                toast.error('Erro ! :' + err.message)
-                            })
-                            //Swal.fire("Salvo!", "", "success");
-                        } else if (result.isDenied) {
-                            Swal.fire("Nada salvo", "", "info");
-                        }
-                    });
+                                }).catch((err) => {
+                                    toast.error('Erro ! :' + err.message)
+                                })
+                                //Swal.fire("Salvo!", "", "success");
+                            } else if (result.isDenied) {
+                                Swal.fire("Nada salvo", "", "info");
+                            }
+                        });
 
+
+                    }
                 }
+
+            } else {
+      
+                const errosenha = validarsenha(senha);             
+
+                    if (errosenha) {
+                        setErro(errosenha);
+                        console.log('Erro de validação:', errosenha);
+                    } else {
+
+                        const password = senha;
+                        const hashedPassword = bcrypt.hashSync(password, 10)
+                        const user = id;
+                        window.localStorage.setItem('Login', JSON.stringify({ user, hashedPassword }))
+
+                        const cadobj = { id, hashedPassword }
+                        //console.log(cadobj) 
+                        Swal.fire({
+                            title: "Deseja salvar ?",
+                            showDenyButton: true,
+                            showCancelButton: true,
+                            confirmButtonText: "Salvar",
+                            denyButtonText: `Não salvar`
+                        }).then((result) => {
+
+                            if (result.isConfirmed) {
+
+                                fetch("https://lojamcserver.onrender.com/usuarios", {
+                                    method: "POST",
+                                    headers: { 'content-type': 'application/json' },
+                                    body: JSON.stringify(cadobj)
+                                }).then((res) => {
+                                    toast.success('Cadastrado com sucesso !')
+                                    setId('');
+                                    setSenha('');
+
+
+                                }).catch((err) => {
+                                    toast.error('Erro ! :' + err.message)
+                                })
+                                //Swal.fire("Salvo!", "", "success");
+                            } else if (result.isDenied) {
+                                Swal.fire("Nada salvo", "", "info");
+                            }
+                        });
+
+
+                    }          
             }
-        
+
+        }
     }
 
     const navigate = useNavigate()
