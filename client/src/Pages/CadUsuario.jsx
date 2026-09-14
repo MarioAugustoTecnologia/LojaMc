@@ -72,8 +72,6 @@ const CadUsuario = () => {
     const validarNomeCompleto = (valor) => {
 
 
-        if (id !== 'admin') {
-
             const regexNomeCompleto = /^[A-Za-zÀ-ú\s]{3,}(?:\s[A-Za-zÀ-ú\s]{3,})+$/
 
 
@@ -89,7 +87,7 @@ const CadUsuario = () => {
             }
 
 
-        }
+        
 
 
     }
@@ -112,13 +110,13 @@ const CadUsuario = () => {
 
         if (isValidate()) {
 
-            const mensagemErro = validarNomeCompleto(id);
+            //const mensagemErro = validarNomeCompleto(id);
             const errosenha = validarsenha(senha);
 
-            if (mensagemErro) {
-                setErro(mensagemErro);
-                console.log('Erro de validação:', mensagemErro);
-            } else {
+            //if (mensagemErro) {
+               // setErro(mensagemErro);
+                //console.log('Erro de validação:', mensagemErro);
+            //} else {
 
                 if (errosenha) {
                     setErro(errosenha);
@@ -164,7 +162,7 @@ const CadUsuario = () => {
 
                 }
             }
-        }
+        
     }
 
     const navigate = useNavigate()
