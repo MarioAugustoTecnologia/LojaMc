@@ -1,14 +1,7 @@
 {
   "pedidos": [],
   "usuarios": [
-    {
-      "id": "admin",
-      "hashedPassword": "$2b$10$aUuRVJ.IRIFZ7Ai.oYMCqe5uzJctSoobypPL6Nvl1z18Y2s5Z0tqG"
-    },
-    {
-      "id": "Mario Augusto Pisani",
-      "hashedPassword": "$2b$10$4s0icXx7slzSBqtwU.DF9Ohnwun1IenV8coj.pQe4XHXAxPutZPi6"
-    }
+   
    ],  
  
   "statusped": [
