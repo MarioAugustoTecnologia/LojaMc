@@ -16,7 +16,7 @@ const EditStatusPed = () => {
     const [novototal, novototalchange] = useState("")
     const [quant, quantchange] = useState("")
     const [desconto, descontochange] = useState("")
-     const [taxaentrega, taxachange] = useState("")
+    const [taxaentrega, taxachange] = useState("")
 
     useEffect(() => {
         fetch("https://lojamcserver.onrender.com/pedidos/" + pedidocod).then((res) => {
@@ -62,7 +62,7 @@ const EditStatusPed = () => {
             isproceed = false
             //errormessage += 'Nome:' 
         }
-        if (statusped === null || statusped === '') {
+        if (document.getElementById("status").value === null || document.getElementById("status").value === '') {
 
             document.getElementById("status").style.borderColor = "red";
             isproceed = false
@@ -75,6 +75,32 @@ const EditStatusPed = () => {
         return isproceed
     }
 
+    const isValidateTwo = () => {
+        let isproceed = true
+        let errormessage = "Campos não podem estar vazio  !"
+        if (novototal === null || novototal === '') {
+
+            document.getElementById("ntotal").style.borderColor = "red";
+            isproceed = false
+            //errormessage += 'Nome:' 
+        }
+        if (desc === null || desc === '') {
+
+            document.getElementById("desc").style.borderColor = "red";
+            isproceed = false
+            //errormessage += 'Nome:' 
+        } if (desconto === null || desconto === '') {
+
+            document.getElementById("desconto").style.borderColor = "red";
+            isproceed = false
+            //errormessage += 'Nome:' 
+        }
+        if (!isproceed) {
+            toast.warning(errormessage)
+        }
+
+        return isproceed
+    }
 
 
     function MostraId() {
@@ -84,15 +110,45 @@ const EditStatusPed = () => {
 
 
     }
+       function MostraDesconto() {
 
-    const editar = (e) => {
+
+        document.getElementById('desc').style.borderColor = 'GainsBoro';
+
+
+    }
+
+    function MostraDesc() {
+
+
+        document.getElementById('desconto').style.borderColor = 'GainsBoro';
+
+
+    }
+       function MostraNovoTotal() {
+
+
+        document.getElementById('ntotal').style.borderColor = 'GainsBoro';
+
+
+    }
+
+     function MostraStatus() {
+
+
+        document.getElementById('status').style.borderColor = 'GainsBoro';
+
+
+    }
+
+
+const editar = (e) => {
 
         e.preventDefault();
 
+        if (isValidate()) {            
 
-        if (isValidate()) {
-
-            if (taxaentrega !== "") {
+            if (taxaentrega) { //Testar Total com Desconto + Taxa de Entrega. (fixo)
 
                 function somarInputs() {
                     // Pega os valores atuais dos campos de input pelo ID
@@ -107,15 +163,15 @@ const EditStatusPed = () => {
                     let total = numero1 + numero2;
                     console.log(total)
                     document.getElementById('total').value = "Total c/Taxa:   " + "  R$" + total.toFixed(2);
-                   
+
                 }
-                 somarInputs()
-                
+                somarInputs()
+
                 const status = document.getElementById('status').value;
                 const total = document.getElementById('total').value
-              
 
-                const edtobj = { id, status, total, quant, desconto, taxaentrega}
+
+                const edtobj = { id, status, total, quant, desconto, taxaentrega }
 
                 Swal.fire({
                     title: "Deseja salvar ?",
@@ -145,10 +201,12 @@ const EditStatusPed = () => {
                 });
 
 
-            }else{
+            } else {
+
 
                 const status = document.getElementById('status').value;
-                const total = document.getElementById('total').value              
+                const total = document.getElementById('total').value
+
 
                 const edtobj = { id, status, total, quant, desconto }
 
@@ -186,36 +244,29 @@ const EditStatusPed = () => {
 
     function NovoTotal() {
 
-        const currencyString = novototal;
 
-        const convertToNumber = (value) => {
-            if (!value) return 0;
-            // 1. Remove tudo que não é número, vírgula ou ponto (o - é mantido para negativos)
-            // 2. Substitui a vírgula por ponto para o padrão JS
-            const cleanValue = value
-                .replace(/[R$\s]/g, "") // Remove R$, espaços e pontos de milhar
+        if (isValidateTwo()) {
 
-            return parseFloat(cleanValue);
-        };
+            var vdesc = desc * novototal;
+            var resultado = novototal - vdesc;
+            document.getElementById('ntotal').value = 'R$' + (resultado).toFixed(2);
+            totalchange('')
+            document.getElementById('total').value = 'Total c/Desconto: R$' + (resultado).toFixed(2);
 
-        const number = convertToNumber(currencyString);
-        console.log(number)
+        }
 
-        var vdesc = desc * number;
-        var resultado = number - vdesc;
-        document.getElementById('ntotal').value = 'R$' + (resultado).toFixed(2);
-        totalchange('')
-        document.getElementById('total').value = 'R$' + (resultado).toFixed(2);
+
+
 
 
     }
     const navigate = useNavigate()
-    
-        function Retornar(){
 
-         navigate("/adminroot/pedidos")
+    function Retornar() {
 
-      }
+        navigate("/adminroot/pedidos")
+
+    }
 
 
     return (
@@ -228,7 +279,7 @@ const EditStatusPed = () => {
 
 
             </div><br />
-         
+
             <form className="mobile-form" style={{ margin: '0 100px' }} onSubmit={editar}>
                 <h5>Atualizar Status do Pedido:</h5>
 
@@ -258,6 +309,7 @@ const EditStatusPed = () => {
                         name="status"
                         onChange={(e) => setValues({ ...values, id: e.target.value })}
                         style={{ width: '150px' }}
+                        onClick={MostraStatus}
 
                     >
                         <option value=""></option>
@@ -278,7 +330,7 @@ const EditStatusPed = () => {
                         className='form-control'
                         value={taxaentrega}
                         onChange={e => taxachange(e.target.value)}
-                        
+
 
                         style={{ width: '150px' }}
 
@@ -294,7 +346,7 @@ const EditStatusPed = () => {
                         className='form-control'
                         value={total}
                         onChange={e => totalchange(e.target.value)}
-                        
+
 
                         style={{ width: '150px' }}
 
@@ -307,7 +359,7 @@ const EditStatusPed = () => {
                 </div>
                 <ToastContainer />
             </form><br /><br />
-             <form className="mobile-form" style={{ margin: '0 100px' }}>
+            <form className="mobile-form" style={{ margin: '0 100px' }}>
                 <h5>Novo Total c/ Desconto:</h5>
 
                 <div className="form-group">
@@ -320,12 +372,11 @@ const EditStatusPed = () => {
                         className='form-control'
                         value={desc}
                         onChange={e => descchange(e.target.value)}
-                      
-
+                        onKeyUp={MostraDesconto}
                         style={{ width: '100px' }}
 
                     />
-                </div>               
+                </div>
                 <div className="form-group">
                     <label htmlFor="total">Novo Total:</label><br />
 
@@ -336,8 +387,7 @@ const EditStatusPed = () => {
                         className='form-control'
                         value={novototal}
                         onChange={e => novototalchange(e.target.value)}
-                        
-
+                        onKeyUp={MostraNovoTotal}
                         style={{ width: '150px' }}
 
                     />
@@ -350,21 +400,22 @@ const EditStatusPed = () => {
                         name="desconto"
                         className='form-control'
                         value={desconto}
-                        onChange={e => descontochange(e.target.value)}                       
+                        onChange={e => descontochange(e.target.value)}
+                        onClick={MostraDesc}
 
                         style={{ width: '100px' }}
 
                     > <option value=""></option>
-                      <option value="Desconto: Sim">Desconto: Sim</option>
-                      <option value="Desconto: Não">Desconto: Não</option></select>                     
+                        <option value="Desconto: Sim">Desconto: Sim</option>
+                        <option value="Desconto: Não">Desconto: Não</option></select>
                 </div><br />
-          
-                  <ToastContainer />
-              </form>
-        
-                 <button style={{ backgroundColor: 'green', color: 'white', width: '100px', margin:'0 100px' }} onClick={NovoTotal}>Novo Total:</button>
-                    
-             
+
+                <ToastContainer />
+            </form>
+
+            <button style={{ backgroundColor: 'green', color: 'white', width: '100px', margin: '0 100px' }} onClick={NovoTotal}>Novo Total:</button>
+
+
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
                 <p className="fw-bolder text-white">&copy; Multicompany Solutions</p>
