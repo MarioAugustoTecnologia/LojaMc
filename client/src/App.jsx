@@ -14,6 +14,9 @@ import MeusPedidos from './Pages/MeusPedidos'
 import CartProd from './Pages/CartProd'
 import ConsultaFrete from './Pages/ConsultaFrete'
 import EditarFrete from './Pages/EditarFrete'
+import RecuperaSenha from './Pages/RecuperaSenha'
+import EditarUsuario from './Pages/EditarUsuario'
+
 
 
 function App() {
@@ -27,6 +30,8 @@ function App() {
           <Route path='/cartprod/:pcod' element={<CartProd />}></Route>
           <Route path='/cadusuario' element={<CadUsuario />}></Route>
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/recuperasenha' element={<RecuperaSenha />}></Route>
+          <Route path='/usuarios/editar/:usuariocod' element={<EditarUsuario />}></Route> 
           <Route path='/meuspedidos' element={<PrivateRoutes><MeusPedidos /></PrivateRoutes>}></Route>
           <Route path='/adminroot/pedidos' element={<PrivateRoutes><Pedidos /></PrivateRoutes>}></Route>
           <Route path='/adminroot/pedidos/status/editar/:pedidocod' element={<PrivateRoutes><EditStatusPed /></PrivateRoutes>}></Route>
