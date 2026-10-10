@@ -199,6 +199,7 @@ const Login = () => {
                 </div>    
                 <ToastContainer />
             </form>
+             <Link to="/recuperasenha" style={{margin:'0 100px'}}>Esqueceu a Senha ?</Link>
 
 
             <footer className="py-4 bg-secondary d-flex justify-content-center" style={{ marginTop: "500px" }}>
