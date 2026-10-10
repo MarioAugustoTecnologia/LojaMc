@@ -1,6 +1,10 @@
 {
   "pedidos": [],
   "usuarios": [
+    {
+      "id": "admin",
+      "hashedPassword": "$2b$10$33LaqzIjOtIhNSUnrrzW/OcErjpOs7obyv.ms8QwVrvDTkO2ptqDK"
+    }
    
    ],  
  

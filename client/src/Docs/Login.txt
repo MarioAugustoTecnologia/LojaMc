@@ -2,4 +2,8 @@ usuario: admin
 Senha: Sys026$#
 
 usuario: Mario Augusto Pisani
-Senha: Sys026@#
+Senha: Sys026@!
+
+
+usuario: Fernando Souza
+Senha: Sys025#%
