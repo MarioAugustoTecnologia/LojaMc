@@ -4,6 +4,16 @@
     {
       "id": "admin",
       "hashedPassword": "$2b$10$33LaqzIjOtIhNSUnrrzW/OcErjpOs7obyv.ms8QwVrvDTkO2ptqDK"
+    },
+    {
+      "id": "Mario Augusto Pisani",
+      "hashedPassword": "$2b$10$udRG3BDsbNUc5BgOHjFuS.h26OrNp0556xWY6aL3exy1NOKk6bWS.",
+      "email": "mariopisanibtu@gmail.com"
+    },
+    {
+      "id": "Fernando Souza",
+      "hashedPassword": "$2b$10$CKMjINgJma0dlQHwQ2xyE.XxakzZnt99yMf4UPknSvaT6ZNulZrAa",
+      "email": "fersouza26@outlook.com"
     }
    
    ],  
